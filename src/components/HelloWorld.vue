@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>何容</h1>
-    <img src="/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg">
+    <img :src="'/img/' + items[idx]" @click="next()">
   </div>
 </template>
 
@@ -10,6 +10,20 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    next() {
+      this.idx += 1
+      if (this.idx === this.items.length) {
+        this.idx = 0
+      }
+    }
+  },
+  data() {
+    return {
+      idx: 0,
+      items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', ]
+    }
   }
 }
 </script>
