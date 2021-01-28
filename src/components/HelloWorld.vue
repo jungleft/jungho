@@ -53,6 +53,7 @@ p {
 img {
   width: 20%;
   position: relative;
+  border-radius: 15px;
 }
 h3 {
   margin: 40px 0 0;
