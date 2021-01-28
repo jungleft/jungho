@@ -19,6 +19,9 @@ export default {
       }
     }
   },
+  mounted() {
+    setInterval(this.next, 1500)
+  },
   data() {
     return {
       idx: 0,
