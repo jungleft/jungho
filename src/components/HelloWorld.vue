@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>何容</h1>
+    <p>ooo</p>
+    <p>ooo<p/>
     <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px'}">
   </div>
 </template>
@@ -20,13 +22,13 @@ export default {
     },
     move() {
       this.left += 1 * this.dir
-      if(this.left == 100 || this.left == -100) {
+      if(this.left == 500 || this.left == -500) {
         this.dir *= -1
       }
     }
   },
   mounted() {
-    setInterval(this.next, 1500)
+    setInterval(this.next, 500)
     setInterval(this.move, 5)
   },
   data() {
@@ -42,8 +44,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1{
+  color: #EAC257;
+}
+p{
+  color: #9CDA68;
+}
 img {
-  width: 60%;
+  width: 20%;
   position: relative;
 }
 h3 {
