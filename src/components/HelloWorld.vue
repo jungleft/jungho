@@ -26,8 +26,8 @@ export default {
     }
   },
   mounted() {
-    setInterval(this.next, 1500)
-    setInterval(this.move, 5)
+    setInterval(this.next, 3000)
+    setInterval(this.move, 15)
   },
   data() {
     return {
