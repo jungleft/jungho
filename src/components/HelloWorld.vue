@@ -20,7 +20,7 @@ export default {
     },
     move() {
       this.left += 1 * this.dir
-      if(this.left == 300 || this.left == -300) {
+      if(this.left == 100 || this.left == -100) {
         this.dir *= -1
       }
     }
