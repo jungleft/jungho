@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
     <h1>何容</h1>
-    <p>ooo</p>
-    <p>ooo<p/>
     <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px'}">
   </div>
 </template>
@@ -52,8 +50,8 @@ p {
 }
 img {
   width: 20%;
+  margin-top: 3em;
   position: relative;
-  border-radius: 15px;
 }
 h3 {
   margin: 40px 0 0;
