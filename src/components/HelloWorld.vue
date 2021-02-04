@@ -1,7 +1,8 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h1>何容</h1>
-    <input type="checkbox" v-model="dark" />黑暗模式
+    <div id="d">
+      <input type="checkbox" v-model="dark" />黑暗模式
+    </div>
     <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
@@ -65,6 +66,11 @@ export default {
 .dark {
   background-color: black;
 }
+#d {
+  position: fixed;
+  bottom: 3em;
+  left: 1em;
+}
 
 h1 {
   color: #EAC257;
@@ -75,6 +81,7 @@ p {
 img {
   width: 300px;
   position: fixed;
+  z-index: -9;
 }
 h3 {
   margin: 40px 0 0;
