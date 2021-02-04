@@ -4,8 +4,8 @@
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
     <h2>my works</h2>
-    <div v-for="i in items" :key="i">
-      <img :src="i">
+    <div class="work" v-for="i in items" :key="i">
+      <img :src="'/img/' + i">
     </div>
   </div>
 </template>
@@ -75,29 +75,11 @@ export default {
   left: 1em;
 }
 
-h2 {
- 
-}
-p {
-
-}
-img {
-  width: 300px;
-  position: fixed;
-  z-index: -9;
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
+.work {
   display: inline-block;
-  margin: 0 10px;
 }
-a {
-  color: #42b983;
+
+.work img {
+  width: 300px;
 }
 </style>
