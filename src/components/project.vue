@@ -77,6 +77,7 @@ export default {
 
 .work {
   display: inline-block;
+  padding: 1em;
 }
 
 .work img {
