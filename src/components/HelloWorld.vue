@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>何容</h1>
-    <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px'}">
+    <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
 
@@ -19,20 +19,27 @@ export default {
       }
     },
     move() {
+      this.top += 1 * this.dir2
       this.left += 1 * this.dir
-      if(this.left == 500 || this.left == -500) {
+      if(this.left == window.innerWidth - 300 || this.left == 0) {
         this.dir *= -1
+        this.next()
+      }
+      if(this.top == window.innerHeight - 200 || this.top == 0) {
+        this.dir2 *= -1
+        this.next()
       }
     }
   },
   mounted() {
-    setInterval(this.next, 3000)
     setInterval(this.move, 15)
   },
   data() {
     return {
       left: 0,
+      top: 0,
       dir: 1,
+      dir2: 1,
       idx: 0,
       items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', ]
     }
@@ -49,9 +56,8 @@ p {
   color: #9CDA68;
 }
 img {
-  width: 20%;
-  margin-top: 3em;
-  position: relative;
+  width: 300px;
+  position: fixed;
 }
 h3 {
   margin: 40px 0 0;
