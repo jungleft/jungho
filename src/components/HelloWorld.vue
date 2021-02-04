@@ -1,6 +1,7 @@
 <template>
-  <div class="hello">
+  <div class="hello" ;class="{dark:dark}">
     <h1>何容</h1>
+    <input type="checkbox" v-model="dark">黑暗模式
     <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
