@@ -1,7 +1,7 @@
 <template>
-  <div class="hello" ;class="{dark:dark}">
+  <div class="hello" :class="{dark:dark}">
     <h1>何容</h1>
-    <input type="checkbox" v-model="dark">黑暗模式
+    <input type="checkbox" v-model="dark" />黑暗模式
     <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      dark: false,
       left: 0,
       top: 0,
       dir: 1,
@@ -50,6 +51,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.hello {
+  padding-top: 4em;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.dark {
+  background-color: black;
+}
+
 h1 {
   color: #EAC257;
 }
