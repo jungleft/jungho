@@ -3,8 +3,8 @@
     <div id="nav">
       <h1>何容</h1>
       <router-link to="/">home</router-link> 
-      <router-link to="/about">about</router-link>
       <router-link to="/project">project</router-link>
+      <router-link to="/contact">contact</router-link>
     </div>
     <router-view/>
   </div>
@@ -37,6 +37,6 @@ h1 {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #F5B041;
 }
 </style>
