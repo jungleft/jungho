@@ -3,9 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import { firestorePlugin } from 'vuefire'
-import db from './db'
-
-console.log(db)
+import './db'
 
 Vue.use(firestorePlugin)
 
