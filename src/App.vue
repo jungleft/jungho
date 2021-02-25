@@ -5,6 +5,7 @@
       <router-link to="/">home</router-link> 
       <router-link to="/project">project</router-link>
       <router-link to="/contact">contact</router-link>
+      <router-link to="/drawing">drawing board</router-link>
     </div>
     <router-view/>
   </div>
