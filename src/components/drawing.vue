@@ -89,7 +89,7 @@ export default {
       };
       xhr.send();
     }
-    toDataURL('https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/drawing-board-e34b6.appspot.com/o/mountains.jpg?alt=media&token=5653fb10-f88d-4038-a4cf-66740851bb8d', function(dataURL){
+    toDataURL('https://firebasestorage.googleapis.com/v0/b/drawing-board-e34b6.appspot.com/o/mountains.jpg?alt=media&token=4d2ab532-d69a-42e5-889b-86dd76d14371', function(dataURL){
       var result = new Image;
       result.src = dataURL;
 
