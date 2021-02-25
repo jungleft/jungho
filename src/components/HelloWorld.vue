@@ -3,7 +3,7 @@
     <div id="d">
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
-    <img :src="'/img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
+    <img :src="'./img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
 
