@@ -5,19 +5,28 @@
 </template>
 
 <script>
+
+import firebase from 'firebase'
+// import db from '../db'
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dark: String
   },
   methods: {
     toBlob() {
+      var storageRef = firebase.storage().ref();
+      var mountainsRef = storageRef.child('mountains.jpg');
       var canvas = document.getElementById('canvas');
       canvas.toBlob(function(blob){
         var image = new Image();
         image.src = blob;
-        var storageRef = '' //firebase
-        storageRef.child('images/' + "apple").put(blob);
+        image.setAttribute('crossorigin', 'anonymous');
+        mountainsRef.put(blob).then(() => {
+          console.log('Uploaded a blob or file!');
+        });
       }); 
     },
     startPainting(e) {
@@ -29,6 +38,7 @@ export default {
       this.painting = false;
       console.log(this.painting);
       this.ctx.beginPath()
+      this.toBlob()
     },
     draw(e) {
       if(!this.painting) return
@@ -50,6 +60,32 @@ export default {
     // Resize canvas
     this.canvas.height = window.innerHeight;
     this.canvas.width = window.innerWidth;
+
+    function toDataURL(url, callback){
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', url);
+      xhr.responseType = 'blob';
+      xhr.onload = function(){
+        var fr = new FileReader();
+      
+        fr.onload = function(){
+          callback(this.result);
+        };
+      
+        fr.readAsDataURL(xhr.response); // async call
+      };
+      
+      xhr.send();
+    }
+
+    toDataURL('https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/drawing-board-e34b6.appspot.com/o/mountains.jpg?alt=media&token=bd6a0a95-d47e-40f3-9470-ff48531e33d0', function(dataURL){
+      var result = document.createElement('img')
+      result.src = dataURL;
+      // console.log(dataURL);
+    // now just to show that passing to a canvas doesn't hold the same results
+    var canvas = document.getElementById('canvas');
+      canvas.getContext('2d').drawImage(result, 0,0);
+    });
   },
   data() {
     return {
