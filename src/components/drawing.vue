@@ -74,7 +74,7 @@ export default {
     this.canvas.height = window.innerHeight;
     this.canvas.width = window.innerWidth;
 
-    function toDataURL(url, callback){
+    function toDataURL(url, callback) {
       var xhr = new XMLHttpRequest();
       xhr.open('get', url);
       xhr.responseType = 'blob';
@@ -87,18 +87,21 @@ export default {
       
         fr.readAsDataURL(xhr.response); // async call
       };
-      
       xhr.send();
     }
-
-    toDataURL('https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/drawing-board-e34b6.appspot.com/o/mountains.jpg?alt=media&token=bd6a0a95-d47e-40f3-9470-ff48531e33d0', function(dataURL){
-      var result = document.createElement('img')
+    toDataURL('https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/drawing-board-e34b6.appspot.com/o/mountains.jpg?alt=media&token=5653fb10-f88d-4038-a4cf-66740851bb8d', function(dataURL){
+      var result = new Image;
       result.src = dataURL;
+
+      // console.log(result.src)
+
+      result.onload = function(){
+        var canvas = document.getElementById('canvas');
+          canvas.getContext('2d').drawImage(result, 0,0);
+      }
+    })
       // console.log(dataURL);
     // now just to show that passing to a canvas doesn't hold the same results
-    var canvas = document.getElementById('canvas');
-      canvas.getContext('2d').drawImage(result, 0,0);
-    });
   },
   data() {
     return {
