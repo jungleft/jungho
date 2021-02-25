@@ -1,11 +1,19 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw"></canvas>
+    <div id ="c">
+      <color-picker v-model="color"></color-picker>
+      <p>
+          Color:
+          <input v-model="color" type="text">
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 
+import ColorPicker from 'vue-color-picker-wheel';
 import firebase from 'firebase'
 // import db from '../db'
 
@@ -14,6 +22,9 @@ export default {
   props: {
     msg: String,
     dark: String
+  },
+  components: {
+      ColorPicker
   },
   methods: {
     toBlob() {
@@ -44,6 +55,8 @@ export default {
       if(!this.painting) return
 
       this.ctx.lineWidth = 10;
+      this.ctx.fillStyle = this.color;
+      this.ctx.strokeStyle = this.color;
       this.ctx.lineCap ="round"
       
      this.ctx.lineTo(e.clientX,e.clientY)
@@ -93,7 +106,8 @@ export default {
       vueCanvas:null,
       painting:false,
       canvas:null,
-      ctx:null
+      ctx:null,
+      color: '#000000'
     }
   }
 }
@@ -104,5 +118,11 @@ export default {
 
 #canvas {
     border: 3px solid black;
+}
+
+#c {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 </style>
