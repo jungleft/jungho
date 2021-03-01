@@ -32,7 +32,7 @@ export default {
   methods: {
     toBlob() {
       const storageRef = firebase.storage().ref();
-      const mountainsRef = storageRef.child('drawing.jpg');
+      const mountainsRef = storageRef.child('mountains.jpg');
       const canvas = document.getElementById('canvas');
       canvas.toBlob((blob) => {
         const image = new Image();
