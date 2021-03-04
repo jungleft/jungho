@@ -4,11 +4,9 @@
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
     <h2>my works</h2>
-    <ul>
-      <li><router-link to="/fluid">fluid lines</router-link></li>
-      <li><router-link to="/calen">canlender drawing</router-link></li>
-      <li><router-link to="/animation">animation</router-link></li>
-    </ul>
+    <div class="work" v-for="i in items" :key="i">
+      <img :src="'/img/' + i">
+    </div>
   </div>
 </template>
 
@@ -43,7 +41,13 @@ export default {
   },
   data() {
     return {
-      
+      dark: false,
+      left: 0,
+      top: 0,
+      dir: 1,
+      dir2: 1,
+      idx: 0,
+      items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', ]
     }
   }
 }
@@ -79,10 +83,4 @@ export default {
 .work img {
   width: 300px;
 }
-
-ul {
-  text-align: left;
-  
-}
-
 </style>
