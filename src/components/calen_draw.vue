@@ -5,7 +5,7 @@
     </div>
     <h2>my works</h2>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'/img/jan0/' + i">
+      <img :src="'./img/jan0/' + i">
     </div>
   </div>
 </template>
