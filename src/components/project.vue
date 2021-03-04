@@ -81,8 +81,9 @@ export default {
 }
 
 ul {
+  width: 33vw;
   text-align: left;
-  
+  margin: 0 auto;
 }
 
 </style>
