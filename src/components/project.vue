@@ -1,9 +1,8 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <div id="d">
-      
+      <input type="checkbox" v-model="dark" />黑白模式
     </div>
-    
     <ul>
       <h3>project</h3>
       <li><router-link to="/calen">canlender drawing</router-link></li>
@@ -67,6 +66,7 @@ h3 {
 }
 
 .dark {
+  filter: grayscale(100%);
   background-color: black;
 }
 #d {
@@ -90,6 +90,10 @@ ul {
   width: 33vw;
   text-align: left;
   margin: 5em auto;
+}
+
+li {
+  margin: 0.5em auto;
 }
 
 </style>

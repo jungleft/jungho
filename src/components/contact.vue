@@ -5,7 +5,8 @@
     </div>
     <h2>contact info</h2>
     <p>email: gteyuoi@gmail.com</p>
-    <p>insta: @jungleft</p>
+    <p>instagram: @jungleft</p>
+    <p>facebook: Jung Ho</p>
   </div>
 </template>
 
@@ -56,7 +57,7 @@ export default {
 <style scoped>
 
 .hello {
-  padding-top: 1.5em;
+  padding-top: 3em;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -74,11 +75,17 @@ export default {
   left: 1em;
 }
 
-h1 {
-
+h2 {
+  list-style: none;
+  width: 33vw;
+  text-align: left;
+  margin: 1em auto;
 }
 p {
-  
+  list-style: none;
+  width: 33vw;
+  text-align: left;
+  margin: 0.5em auto;
 }
 img {
   width: 300px;
