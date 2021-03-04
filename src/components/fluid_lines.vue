@@ -60,6 +60,7 @@ export default {
   padding-top: 1.5em;
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
   position: fixed;
   z-index: -1;
   top: 0;
