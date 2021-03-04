@@ -69,6 +69,7 @@ h3 {
   filter: grayscale(100%);
   background-color: black;
 }
+
 #d {
   position: fixed;
   bottom: 3em;

@@ -3,7 +3,7 @@
     <div id="d">
       <input type="checkbox" v-model="dark" />黑白模式
     </div>
-    <h2>contact info</h2>
+    <h2>contact</h2>
     <p>email: gteyuoi@gmail.com</p>
     <p>instagram: @jungleft</p>
     <p>facebook: Jung Ho</p>
