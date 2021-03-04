@@ -63,14 +63,15 @@ export default {
   left: 0;
 }
 
-.dark {
-  filter: grayscale(100%);
-  background-color: black;
-}
 #d {
   position: fixed;
   bottom: 3em;
   left: 1em;
+}
+
+.dark {
+  filter: grayscale(100%);
+  background-color: black;
 }
 
 h1 {

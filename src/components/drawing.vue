@@ -137,12 +137,14 @@ export default {
 <style scoped>
 
 #canvas {
-    border: 3px solid black;
+   
 }
 
 #c {
   position: fixed;
   bottom: 0;
   right: 0;
+  padding-right: 1em;
 }
+
 </style>
