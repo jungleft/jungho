@@ -27,6 +27,24 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../components/project.vue')
   },
   {
+    path: '/fluid',
+    name: 'fluid',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../components/fluid_lines.vue')
+  },
+  {
+    path: '/calen',
+    name: 'calen',
+
+    component: () => import(/* webpackChunkName: "about" */ '../components/calen_draw.vue')
+  },
+  {
+    path: '/animation',
+    name: 'animation',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../components/animation.vue')
+  },
+  {
     path: '/drawing',
     name: 'drawing',
     // route level code-splitting
