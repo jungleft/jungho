@@ -68,6 +68,7 @@ export default {
 }
 
 .dark {
+  filter: grayscale(100%);
   background-color: black;
 }
 #d {
