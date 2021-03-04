@@ -1,15 +1,21 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <div id="d">
-      <input type="checkbox" v-model="dark" />黑暗模式
+      <input type="checkbox" v-model="dark" />黑白模式
     </div>
     <h2>animation</h2>
     <iframe src="https://player.vimeo.com/video/418366721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/418366721">The British Museum</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/377326463" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/377326463">Character Lip sync  ( feat. Liza )</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <iframe src="https://player.vimeo.com/video/377325401" width="640" height="528" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/377325401">Postcode Lottery</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/326914723" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/326914723">Play the Scene</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <iframe src="https://player.vimeo.com/video/326915884" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/326915884">Walk the Walk</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/420255342" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/420255342">The Portfolio</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
   </div>
 </template>
 
@@ -71,6 +77,7 @@ export default {
 }
 
 .dark {
+  filter: grayscale(100%);
   background-color: black;
 }
 #d {

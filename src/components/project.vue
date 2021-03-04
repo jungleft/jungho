@@ -1,12 +1,13 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <div id="d">
-      <input type="checkbox" v-model="dark" />黑暗模式
+      
     </div>
     
     <ul>
-      <li><router-link to="/fluid">fluid lines</router-link></li>
+      <h3>project</h3>
       <li><router-link to="/calen">canlender drawing</router-link></li>
+       <li><router-link to="/fluid">fluid lines</router-link></li>
       <li><router-link to="/animation">animation</router-link></li>
     </ul>
   </div>
@@ -88,7 +89,7 @@ ul {
 
   width: 33vw;
   text-align: left;
-  margin: 10em auto;
+  margin: 5em auto;
 }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <div id="d">
-      <input type="checkbox" v-model="dark" />黑暗模式
+      <input type="checkbox" v-model="dark" />黑白模式
     </div>
     <h2>contact info</h2>
     <p>email: gteyuoi@gmail.com</p>

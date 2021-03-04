@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <div id="d">
-      <input type="checkbox" v-model="dark" />黑暗模式
+      <input type="checkbox" v-model="dark" />黑白模式
     </div>
     <h2>Fluid Lines</h2>
     <div class="work" v-for="i in items" :key="i">
@@ -68,6 +68,7 @@ export default {
 }
 
 .dark {
+  filter: grayscale(100%);
   background-color: black;
 }
 #d {
@@ -78,10 +79,10 @@ export default {
 
 .work {
   display: inline-block;
-  padding: 1em;
+  padding: 5em;
 }
 
 .work img {
-  width: 300px;
+  width: 600px;
 }
 </style>
