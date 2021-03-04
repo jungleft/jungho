@@ -83,4 +83,10 @@ export default {
 .work img {
   width: 300px;
 }
+
+ul {
+  text-align: left;
+  
+}
+
 </style>
