@@ -9,7 +9,7 @@
     </div>
     <h2>二月</h2>
     <div class="work" v-for="i in items2" :key="i">
-      <img :src="'./img/fab0/' + i">
+      <img :src="'./img/feb0/' + i">
     </div>
   </div>
 </template>
