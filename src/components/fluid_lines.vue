@@ -3,9 +3,9 @@
     <div id="d">
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
-    <h2>my works</h2>
+    <h2>Fluid Lines</h2>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'/img/' + i">
+      <img :src="'./img/' + i">
     </div>
   </div>
 </template>

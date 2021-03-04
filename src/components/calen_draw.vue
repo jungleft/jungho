@@ -3,9 +3,13 @@
     <div id="d">
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
-    <h2>my works</h2>
+    <h2>一月</h2>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'/img/jan0/' + i">
+      <img :src="'./img/jan0/' + i">
+    </div>
+    <h2>二月</h2>
+    <div class="work" v-for="i in items2" :key="i">
+      <img :src="'./img/fab0/' + i">
     </div>
   </div>
 </template>
@@ -47,7 +51,8 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','img499.jpg','img500.jpg','img501.jpg','img502.jpg','img503.jpg','img504.jpg','img505.jpg','img506.jpg','img507.jpg','img508.jpg','img509.jpg','img510.jpg','img511.jpg','img512.jpg','img513.jpg','img514.jpg','img515.jpg','img516.jpg','img517.jpg','img518.jpg','img519.jpg' ]
+      items: ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','img499.jpg','img500.jpg','img501.jpg','img502.jpg','img503.jpg','img504.jpg','img505.jpg','img506.jpg','img507.jpg','img508.jpg','img509.jpg','img510.jpg','img511.jpg','img512.jpg','img513.jpg','img514.jpg','img515.jpg','img516.jpg','img517.jpg','img518.jpg','img519.jpg' ],
+      items2: ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','img499.jpg','img500.jpg','img501.jpg','img502.jpg','img503.jpg','img504.jpg','img505.jpg','img506.jpg','img507.jpg','img508.jpg','img509.jpg','img510.jpg','img511.jpg','img512.jpg','img513.jpg','img514.jpg','img515.jpg','img516.jpg','img517.jpg','img518.jpg','img519.jpg' ]
     }
   }
 }
