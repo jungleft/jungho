@@ -3,7 +3,7 @@
     <div id="d">
       <input type="checkbox" v-model="dark" />黑暗模式
     </div>
-    <h2>my works</h2>
+    
     <ul>
       <li><router-link to="/fluid">fluid lines</router-link></li>
       <li><router-link to="/calen">canlender drawing</router-link></li>
@@ -51,7 +51,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+h3 {
+  font-size: 22px
+}
 .hello {
   padding-top: 1.5em;
   width: 100vw;
@@ -82,9 +84,11 @@ export default {
 }
 
 ul {
+  list-style: none;
+
   width: 33vw;
   text-align: left;
-  margin: 0 auto;
+  margin: 10em auto;
 }
 
 </style>
