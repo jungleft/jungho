@@ -76,9 +76,10 @@ export default {
   filter: grayscale(100%);
   background-color: black;
 }
+
 #d {
   position: fixed;
-  bottom: 3em;
+  bottom: 5em;
   left: 1em;
 }
 

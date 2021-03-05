@@ -65,7 +65,7 @@ export default {
 
 #d {
   position: fixed;
-  bottom: 3em;
+  bottom: 5em;
   left: 1em;
 }
 
