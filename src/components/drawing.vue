@@ -3,6 +3,7 @@
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw" @touchstart="startTouchPainting" @touchmove="drawTouch" @touchend="finishedPainting"></canvas>
     <div id ="c">
       <h3> draw your own!</h3>
+      <a id ="clear" @click="clear()">清空</a>
       <color-picker v-model="color"></color-picker>
       <p>
           Color:
@@ -85,6 +86,10 @@ export default {
       this.ctx.beginPath();
       this.ctx.moveTo(e.clientX, e.clientY);
     },
+    clear() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.finishedPainting();
+    },
   },
   mounted() {
     this.canvas = document.getElementById('canvas');
@@ -145,6 +150,16 @@ export default {
   bottom: 0;
   right: 0;
   padding-right: 1em;
+}
+
+a#clear {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  background-color: yellow;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
 }
 
 </style>
