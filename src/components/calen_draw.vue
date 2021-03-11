@@ -10,8 +10,10 @@
       </a>
     </div>
     <h2>Feb</h2>
-    <div class="work" v-for="i in items2" :key="i">
-      <img :src="'./img/feb0/' + i">
+    <div class="work" v-for="i in items2" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/feb'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
     </div>
   </div>
 </template>
@@ -85,7 +87,35 @@ export default {
         {src: 'img517.jpg', hover: false},
         {src: 'img518.jpg', hover: false},
         {src: 'img519.jpg', hover: false} ],
-      items2: ['img824.jpg','img825.jpg','img826.jpg','img827.jpg','img828.jpg','img829.jpg','img830.jpg','img831.jpg','img832.jpg','img833.jpg','img834.jpg','img835.jpg','img836.jpg','img837.jpg','img838.jpg','img839.jpg','img840.jpg','img841.jpg','img842.jpg','img843.jpg','img844.jpg','img845.jpg','img846.jpg','img847.jpg','img848.jpg','img849.jpg','img850.jpg','img851.jpg']
+      items2: [
+      {src:'img824.jpg',hover: false},
+      {src:'img825.jpg',hover: false},
+      {src:'img826.jpg',hover: false},
+      {src:'img827.jpg',hover: false},
+      {src:'img828.jpg',hover: false},
+      {src:'img829.jpg',hover: false},
+      {src:'img830.jpg',hover: false},
+      {src:'img831.jpg',hover: false},
+      {src:'img832.jpg',hover: false},
+      {src:'img833.jpg',hover: false},
+      {src:'img834.jpg',hover: false},
+      {src:'img835.jpg',hover: false},
+      {src:'img836.jpg',hover: false},
+      {src:'img837.jpg',hover: false},
+      {src:'img838.jpg',hover: false},
+      {src:'img839.jpg',hover: false},
+      {src:'img840.jpg',hover: false},
+      {src:'img841.jpg',hover: false},
+      {src:'img842.jpg',hover: false},
+      {src:'img843.jpg',hover: false},
+      {src:'img844.jpg',hover: false},
+      {src:'img845.jpg',hover: false},
+      {src:'img846.jpg',hover: false},
+      {src:'img847.jpg',hover: false},
+      {src:'img848.jpg',hover: false},
+      {src:'img849.jpg',hover: false},
+      {src:'img850.jpg',hover: false},
+      {src:'img851.jpg'hover: false},],
     }
   }
 }
