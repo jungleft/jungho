@@ -87,7 +87,9 @@ p {
   margin: 0.5em auto;
 }
 img {
-  width: 300px;
+  width: 150px;
+  margin-left: -20vw;
+  margin-bottom: 2em;
 }
 h3 {
   margin: 40px 0 0;

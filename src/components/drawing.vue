@@ -3,7 +3,7 @@
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw" @touchstart="startTouchPainting" @touchmove="drawTouch" @touchend="finishedPainting"></canvas>
     <div id ="c">
       <h3> draw your own!</h3>
-      <a id ="clear" @click="clear()">清空</a>
+      <a id ="clear" @click="clear()">ERASE</a>
       <div class="small">
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
       </div>
@@ -157,7 +157,7 @@ export default {
 a#clear {
   cursor: pointer;
   display: inline-block;
-  font-size: 18px;
+  font-size: 12px;
   background-color: yellow;
   padding: 3px;
   border-radius: 5px;
