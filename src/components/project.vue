@@ -5,9 +5,9 @@
     </div>
     <ul>
       <h3>project</h3>
-      <li><router-link to="/calen">canlender drawing</router-link></li>
+      <li><router-link to="/calen">moon out of sun</router-link></li>
        <li><router-link to="/fluid">fluid lines</router-link></li>
-      <li><router-link to="/animation">animation</router-link></li>
+      <li><router-link to="/animation">moving images</router-link></li>
     </ul>
   </div>
 </template>
