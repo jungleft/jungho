@@ -1,9 +1,10 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>contact</h2>
-    <p>email: gteyuoi@gmail.com</p>
-    <p>instagram: @jungleft</p>
-    <p>facebook: Jung Ho</p>
+    <img ;src="'./img/author.jpg'"/>
+    <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
+    <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
+    <p>facebook: <a href="https://www.facebook.com/Jung-Ho-305353076838511" target="_blank" rel="noopener noreferrer">Jung Ho</a></p>
   </div>
 </template>
 
