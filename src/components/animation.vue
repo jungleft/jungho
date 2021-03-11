@@ -21,7 +21,7 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    dark: String
+    dark: Boolean
   },
   methods: {
     next() {

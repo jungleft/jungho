@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>contact</h2>
-    <img ;src="'./img/author.jpg'"/>
+    <img :src="'./img/author.jpg'"/>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
     <p>facebook: <a href="https://www.facebook.com/Jung-Ho-305353076838511" target="_blank" rel="noopener noreferrer">Jung Ho</a></p>
@@ -13,7 +13,7 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    dark: String
+    dark: Boolean
   },
   methods: {
     next() {
@@ -88,8 +88,6 @@ p {
 }
 img {
   width: 300px;
-  position: fixed;
-  z-index: -9;
 }
 h3 {
   margin: 40px 0 0;

@@ -25,7 +25,7 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    dark: String,
+    dark: Boolean,
   },
   metaInfo: {
     title: '圖鴨板',

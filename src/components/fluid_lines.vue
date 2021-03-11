@@ -11,7 +11,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dark: Boolean
   },
   methods: {
     next() {
@@ -38,7 +39,6 @@ export default {
   },
   data() {
     return {
-      dark: false,
       left: 0,
       top: 0,
       dir: 1,
