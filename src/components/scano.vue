@@ -1,15 +1,9 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
+    <h2>scanography</h2>
+    <div class="work" v-for="i in items" :key="i">
+      <img :src="'./img/' + i">
     </div>
-    <ul>
-      <h3>project</h3>
-      <li><router-link to="/calen">moon out of sun</router-link></li>
-       <li><router-link to="/fluid">fluid lines</router-link></li>
-      <li><router-link to="/animation">moving images</router-link></li>
-      <li><router-link to="/scano">scanography</router-link></li>
-    </ul>
   </div>
 </template>
 
@@ -45,7 +39,12 @@ export default {
   },
   data() {
     return {
-      
+      left: 0,
+      top: 0,
+      dir: 1,
+      dir2: 1,
+      idx: 0,
+      items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg','IMG_9036.jpeg', 'IMG_9037.jpeg', 'IMG_9038.jpeg', 'IMG_9142.jpeg' ]
     }
   }
 }
@@ -53,9 +52,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  font-size: 22px
-}
+
 .hello {
   padding-top: 1.5em;
   width: 100vw;
@@ -67,6 +64,9 @@ h3 {
   left: 0;
 }
 
+h2 {
+  padding-top: 1em;
+}
 .dark {
   filter: grayscale(100%);
   background-color: black;
@@ -80,23 +80,10 @@ h3 {
 
 .work {
   display: inline-block;
-  padding: 1em;
+  padding: 3em;
 }
 
 .work img {
-  width: 300px;
+  width: 600px;
 }
-
-ul {
-  list-style: none;
-
-  width: 33vw;
-  text-align: left;
-  margin: 5em auto;
-}
-
-li {
-  margin: 0.5em auto;
-}
-
 </style>
