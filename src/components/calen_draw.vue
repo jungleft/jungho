@@ -115,7 +115,7 @@ export default {
       {src:'img848.jpg',hover: false},
       {src:'img849.jpg',hover: false},
       {src:'img850.jpg',hover: false},
-      {src:'img851.jpg'hover: false},],
+      {src:'img851.jpg',hover: false},],
     }
   }
 }
