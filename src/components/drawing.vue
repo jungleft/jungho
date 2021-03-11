@@ -4,7 +4,9 @@
     <div id ="c">
       <h3> draw your own!</h3>
       <a id ="clear" @click="clear()">清空</a>
-      <color-picker v-model="color"></color-picker>
+      <div class="small">
+        <color-picker :width="150" :height="150" v-model="color"></color-picker>
+      </div>
       <p>
           Color:
           <input v-model="color" type="text">
