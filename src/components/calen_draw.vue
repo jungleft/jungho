@@ -1,8 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
-    </div>
     <h2>Jan</h2>
     <div class="work" v-for="i in items" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
@@ -20,7 +17,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dark: String
   },
   methods: {
     next() {
@@ -47,7 +45,6 @@ export default {
   },
   data() {
     return {
-      dark: false,
       left: 0,
       top: 0,
       dir: 1,

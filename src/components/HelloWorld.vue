@@ -1,8 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
-    </div>
     <img :src="'./img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
@@ -61,12 +58,6 @@ export default {
   z-index: -1;
   top: 0;
   left: 0;
-}
-
-#d {
-  position: fixed;
-  bottom: 5em;
-  left: 1em;
 }
 
 .dark {

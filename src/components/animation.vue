@@ -1,8 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
-    </div>
     <h2>animation</h2>
     <iframe src="https://player.vimeo.com/video/418366721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/418366721">The British Museum</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -23,7 +20,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dark: String
   },
   methods: {
     next() {
@@ -50,7 +48,6 @@ export default {
   },
   data() {
     return {
-      dark: false,
       left: 0,
       top: 0,
       dir: 1,

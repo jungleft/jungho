@@ -7,11 +7,34 @@
       <router-link to="/contact">contact</router-link>
       <router-link to="/drawing">d.y.o.</router-link>
     </div>
-    <router-view/>
+    <div id="d">
+      <input type="checkbox" v-model="dark" />黑白模式
+    </div>
+    <router-view :dark="dark"/>
   </div>
 </template>
 
+<script type="text/javascript">
+
+export default {
+  name: 'App',
+  data() {
+    return {
+      dark: false
+    }
+  }
+}
+</script>
+
 <style>
+
+#d {
+  position: fixed;
+  bottom: 5em;
+  left: 1em;
+}
+
+
 h1 {
  
 }

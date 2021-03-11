@@ -1,8 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
-    </div>
     <h2>contact</h2>
     <p>email: gteyuoi@gmail.com</p>
     <p>instagram: @jungleft</p>
@@ -14,7 +11,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dark: String
   },
   methods: {
     next() {
@@ -41,7 +39,6 @@ export default {
   },
   data() {
     return {
-      dark: false,
       left: 0,
       top: 0,
       dir: 1,
