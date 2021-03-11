@@ -4,8 +4,10 @@
       <input type="checkbox" v-model="dark" />黑白模式
     </div>
     <h2>Jan</h2>
-    <div class="work" v-for="i in items" :key="i">
-      <img :src="'./img/jan0/' + i">
+    <div class="work" v-for="i in items" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/jan'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
     </div>
     <h2>Feb</h2>
     <div class="work" v-for="i in items2" :key="i">
@@ -51,7 +53,38 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','img499.jpg','img500.jpg','img501.jpg','img502.jpg','img503.jpg','img504.jpg','img505.jpg','img506.jpg','img507.jpg','img508.jpg','img509.jpg','img510.jpg','img511.jpg','img512.jpg','img513.jpg','img514.jpg','img515.jpg','img516.jpg','img517.jpg','img518.jpg','img519.jpg' ],
+      items: [
+        {src: '01.jpg', hover: false},
+        {src: '02.jpg', hover: false},
+        {src: '03.jpg', hover: false},
+        {src: '04.jpg', hover: false},
+        {src: '05.jpg', hover: false},
+        {src: '06.jpg', hover: false},
+        {src: '07.jpg', hover: false},
+        {src: '08.jpg', hover: false},
+        {src: '09.jpg', hover: false},
+        {src: '10.jpg', hover: false},
+        {src: 'img499.jpg', hover: false},
+        {src: 'img500.jpg', hover: false},
+        {src: 'img501.jpg', hover: false},
+        {src: 'img502.jpg', hover: false},
+        {src: 'img503.jpg', hover: false},
+        {src: 'img504.jpg', hover: false},
+        {src: 'img505.jpg', hover: false},
+        {src: 'img506.jpg', hover: false},
+        {src: 'img507.jpg', hover: false},
+        {src: 'img508.jpg', hover: false},
+        {src: 'img509.jpg', hover: false},
+        {src: 'img510.jpg', hover: false},
+        {src: 'img511.jpg', hover: false},
+        {src: 'img512.jpg', hover: false},
+        {src: 'img513.jpg', hover: false},
+        {src: 'img514.jpg', hover: false},
+        {src: 'img515.jpg', hover: false},
+        {src: 'img516.jpg', hover: false},
+        {src: 'img517.jpg', hover: false},
+        {src: 'img518.jpg', hover: false},
+        {src: 'img519.jpg', hover: false} ],
       items2: ['img824.jpg','img825.jpg','img826.jpg','img827.jpg','img828.jpg','img829.jpg','img830.jpg','img831.jpg','img832.jpg','img833.jpg','img834.jpg','img835.jpg','img836.jpg','img837.jpg','img838.jpg','img839.jpg','img840.jpg','img841.jpg','img842.jpg','img843.jpg','img844.jpg','img845.jpg','img846.jpg','img847.jpg','img848.jpg','img849.jpg','img850.jpg','img851.jpg']
     }
   }
