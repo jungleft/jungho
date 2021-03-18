@@ -1,8 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
-    </div>
     <ul>
       <h3>project</h3>
       <li><router-link to="/calen">moon out of sun</router-link></li>
