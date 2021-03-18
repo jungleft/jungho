@@ -50,10 +50,10 @@ export default {
 
 
 h1 {
- 
+ font-family: "Courier New", "LiSong Pro";
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Courier New", "LiSong Pro", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -73,6 +73,7 @@ h1 {
   display: block;
   font-weight: bold;
   color: #2c3e50;
+  font-family: "Courier New";
 }
 
 #nav a.router-link-exact-active {
