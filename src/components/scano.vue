@@ -44,7 +44,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: ['img593', 'img594', 'img595', 'img596', 'img599', 'img600' ]
+      items: ['img593.jpg', 'img594.jpg', 'img595.jpg', 'img596.jpg', 'img599.jpg', 'img600.jpg' ]
     }
   }
 }
