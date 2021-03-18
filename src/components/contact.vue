@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h2>contact</h2>
+    <h2>info</h2>
     <img :src="'./img/author.jpg'"/>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>

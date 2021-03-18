@@ -3,9 +3,9 @@
     <div id="nav">
       <h1>{{name[idx]}}</h1>
       <router-link to="/">home</router-link> 
-      <router-link to="/project">project</router-link>
-      <router-link to="/contact">contact</router-link>
-      <router-link to="/drawing">d.y.o.</router-link>
+      <router-link to="/contact">info</router-link>
+      <router-link to="/project">works</router-link>
+      <router-link to="/drawing">dyo.</router-link>
     </div>
     <div id="d">
       <input type="checkbox" v-model="dark" />黑白模式
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       dark: false,
-      name: ['何容','Jung Ho'],
+      name: ['何 容','Jung Ho'],
       idx: 0
     }
   },
@@ -74,6 +74,7 @@ h1 {
   font-weight: bold;
   color: #2c3e50;
   font-family: "Courier New";
+  padding: 3px;
 }
 
 #nav a.router-link-exact-active {

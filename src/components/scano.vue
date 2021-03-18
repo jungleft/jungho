@@ -70,7 +70,7 @@ h2 {
 }
 p{
   text-align: left;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 .dark {
   filter: grayscale(100%);
