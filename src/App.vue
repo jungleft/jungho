@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <h1>何容 Jung Ho</h1>
+      <h1>{{name[idx]}}</h1>
       <router-link to="/">home</router-link> 
       <router-link to="/project">project</router-link>
       <router-link to="/contact">contact</router-link>
@@ -20,8 +20,21 @@ export default {
   name: 'App',
   data() {
     return {
-      dark: false
+      dark: false,
+      name: ['何容','Jung Ho'],
+      idx: 0
     }
+  },
+  methods: {
+    change() {
+      this.idx++
+      if (this.idx == 2) {
+        this.idx = 0
+      }
+    }
+  },
+  mounted() {
+    setInterval(this.change, 1500)
   }
 }
 </script>
