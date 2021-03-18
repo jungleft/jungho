@@ -95,6 +95,8 @@ ul {
 li {
   margin: 0.5em auto;
 }
-
+a:visited {
+  color: #F08080;
+}
 
 </style>

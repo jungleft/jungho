@@ -2,7 +2,8 @@
   <div class="hello" :class="{dark:dark}">
     <h2>scanography</h2>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'./img/' + i">
+      <img :src="'./img/' + i.src">
+      <p>{{i.txt}}</p>
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: ['img593.jpg', 'img594.jpg', 'img595.jpg', 'img596.jpg', 'img599.jpg', 'img600.jpg' ]
+      items: [{src:'img593.jpg', txt:'01'}, {src:'img594.jpg', txt:'02'}, {src:'img595.jpg', txt:'03'}, {src:'img596.jpg', txt:'04'}, {src:'img599.jpg', txt:'05'}, {src:'img600.jpg', txt:'06'} ]
     }
   }
 }
@@ -67,6 +68,10 @@ export default {
 h2 {
   padding-top: 1em;
 }
+p{
+  text-align: left;
+  margin-left: 1em;
+}
 .dark {
   filter: grayscale(100%);
   background-color: black;
@@ -86,4 +91,5 @@ h2 {
 .work img {
   width: 600px;
 }
+
 </style>
