@@ -143,22 +143,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.hello {
-  position: relative;
-  z-index: -1;
-}
-
-#canvas {
-  position: relative;
-  z-index: -1;
-}
-
 #c {
   position: fixed;
   bottom: 0;
   right: 0;
   padding-right: 1em;
-  z-index: -1;
 }
 
 .dark {

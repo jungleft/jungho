@@ -32,6 +32,7 @@ export default {
   position: fixed;
   bottom: 5em;
   left: 1em;
+  z-index: 9;
 }
 
 
@@ -49,6 +50,7 @@ h1 {
 #nav {
   text-align: left;
   position: fixed;
+  z-index: 9;
   top:0;
   left:0;
   padding: 30px;
