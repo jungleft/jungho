@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h2>scanography</h2>
+    <h2>Scanography</h2>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
       <p>{{i.txt}}</p>

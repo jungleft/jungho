@@ -1,12 +1,14 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h2>Jan</h2>
+    <h2>Moon Out of Sun</h2>
+    <p>2021<br>Everyday calendar drawings<br> and daily window.(ongoing)</p>
+    <h3>Jan</h3>
     <div class="work" v-for="i in items" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
       <img :src="'./img/jan'+ (i.hover ? 1 : 0) +'/' + i.src" />
       </a>
     </div>
-    <h2>Feb</h2>
+    <h3>Feb</h3>
     <div class="work" v-for="i in items2" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
       <img :src="'./img/feb'+ (i.hover ? 1 : 0) +'/' + i.src" />
@@ -120,6 +122,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+h2{
+  padding-top: 1em;
+}
+h3{
+  padding-top: 2em;
+}
+p{
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
 
 .hello {
   padding-top: 1.5em;

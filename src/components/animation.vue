@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h2>animation</h2>
+    <h2>Moving Images</h2>
     <iframe src="https://player.vimeo.com/video/418366721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/418366721">The British Museum</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <iframe src="https://player.vimeo.com/video/377326463" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -71,6 +71,10 @@ export default {
   z-index: -1;
   top: 0;
   left: 0;
+}
+h2{
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
 
 .dark {

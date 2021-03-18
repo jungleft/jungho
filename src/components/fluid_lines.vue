@@ -2,7 +2,8 @@
   <div class="hello" :class="{dark:dark}">
     <h2>Fluid Lines</h2>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'./img/' + i">
+      <img :src="'./img/' + i.src">
+      <p>{{i.txt}}</p>
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg','IMG_9036.jpeg', 'IMG_9037.jpeg', 'IMG_9038.jpeg', 'IMG_9142.jpeg' ]
+      items: [{src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', txt:'fluid lines, green'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', txt:'fluid lines, blue'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', txt:'fluid lines, blank space'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', txt:'fluid lines, statue'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', txt:'fluid lines, clouds'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', txt:'fluid lines, orange sky'}, {src:'IMG_9037.jpeg', txt:'fluid lines, dark'}, {src:'IMG_9036.jpeg', txt:'fluid lines, darker'},  {src:'IMG_9038.jpeg', txt:'fluid lines, cut out'}, {src:'IMG_9142.jpeg', txt:'fluid lines, grayscale'} ]
     }
   }
 }
@@ -66,6 +67,10 @@ export default {
 
 h2 {
   padding-top: 1em;
+}
+p{
+  text-align: left;
+  margin-left: 0.5em;
 }
 .dark {
   filter: grayscale(100%);
