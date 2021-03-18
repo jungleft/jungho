@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-   
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home" :class="{dark:dark}">
+    <HelloWorld msg="Welcome to Your Vue.js App" :dark="dark"/>
   </div>
 </template>
 
@@ -11,6 +10,9 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
+  props: {
+    dark: Boolean,
+  },
   components: {
     HelloWorld
   }
