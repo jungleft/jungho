@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <h1>{{name[idx]}}</h1>
+      <img class="small" :src="'./img/'+name[idx]">
       <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
       <router-link to="/contact"><img class="small" src="./assets/info.png"></router-link>
       <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       dark: false,
-      name: ['何 容','Jung Ho'],
+      name: ['cjh.png','jh.png'],
       idx: 0
     }
   },
