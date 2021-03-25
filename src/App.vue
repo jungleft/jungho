@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav" :class="{dark:dark}">
-      <img class="big" :src="'./img/'+name[idx]">
-      <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
-      <router-link to="/contact"><img id="info" class="small" src="./assets/info.png"></router-link>
-      <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
-      <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
+    <div v-if="start" :class="{'hue-rotate': rot}">
+      <div id="nav" :class="{dark:dark}">
+        <img class="big" :src="'./img/'+name[idx]">
+        <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
+        <router-link to="/contact"><img id="info" class="small" src="./assets/info.png"></router-link>
+        <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
+        <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
+      </div>
+      <div id="d" :class="{dark:dark}">
+        <a @click="start = false">重選</a>
+      </div>
+      <router-view :dark="dark"/>
     </div>
-    <div id="d">
-      <input type="checkbox" v-model="dark" />黑白模式
+    <div class="flex" v-else>
+      <a @click="normal()">一般</a>
+      <a @click="bw()">黑白</a>
+      <a @click="rotate()">色相旋轉</a>
     </div>
-    <router-view :dark="dark"/>
   </div>
 </template>
 
@@ -22,7 +29,9 @@ export default {
     return {
       dark: false,
       name: ['cjh.png','jh.png'],
-      idx: 0
+      idx: 0,
+      rot: false,
+      start: false
     }
   },
   methods: {
@@ -31,6 +40,17 @@ export default {
       if (this.idx == 2) {
         this.idx = 0
       }
+    },
+    normal() {
+      this.start = true
+    },
+    bw() {
+      this.dark = true
+      this.start = true
+    },
+    rotate() {
+      this.rot = true
+      this.start = true
     }
   },
   mounted() {
@@ -43,9 +63,31 @@ export default {
 
 #d {
   position: fixed;
-  bottom: 5em;
+  top: 85vh;
   left: 1em;
   z-index: 9;
+}
+
+#d.dark {
+  color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 28px;
+}
+
+.flex a {
+  margin: 2em;
+}
+
+.hue-rotate {
+  filter:hue-rotate(90deg);
+  -webkit-filter:hue-rotate(90deg);
 }
 
 
@@ -58,6 +100,10 @@ h1 {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+a {
+  cursor: pointer;
 }
 
 #nav {
@@ -93,5 +139,9 @@ h1 {
 }
 .big{
   height: 5em;
+}
+
+button {
+  font-size: 26px;
 }
 </style>
