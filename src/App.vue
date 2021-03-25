@@ -2,10 +2,10 @@
   <div id="app">
     <div id="nav">
       <h1>{{name[idx]}}</h1>
-      <router-link to="/">home</router-link> 
-      <router-link to="/contact">info</router-link>
-      <router-link to="/project">works</router-link>
-      <router-link to="/drawing">dyo.</router-link>
+      <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
+      <router-link to="/contact"><img class="small" src="./assets/info.png"></router-link>
+      <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
+      <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
     </div>
     <div id="d">
       <input type="checkbox" v-model="dark" />黑白模式
@@ -79,5 +79,8 @@ h1 {
 
 #nav a.router-link-exact-active {
   color: #F5B041;
+}
+.small{
+  height: 4em;
 }
 </style>
