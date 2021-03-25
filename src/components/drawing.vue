@@ -141,7 +141,7 @@ export default {
 
 #c {
   position: fixed;
-  bottom: 0;
+  bottom: 110px;
   right: 0;
   padding-right: 1em;
 }
