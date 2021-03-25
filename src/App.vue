@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" :class="{dark:dark}">
       <img class="small" :src="'./img/'+name[idx]">
       <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
       <router-link to="/contact"><img class="small" src="./assets/info.png"></router-link>
@@ -75,6 +75,11 @@ h1 {
   color: #2c3e50;
   font-family: "Courier New";
   padding: 3px;
+}
+
+#nav.dark img.small {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 #nav a.router-link-exact-active {
