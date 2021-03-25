@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav" :class="{dark:dark}">
-      <img class="small" :src="'./img/'+name[idx]">
+      <img class="big" :src="'./img/'+name[idx]">
       <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
-      <router-link to="/contact"><img class="small" src="./assets/info.png"></router-link>
+      <router-link to="/contact"><img id="info" class="small" src="./assets/info.png"></router-link>
       <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
       <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
     </div>
@@ -77,7 +77,7 @@ h1 {
   padding: 3px;
 }
 
-#nav.dark img.small {
+#nav.dark img {
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
@@ -86,6 +86,12 @@ h1 {
   color: #F5B041;
 }
 .small{
-  height: 4em;
+  height: 2em;
+}
+#info{
+  height: 1.6em;
+}
+.big{
+  height: 5em;
 }
 </style>
