@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div v-if="start" :class="{'hue-rotate': rot}">
+    <div v-if="start" :class="{'hue-rotate': rot, blur: blur}">
       <div id="nav" :class="{dark:dark}">
         <img class="big" :src="'./img/'+name[idx]">
         <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
@@ -9,7 +9,7 @@
         <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
       </div>
       <div id="d" :class="{dark:dark}">
-        <a @click="start = false">重選</a>
+        <a @click="reset()">重選</a>
       </div>
       <router-view :dark="dark"/>
     </div>
@@ -17,6 +17,7 @@
       <a @click="normal()">一般</a>
       <a @click="bw()">黑白</a>
       <a @click="rotate()">色相旋轉</a>
+      <a @click="bl()">模糊</a>
     </div>
   </div>
 </template>
@@ -31,6 +32,7 @@ export default {
       name: ['cjh.png','jh.png'],
       idx: 0,
       rot: false,
+      blur: false,
       start: false
     }
   },
@@ -41,6 +43,12 @@ export default {
         this.idx = 0
       }
     },
+    reset() {
+      this.blur = false;
+      this.dark = false;
+      this.rot = false;
+      this.start = false;
+    },
     normal() {
       this.start = true
     },
@@ -50,6 +58,10 @@ export default {
     },
     rotate() {
       this.rot = true
+      this.start = true
+    },
+    bl() {
+      this.blur = true
       this.start = true
     }
   },
@@ -81,8 +93,20 @@ export default {
   font-size: 28px;
 }
 
+@media screen and (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+}
+
 .flex a {
   margin: 2em;
+}
+
+
+.blur {
+  filter:blur(3px);
+  -webkit-filter:blur(3px);
 }
 
 .hue-rotate {
@@ -94,6 +118,7 @@ export default {
 h1 {
  font-family: "Courier New", "LiSong Pro";
 }
+
 #app {
   font-family: "Courier New", "LiSong Pro", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
