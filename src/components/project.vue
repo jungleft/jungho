@@ -96,7 +96,7 @@ li {
   margin: 0.5em auto;
 }
 a:visited {
-  color: #F08080;
+  color: #5499C7;
 }
 
 </style>

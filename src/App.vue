@@ -6,18 +6,19 @@
         <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
-        <router-link to="/drawing"><img class="small" src="./assets/dyo.png"></router-link>
+        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png"></router-link>
       </div>
       <div id="d" :class="{dark:dark}">
-        <a @click="reset()">重選</a>
+        <a @click="reset()"><img class="big" src="./assets/eyes.png"></a>
       </div>
       <router-view :dark="dark"/>
     </div>
     <div class="flex" v-else>
-      <a @click="normal()">一般</a>
-      <a @click="bw()">黑白</a>
-      <a @click="rotate()">色相旋轉</a>
-      <a @click="bl()">模糊</a>
+      <a @click="normal()"><img class="small" src="./assets/normal.png"></a>
+      <a @click="bw()"><img class="small" src="./assets/bw.png"></a>
+      <a @click="rotate()"><img class="small" src="./assets/rotate.png"></a>
+      <a @click="bl()"><img class="small" src="./assets/bl.png"></a>
+      <a @click="invert()"><img class="small" src="./assets/iv.png"></a>
     </div>
   </div>
 </template>
@@ -33,7 +34,8 @@ export default {
       idx: 0,
       rot: false,
       blur: false,
-      start: false
+      start: false,
+      iv: false,
     }
   },
   methods: {
@@ -48,6 +50,7 @@ export default {
       this.dark = false;
       this.rot = false;
       this.start = false;
+      this.iv = false;
     },
     normal() {
       this.start = true
@@ -62,6 +65,10 @@ export default {
     },
     bl() {
       this.blur = true
+      this.start = true
+    },
+    invert() {
+      this.iv = true
       this.start = true
     }
   },
@@ -114,6 +121,10 @@ export default {
   -webkit-filter:hue-rotate(90deg);
 }
 
+.invert {
+  filter:invert(1);
+  -webkit-filter:invert(1);
+}
 
 h1 {
  font-family: "Courier New", "LiSong Pro";
@@ -153,6 +164,11 @@ a {
   filter: invert(100%);
 }
 
+#d.dark img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 #nav a.router-link-exact-active {
   color: #F5B041;
 }
@@ -162,8 +178,11 @@ a {
 #info{
   height: 1.6em;
 }
+#dyo{
+  height: 2.3em;
+}
 .big{
-  height: 5em;
+  height: 4em;
 }
 
 button {
