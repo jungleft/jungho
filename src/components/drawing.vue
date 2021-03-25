@@ -7,10 +7,6 @@
       <div class="small">
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
       </div>
-      <p>
-          Color:
-          <input v-model="color" type="text">
-      </p>
     </div>
   </div>
 </template>
