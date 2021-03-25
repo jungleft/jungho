@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div v-if="start" :class="{'hue-rotate': rot, blur: blur}">
+    <div id="main" v-if="start" :class="{'hue-rotate': rot, blur: blur, invert: iv}">
       <div id="nav" :class="{dark:dark}">
         <img class="big" :src="'./img/'+name[idx]">
         <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
@@ -91,6 +91,10 @@ export default {
   color: white;
 }
 
+#main {
+  background-color: white;
+}
+
 .flex {
   display: flex;
   justify-content: center;
@@ -122,6 +126,11 @@ export default {
 }
 
 .invert {
+  filter:invert(1);
+  -webkit-filter:invert(1);
+}
+
+.invert img.small, .invert img.big {
   filter:invert(1);
   -webkit-filter:invert(1);
 }
