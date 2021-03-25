@@ -130,6 +130,11 @@ h1 {
  font-family: "Courier New", "LiSong Pro";
 }
 
+p {
+  font-size: 0.6em;
+
+}
+
 #app {
   font-family: "Courier New", "LiSong Pro", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
