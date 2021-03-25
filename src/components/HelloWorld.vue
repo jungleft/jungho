@@ -75,8 +75,8 @@ img {
   width: 300px;
   position: fixed;
   z-index: -9;
-  filter:drop-shadow(5px 5px 5px #333);
-  -webkit-filter:drop-shadow(5px 5px 5px #333);
+  filter:drop-shadow(1px 1px 1px #333);
+  -webkit-filter:drop-shadow(1px 1px 1px #333);
 }
 h3 {
   margin: 40px 0 0;
