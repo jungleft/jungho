@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>Scanography</h2>
-    <p>2021<br>Just trying to scan some<br>of the ephemeral collection.</p>
+    <p>2021<br>Trying to scan some of<br>the ephemeral collection.</p>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
       <h4>{{i.txt}}</h4>
