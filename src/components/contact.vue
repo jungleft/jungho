@@ -2,6 +2,7 @@
   <div class="hello" :class="{dark:dark}">
     <h2>info</h2>
     <img :src="'./img/author.jpg'"/>
+    <h4>何容</h4>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
     <p>facebook: <a href="https://www.facebook.com/Jung-Ho-305353076838511" target="_blank" rel="noopener noreferrer">Jung Ho</a></p>
@@ -80,30 +81,42 @@ h2 {
   width: 33vw;
   text-align: left;
   margin: 1em auto;
+  margin-bottom: 2em;
 }
 p {
   list-style: none;
   width: 33vw;
   text-align: left;
-  margin: 0.5em auto;
+  margin: 0.7em auto;
+}
+h4 {
+  list-style: none;
+  width: 33vw;
+  text-align: left;
+  margin: 0.7em auto;
+  margin-bottom: 1em;
 }
 img {
-  width: 150px;
-  margin-left: -20vw;
-  margin-bottom: 2em;
+  width: 200px;
+  margin-left: -18vw;
+  margin-bottom: 1em;
 }
-h3 {
-  margin: 40px 0 0;
-}
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
-  color: #42b983;
+  color: #566573;
+}
+
+a:visited {
+  color: #AF601A;
 }
 </style>

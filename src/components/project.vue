@@ -95,8 +95,12 @@ ul {
 li {
   margin: 0.5em auto;
 }
-a:visited {
-  color: #5499C7;
+
+a {
+  color: #566573;
 }
 
+a:visited {
+  color: #AF601A;
+}
 </style>
