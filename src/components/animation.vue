@@ -1,6 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>Moving Images</h2>
+    <p>2018-2020<br>Experimental pieces I did when<br>studying in the IABA Kingston.</p>
     <iframe src="https://player.vimeo.com/video/418366721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/418366721">The British Museum</a> from <a href="https://vimeo.com/user84130549">JUNG HO</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <iframe src="https://player.vimeo.com/video/377326463" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -73,6 +74,10 @@ export default {
   left: 0;
 }
 h2{
+  padding-top: 1em;
+}
+
+p{
   padding-top: 1em;
   padding-bottom: 2em;
 }

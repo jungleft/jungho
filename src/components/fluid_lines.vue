@@ -1,9 +1,10 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>Fluid Lines</h2>
+    <p>2021<br>Watercolour on paper (4K).</p>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
-      <p>{{i.txt}}</p>
+      <h4>{{i.txt}}</h4>
     </div>
   </div>
 </template>
@@ -68,10 +69,17 @@ export default {
 h2 {
   padding-top: 1em;
 }
-p{
+
+h4{
   text-align: left;
   margin-left: 0.5em;
 }
+
+p{
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
 .dark {
   filter: grayscale(100%);
   background-color: black;
