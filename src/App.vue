@@ -14,8 +14,8 @@
       <router-view :dark="dark"/>
     </div>
     <div class="flex" v-else>
-      <a @click="normal()"><img class="small" title="normal" src="./assets/normal.png"></a>
-      <a @click="bw()"><img class="small" title="grayscale" src="./assets/bw.png"></a>
+      <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span v-show="focus == 'normal'"><br/>Normal</span></a>
+      <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span v-show="focus == 'bw'"><br/>Grayscale</span></a>
       <a @click="rotate()"><img class="small" title="rotate" src="./assets/rotate.png"></a>
       <a @click="bl()"><img class="small" title="blur" src="./assets/bl.png"></a>
       <a @click="invert()"><img class="small" title="invert" src="./assets/iv.png"></a>
@@ -36,6 +36,7 @@ export default {
       blur: false,
       start: false,
       iv: false,
+      focus: null
     }
   },
   methods: {
