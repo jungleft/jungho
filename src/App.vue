@@ -14,11 +14,11 @@
       <router-view :dark="dark"/>
     </div>
     <div class="flex" v-else>
-      <a @click="normal()"><img class="small" src="./assets/normal.png"></a>
-      <a @click="bw()"><img class="small" src="./assets/bw.png"></a>
-      <a @click="rotate()"><img class="small" src="./assets/rotate.png"></a>
-      <a @click="bl()"><img class="small" src="./assets/bl.png"></a>
-      <a @click="invert()"><img class="small" src="./assets/iv.png"></a>
+      <a @click="normal()"><img class="small" title="normal" src="./assets/normal.png"></a>
+      <a @click="bw()"><img class="small" title="grayscale" src="./assets/bw.png"></a>
+      <a @click="rotate()"><img class="small" title="rotate" src="./assets/rotate.png"></a>
+      <a @click="bl()"><img class="small" title="blur" src="./assets/bl.png"></a>
+      <a @click="invert()"><img class="small" title="invert" src="./assets/iv.png"></a>
     </div>
   </div>
 </template>
