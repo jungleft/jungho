@@ -9,7 +9,9 @@
         <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png"></router-link>
       </div>
       <div id="d" :class="{dark:dark}">
-        <a @click="reset()"><img class="big" src="./assets/eyes.png"></a>
+        <a @click="reset()">
+          <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
+          <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png"></a>
       </div>
       <router-view :dark="dark"/>
     </div>
