@@ -125,6 +125,7 @@ a {
 
 @media screen and (max-width: 600px) {
   .flex {
+    height: auto;
     flex-direction: column;
   }
 }
