@@ -3,10 +3,10 @@
     <div id="main" v-if="start" :class="{'hue-rotate': rot, blur: blur, invert: iv}">
       <div id="nav" :class="{dark:dark}">
         <img class="big" :src="'./img/'+name[idx]">
-        <router-link to="/"><img class="small" src="./assets/home.png"></router-link> 
-        <router-link to="/contact"><img id="info" class="small" src="./assets/info.png"></router-link>
-        <router-link to="/project"><img class="small" src="./assets/works.png"></router-link>
-        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png"></router-link>
+        <router-link to="/"><img class="small" src="./assets/home.png" alt="home"></router-link> 
+        <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="info"></router-link>
+        <router-link to="/project"><img class="small" src="./assets/works.png" alt="works"></router-link>
+        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="dyo"></router-link>
       </div>
       <div id="d" :class="{dark:dark}">
         <a @click="reset()">
