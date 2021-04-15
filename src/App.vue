@@ -14,11 +14,11 @@
       <router-view :dark="dark"/>
     </div>
     <div class="flex" v-else>
-      <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span v-show="focus == 'normal'"><br/>Normal</span></a>
-      <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span v-show="focus == 'bw'"><br/>Grayscale</span></a>
-      <a @click="rotate()"><img class="small" title="rotate" src="./assets/rotate.png"></a>
-      <a @click="bl()"><img class="small" title="blur" src="./assets/bl.png"></a>
-      <a @click="invert()"><img class="small" title="invert" src="./assets/iv.png"></a>
+      <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span class="l" v-show="focus == 'normal'"><br/>Normal</span></a>
+      <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span class="l" v-show="focus == 'bw'"><br/>Grayscale</span></a>
+      <a @click="rotate()" @mouseover="focus='rotate'"><img class="small" title="rotate" src="./assets/rotate.png"><span class="l" v-show="focus == 'rotate'"><br/>Rotate</span></a>
+      <a @click="bl()" @mouseover="focus='bl'"><img class="small" title="blur" src="./assets/bl.png"><span class="l" v-show="focus == 'bl'"><br/>Blur</span></a>
+      <a @click="invert()" @mouseover="focus='invert'"><img class="small" title="invert" src="./assets/iv.png"><span class="l" v-show="focus == 'invert'"><br/>Invert</span></a>
     </div>
   </div>
 </template>
@@ -80,6 +80,10 @@ export default {
 </script>
 
 <style>
+
+.l {
+  font-size: 16px;
+}
 
 #d {
   position: fixed;
