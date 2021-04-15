@@ -11,7 +11,11 @@
       <div id="d" :class="{dark:dark}">
         <a @click="reset()">
           <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
-          <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png"></a>
+          <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
+          <img class="big" v-show="!blur && !dark && !iv && rot" src="./assets/rotate.png">
+          <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
+          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png">
+        <br>reset</a>
       </div>
       <router-view :dark="dark"/>
     </div>
@@ -82,6 +86,14 @@ export default {
 </script>
 
 <style>
+
+body {
+  cursor: crosshair;
+}
+
+a {
+  cursor: cell !important; 
+}
 
 .l {
   font-size: 16px;

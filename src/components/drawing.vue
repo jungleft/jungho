@@ -139,6 +139,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+canvas {
+  cursor: se-resize;
+}
+
 #c {
   position: fixed;
   bottom: 110px;
