@@ -22,8 +22,6 @@ import ColorPicker from 'vue-color-picker-wheel';
 import firebase from 'firebase';
 import { db } from '../db.js';
 
-console.log(db)
-
 export default {
   name: 'HelloWorld',
   props: {
@@ -42,7 +40,6 @@ export default {
   methods: {
     save() {
       const canvas = document.getElementById('canvas');
-      console.log(canvas.toDataURL())
       this.$firestoreRefs.test.add({src: canvas.toDataURL()})
     },
     toBlob() {
