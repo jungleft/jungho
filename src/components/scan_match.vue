@@ -1,14 +1,9 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h2>Scanography</h2>
-    <p>2021<br>Messing around with scanner.</p>
-    <li><router-link to="/scan_photo">photo</router-link></li>
-      <li><router-link to="/scan_match">match</router-link></li>
-      <li><router-link to="/scan_bag">bag</router-link></li>
-      <li><router-link to="/scan_card">card</router-link></li>
+    <h3>Matchbox</h3>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
-      <h4>{{i.txt}}</h4>
+      <p>{{i.txt}}</p>
     </div>
   </div>
 </template>
@@ -43,7 +38,16 @@ export default {
   mounted() {
     setInterval(this.move, 15)
   },
-  
+  data() {
+    return {
+      left: 0,
+      top: 0,
+      dir: 1,
+      dir2: 1,
+      idx: 0,
+      items: [{src:'img555.jpg', txt:'01'}, {src:'img567.jpg', txt:'02'}, {src:'img568.jpg', txt:'03'}, {src:'img569.jpg', txt:'04'}, {src:'img592.jpg', txt:'05'}, {src:'img622.jpg', txt:'06'} ]
+    }
+  }
 }
 </script>
 
@@ -61,18 +65,13 @@ export default {
   left: 0;
 }
 
-h2 {
-  padding-top: 1em;
-}
-
-h4{
-  text-align: left;
-  margin-left: 0.5em;
+h3 {
+  padding-top: 2em;
 }
 
 p{
-  padding-top: 1em;
-  padding-bottom: 1em;
+  text-align: left;
+  margin-left: 0.5em;
 }
 
 .dark {
@@ -93,25 +92,6 @@ p{
 
 .work img {
   width: 600px;
-}
-
-ul {
-  list-style: none;
-  width: 33vw;
-  text-align: left;
-  margin: 5em auto;
-}
-
-li {
-  margin: 0.5em auto;
-}
-
-a {
-  color: #566573;
-}
-
-a:visited {
-  color: #AF601A;
 }
 
 </style>

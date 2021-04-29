@@ -11,7 +11,7 @@
     </div>
     <div>
       <span v-for="(t, idx) in test" :key="t.src">
-        <a @click="del(idx)">X</a>
+        <a @click="del(idx)">x</a>
         <a @click="use(t)">
           <img class="small" :src="t.src"/>
         </a>
