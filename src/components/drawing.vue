@@ -10,8 +10,12 @@
       </div>
     </div>
     <div>
-      <img class="small" v-for="t in test" :key="t.src" :src="t.src"/>
-      }
+      <span v-for="(t, idx) in test" :key="t.src">
+        <a @click="del(idx)">X</a>
+        <a @click="use(t)">
+          <img class="small" :src="t.src"/>
+        </a>
+      </span>
     </div>
   </div>
 </template>
@@ -38,6 +42,27 @@ export default {
     ColorPicker,
   },
   methods: {
+    del(i) {
+      db.collection('img').onSnapshot(snapshot => {
+        snapshot.docs.forEach((doc, idx) => {
+            console.log(idx)
+            if (idx === i) {
+            db.collection('img').doc(doc.id).delete()
+              .catch(error => {
+                  console.log(error)
+              })
+            }
+        })
+      })
+    },
+    use(t) {
+      const canvas = document.getElementById('canvas');
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.finishedPainting();
+      const result = new Image();
+      result.src = t.src;
+      canvas.getContext('2d').drawImage(result, 0, 0);
+    },
     save() {
       const canvas = document.getElementById('canvas');
       this.$firestoreRefs.test.add({src: canvas.toDataURL()})
