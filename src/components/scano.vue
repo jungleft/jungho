@@ -46,7 +46,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: [{src:'img593.jpg', txt:'01'}, {src:'img594.jpg', txt:'02'}, {src:'img595.jpg', txt:'03'}, {src:'img596.jpg', txt:'04'}, {src:'img599.jpg', txt:'05'}, {src:'img600.jpg', txt:'06'} ]
+      items: [{src:'img593.jpg', txt:'01'}, {src:'img594.jpg', txt:'02'}, {src:'img595.jpg', txt:'03'}, {src:'img596.jpg', txt:'04'}, {src:'img599.jpg', txt:'05'}, {src:'img600.jpg', txt:'06'}, {src:'img555.jpg', txt:'02'}, {src:'img567.jpg', txt:'02'}, {src:'img568.jpg', txt:'02'}, {src:'img569.jpg', txt:'02'}, {src:'img592.jpg', txt:'02'} ]
     }
   }
 }
