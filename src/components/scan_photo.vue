@@ -65,10 +65,6 @@ export default {
   left: 0;
 }
 
-h2 {
-  padding-top: 1em;
-}
-
 h3 {
   padding-top: 2em;
 }
