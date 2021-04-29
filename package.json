@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "firebase": "^8.2.9",
+    "firebase": "^8.4.2",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-color-picker-wheel": "^0.4.3",

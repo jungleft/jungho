@@ -3,10 +3,15 @@
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw" @touchstart="startTouchPainting" @touchmove="drawTouch" @touchend="finishedPainting"></canvas>
     <div id ="c">
       <h3> draw your own!</h3>
+      <a id ="save" @click="save()">Save</a>
       <a id ="clear" @click="clear()">ERASE</a>
       <div class="small">
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
       </div>
+    </div>
+    <div>
+      <img class="small" v-for="t in test" :key="t.src" :src="t.src"/>
+      }
     </div>
   </div>
 </template>
@@ -15,13 +20,18 @@
 
 import ColorPicker from 'vue-color-picker-wheel';
 import firebase from 'firebase';
-// import db from '../db'
+import { db } from '../db.js';
+
+console.log(db)
 
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
     dark: Boolean,
+  },
+  firestore: {
+    test: db.collection('img'),
   },
   metaInfo: {
     title: '圖鴨板',
@@ -30,6 +40,11 @@ export default {
     ColorPicker,
   },
   methods: {
+    save() {
+      const canvas = document.getElementById('canvas');
+      console.log(canvas.toDataURL())
+      this.$firestoreRefs.test.add({src: canvas.toDataURL()})
+    },
     toBlob() {
       const storageRef = firebase.storage().ref();
       const mountainsRef = storageRef.child('mountains.jpg');
@@ -124,6 +139,7 @@ export default {
   },
   data() {
     return {
+      test: [],
       message: 'Hello Vue!',
       vueCanvas: null,
       painting: false,
@@ -155,6 +171,16 @@ canvas {
   background-color: black;
 }
 
+a#save {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  background-color: #3f3;
+  padding: 3px;
+  border-radius: 5px;
+  color: black;
+}
+
 a#clear {
   cursor: pointer;
   display: inline-block;
@@ -163,6 +189,10 @@ a#clear {
   padding: 3px;
   border-radius: 5px;
   color: black;
+}
+
+.small {
+  height: 150px;
 }
 
 </style>
