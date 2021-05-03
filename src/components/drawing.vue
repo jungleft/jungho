@@ -43,17 +43,16 @@ export default {
   },
   methods: {
     del(i) {
-      db.collection('img').onSnapshot(snapshot => {
+      db.collection('img').onSnapshot((snapshot) => {
         snapshot.docs.forEach((doc, idx) => {
-            console.log(idx)
-            if (idx === i) {
-            db.collection('img').doc(doc.id).delete()
-              .catch(error => {
-                  console.log(error)
-              })
-            }
-        })
-      })
+          console.log(idx);
+          if (idx === i) {
+            db.collection('img').doc(doc.id).delete().catch((error) => {
+              console.log(error);
+            });
+          }
+        });
+      });
     },
     use(t) {
       const canvas = document.getElementById('canvas');
