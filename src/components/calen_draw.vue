@@ -20,6 +20,12 @@
       <img :src="'./img/mar'+ (i.hover ? 1 : 0) +'/' + i.src" />
       </a>
     </div>
+     <h3>Apr</h3>
+    <div class="work" v-for="i in items4" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/mar'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -152,7 +158,39 @@ export default {
         {src: 'img028.jpg', hover: false},
         {src: 'img029.jpg', hover: false},
         {src: 'img030.jpg', hover: false},
-        {src: 'img031.jpg', hover: false} ]
+        {src: 'img031.jpg', hover: false} ],
+      items4: [
+        {src: 'img046.jpg', hover: false},
+        {src: 'img047.jpg', hover: false},
+        {src: 'img048.jpg', hover: false},
+        {src: 'img049.jpg', hover: false},
+        {src: 'img050.jpg', hover: false},
+        {src: 'img051.jpg', hover: false},
+        {src: 'img052.jpg', hover: false},
+        {src: 'img053.jpg', hover: false},
+        {src: 'img054.jpg', hover: false},
+        {src: 'img055.jpg', hover: false},
+        {src: 'img056.jpg', hover: false},
+        {src: 'img057.jpg', hover: false},
+        {src: 'img058.jpg', hover: false},
+        {src: 'img059.jpg', hover: false},
+        {src: 'img060.jpg', hover: false},
+        {src: 'img061.jpg', hover: false},
+        {src: 'img062.jpg', hover: false},
+        {src: 'img063.jpg', hover: false},
+        {src: 'img064.jpg', hover: false},
+        {src: 'img065.jpg', hover: false},
+        {src: 'img066.jpg', hover: false},
+        {src: 'img067.jpg', hover: false},
+        {src: 'img068.jpg', hover: false},
+        {src: 'img069.jpg', hover: false},
+        {src: 'img070.jpg', hover: false},
+        {src: 'img071.jpg', hover: false},
+        {src: 'img072.jpg', hover: false},
+        {src: 'img073.jpg', hover: false},
+        {src: 'img074.jpg', hover: false},
+        {src: 'img075.jpg', hover: false},
+        {src: 'img076.jpg', hover: false} ]
     }
   }
 }
