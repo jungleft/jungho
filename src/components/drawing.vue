@@ -50,6 +50,7 @@ export default {
             db.collection('img').doc(doc.id).delete().catch((error) => {
               console.log(error);
             });
+            break;
           }
         });
       });
