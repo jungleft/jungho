@@ -63,7 +63,7 @@ export default {
 <style scoped>
 
 .gallary {
-  width: 600px;
+  max-width: 600px;
   margin: 4em auto;
 }
 
