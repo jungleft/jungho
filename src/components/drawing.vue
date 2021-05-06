@@ -9,14 +9,6 @@
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
       </div>
     </div>
-    <div>
-      <span v-for="(t, idx) in test" :key="t.src">
-        <a @click="del(idx)">x</a>
-        <a @click="use(t)">
-          <img class="small" :src="t.src"/>
-        </a>
-      </span>
-    </div>
   </div>
 </template>
 
@@ -50,7 +42,6 @@ export default {
             db.collection('img').doc(doc.id).delete().catch((error) => {
               console.log(error);
             });
-            break;
           }
         });
       });
@@ -66,6 +57,7 @@ export default {
     save() {
       const canvas = document.getElementById('canvas');
       this.$firestoreRefs.test.add({src: canvas.toDataURL()})
+      this.$router.push('/gallary');
     },
     toBlob() {
       const storageRef = firebase.storage().ref();
