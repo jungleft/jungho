@@ -2,10 +2,10 @@
   <div class="hello" :class="{dark:dark}">
     <h2>Scanography</h2>
     <p>2021<br>Messing around with scanner.</p>
-    <li><router-link to="/scan_photo">photo</router-link></li>
-      <li><router-link to="/scan_match">match</router-link></li>
-      <li><router-link to="/scan_bag">bag</router-link></li>
-      <li><router-link to="/scan_card">card</router-link></li>
+    <p><router-link to="/scan_photo">photo</router-link></p>
+      <p><router-link to="/scan_match">match</router-link></p>
+      <p><router-link to="/scan_bag">bag</router-link></p>
+      <p><router-link to="/scan_card">card</router-link></p>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
       <h4>{{i.txt}}</h4>
@@ -71,8 +71,7 @@ h4{
 }
 
 p{
-  padding-top: 1em;
-  padding-bottom: 1em;
+  
 }
 
 .dark {
