@@ -1,5 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
+    <h3><router-link to="/contact">按此找我</router-link></h3>
+
     <img :src="'./img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
