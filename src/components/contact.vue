@@ -3,11 +3,10 @@
     <h2>info</h2>
     <img :src="'./img/author.jpg'"/>
     <h4>何容</h4>
-    <p>繪畫設計</p>
-    <p>美術教學</p>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
     <p>facebook: <a href="https://www.facebook.com/Jung-Ho-305353076838511" target="_blank" rel="noopener noreferrer">Jung Ho</a></p>
+    <p>(open for commissions!)</p>
   </div>
 </template>
 

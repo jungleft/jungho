@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <h3><router-link to="/contact">按此找我</router-link></h3>
+    <p><router-link to="/contact">hey there!</router-link></p>
 
     <img :src="'./img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
@@ -72,6 +72,8 @@ h1 {
 }
 p {
   color: #9CDA68;
+  margin-top: 25em;
+  margin-left: 50em;
 }
 img {
   width: 300px;
@@ -90,6 +92,10 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #F8C471;
+}
+
+a:visited {
+  color: #F8C471;
 }
 </style>

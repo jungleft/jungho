@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <h2>Scanography</h2>
-    <p>2021<br>Messing around with scanner.</p>
+    <p>2021<br>Messing around scanner.</p>
     <p><router-link to="/scan_photo">photo</router-link></p>
       <p><router-link to="/scan_match">match</router-link></p>
       <p><router-link to="/scan_bag">bag</router-link></p>
@@ -63,6 +63,7 @@ export default {
 
 h2 {
   padding-top: 1em;
+  margin-bottom: 1.5em;
 }
 
 h4{
@@ -71,7 +72,7 @@ h4{
 }
 
 p{
-  
+  margin-bottom: 1em;
 }
 
 .dark {

@@ -3,7 +3,7 @@
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw" @touchstart="startTouchPainting" @touchmove="drawTouch" @touchend="finishedPainting"></canvas>
     <div id ="c">
       <h3> draw your own!</h3>
-      <a id ="save" @click="save()">Save</a>
+      <a id ="save" @click="save()">SAVE</a>
       <a id ="clear" @click="clear()">ERASE</a>
       <div class="small">
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
@@ -189,7 +189,7 @@ a#save {
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
-  background-color: #3f3;
+  background-color: #F9E79F;
   padding: 3px;
   border-radius: 5px;
   color: black;
@@ -199,7 +199,7 @@ a#clear {
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
-  background-color: yellow;
+  background-color: #D6EAF8;
   padding: 3px;
   border-radius: 5px;
   color: black;

@@ -1,13 +1,14 @@
 <template>
   <div class="gallary">
+    <h2>gallary</h2>
     <div class = "inline" v-for="(t,idx) in test" :key="t.src">
       <img class ="g" :src="t.src"/>
       <a @click="del(idx)">x</a>
     </div>
     <div>
-      <h1>
-        <router-link to="/drawing">畫畫</router-link>
-      </h1>
+      <h3>
+        <router-link to="/drawing">Back to dyo.</router-link>
+      </h3>
     </div>
   </div>
 </template>
@@ -63,7 +64,7 @@ export default {
 <style scoped>
 
 .gallary {
-  max-width: 600px;
+  max-width: 800px;
   margin: 4em auto;
 }
 
@@ -107,7 +108,20 @@ a {
   cursor: pointer;
 }
 
+a:visited {
+  color: #AF601A;
+}
+
 .inline {
   display: inline-block;
+}
+
+h2 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h3 {
+  margin-top: 2em;
 }
 </style>

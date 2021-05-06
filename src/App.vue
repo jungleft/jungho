@@ -14,8 +14,7 @@
           <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
           <img class="big" v-show="!blur && !dark && !iv && rot" src="./assets/rotate.png">
           <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
-          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png">
-        <br>reset</a>
+          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png"></a>
       </div>
       <router-view :dark="dark"/>
     </div>

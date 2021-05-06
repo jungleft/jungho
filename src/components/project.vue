@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <ul>
-      <h3>works</h3>
+      <h2>works</h2>
       <li><router-link to="/calen">moon out of sun</router-link></li>
       <li><router-link to="/fluid">fluid lines</router-link></li>
       <li><router-link to="/animation">moving images</router-link></li>
@@ -50,9 +50,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  font-size: 22px
-}
+
 .hello {
   padding-top: 1.5em;
   width: 100vw;
@@ -92,8 +90,12 @@ ul {
   margin: 5em auto;
 }
 
+h2 {
+  margin-bottom: 2em;
+}
+
 li {
-  margin: 0.5em auto;
+  margin: 0.8em auto;
 }
 
 a {
