@@ -23,7 +23,7 @@
      <h3>Apr</h3>
     <div class="work" v-for="i in items4" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
-      <img :src="'./img/mar'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      <img :src="'./img/apr'+ (i.hover ? 1 : 0) +'/' + i.src" />
       </a>
     </div>
   </div>
