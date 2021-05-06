@@ -62,6 +62,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.gallary {
+  width: 600px;
+  margin: 4em auto;
+}
+
 a#save {
   cursor: pointer;
   display: inline-block;
