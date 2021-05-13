@@ -41,7 +41,7 @@ export default {
             db.collection('img').doc(doc.id).delete().catch((error) => {
               console.log(error);
             });
-            idx = null
+            i = null
             window.location.reload();
             return;
           }

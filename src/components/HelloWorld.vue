@@ -2,7 +2,9 @@
   <div class="hello" :class="{dark:dark}">
     <p><router-link to="/contact">hey there!</router-link></p>
 
-    <img :src="items[idx].src" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
+    <a @click="use(items[idx].src)">
+      <img :src="items[idx].src" :style="{left: left + 'px', top: top + 'px'}">
+    </a>
   </div>
 </template>
 
@@ -19,6 +21,10 @@ export default {
     items: db.collection('img'),
   },
   methods: {
+    use(s) {
+      localStorage.src = s;
+      this.$router.push('/drawing')
+    },
     next() {
       this.idx += 1
       if (this.idx === this.items.length) {
