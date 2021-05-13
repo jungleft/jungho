@@ -134,7 +134,7 @@ a {
 }
 
 .flex a {
-  margin: 2em;
+  margin: 1em 2em;
 }
 
 
@@ -193,7 +193,7 @@ a {
   font-weight: bold;
   color: #2c3e50;
   font-family: "Courier New";
-  padding: 3px;
+  padding: 0;
 }
 
 #nav.dark img {
@@ -225,4 +225,21 @@ a {
 button {
   font-size: 26px;
 }
+
+@media screen and (max-width: 420px) {
+
+  .small{
+    height: 1em;
+  }
+  #info{
+    height: .8em;
+  }
+  #dyo{
+    height: 1.6em;
+  }
+  .big{
+    height: 2em;
+  }
+}
+
 </style>
