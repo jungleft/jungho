@@ -184,12 +184,12 @@ canvas {
 
 #g {
   position: fixed;
-  bottom:0;
-  right:0;
+  top:3em;
+  right:2em;
 }
 
 #gallary {
-  height: 5em;
+  height: 3.5em;
 }
 
 #c {
