@@ -2,8 +2,8 @@
   <div class="hello" :class="{dark:dark}">
     <p><router-link to="/contact">hey there!</router-link></p>
 
-    <a @click="use(items[idx].src)">
-      <img :src="items[idx].src" :style="{left: left + 'px', top: top + 'px'}">
+    <a @click="use(items[idx] && items[idx].src || items[idx])">
+      <img :src="items[idx] && items[idx].src || items[idx]" :style="{left: left + 'px', top: top + 'px'}">
     </a>
   </div>
 </template>
@@ -87,7 +87,7 @@ p {
   margin-left: 50em;
 }
 img {
-  width: 300px;
+  width: 250px;
   position: fixed;
   z-index: -9;
 }
