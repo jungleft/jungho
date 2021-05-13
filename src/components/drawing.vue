@@ -195,7 +195,7 @@ canvas {
 #c {
   position: fixed;
   bottom: 110px;
-  right: 0;
+  right: 2em;
   padding-right: 1em;
 }
 
