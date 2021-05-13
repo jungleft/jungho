@@ -2,16 +2,21 @@
   <div class="hello" :class="{dark:dark}">
     <p><router-link to="/contact">hey there!</router-link></p>
 
-    <img :src="'./img/' + items[idx]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
+    <img :src="items[idx.src]" @click="next()" :style="{left: left + 'px', top: top + 'px'}">
   </div>
 </template>
 
 <script>
+  import { db } from '../db';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
     dark: Boolean,
+  },
+  firestore: {
+    items: db.collection('img'),
   },
   methods: {
     next() {
