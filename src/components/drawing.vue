@@ -9,6 +9,7 @@
         <color-picker :width="150" :height="150" v-model="color"></color-picker>
       </div>
     </div>
+     <router-link to="/gallary" id="g"><img id="gallary" class="small" src="../assets/gallary.png" alt="gallary"></router-link>
   </div>
 </template>
 
@@ -179,6 +180,16 @@ export default {
 
 canvas {
   cursor: se-resize;
+}
+
+#g {
+  position: fixed;
+  bottom:0;
+  right:0;
+}
+
+#gallary {
+  height: 5em;
 }
 
 #c {
