@@ -79,6 +79,10 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$router.currentRoute.path)
+    if (this.$router.currentRoute.path == '/gallary') {
+      this.start = true;
+    }
     setInterval(this.change, 1500)
   }
 }

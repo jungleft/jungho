@@ -46,12 +46,12 @@ export default {
         });
       });
     },
-    use(t) {
+    use(s) {
       const canvas = document.getElementById('canvas');
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.finishedPainting();
       const result = new Image();
-      result.src = t.src;
+      result.src = s;
       canvas.getContext('2d').drawImage(result, 0, 0);
     },
     save() {
@@ -148,6 +148,9 @@ export default {
         canvas.getContext('2d').drawImage(result, 0, 0);
       };
     });
+    if (localStorage.src) {
+      this.use(localStorage.src)
+    }
     // console.log(dataURL);
     // now just to show that passing to a canvas doesn't hold the same results
   },
