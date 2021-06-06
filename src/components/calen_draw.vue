@@ -3,6 +3,13 @@
     <h2>Moon Out of Sun</h2>
     <p>2021<br>Everyday calendar drawings<br> and daily window.(ongoing)</p>
 
+     <h3>May</h3>
+    <div class="work" v-for="i in items5" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/may'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
+
      <h3>Apr</h3>
     <div class="work" v-for="i in items4" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
@@ -70,6 +77,38 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
+      items5: [
+        {src: 'img001.jpg', hover: false},
+        {src: 'img002.jpg', hover: false},
+        {src: 'img003.jpg', hover: false},
+        {src: 'img004.jpg', hover: false},
+        {src: 'img005.jpg', hover: false},
+        {src: 'img006.jpg', hover: false},
+        {src: 'img007.jpg', hover: false},
+        {src: 'img008.jpg', hover: false},
+        {src: 'img009.jpg', hover: false},
+        {src: 'img010.jpg', hover: false},
+        {src: 'img011.jpg', hover: false},
+        {src: 'img012.jpg', hover: false},
+        {src: 'img013.jpg', hover: false},
+        {src: 'img014.jpg', hover: false},
+        {src: 'img015.jpg', hover: false},
+        {src: 'img016.jpg', hover: false},
+        {src: 'img017.jpg', hover: false},
+        {src: 'img018.jpg', hover: false},
+        {src: 'img019.jpg', hover: false},
+        {src: 'img020.jpg', hover: false},
+        {src: 'img021.jpg', hover: false},
+        {src: 'img022.jpg', hover: false},
+        {src: 'img023.jpg', hover: false},
+        {src: 'img024.jpg', hover: false},
+        {src: 'img025.jpg', hover: false},
+        {src: 'img026.jpg', hover: false},
+        {src: 'img027.jpg', hover: false},
+        {src: 'img028.jpg', hover: false},
+        {src: 'img029.jpg', hover: false},
+        {src: 'img030.jpg', hover: false}, 
+        {src: 'img031.jpg', hover: false} ],
       items4: [
         {src: 'img046.jpg', hover: false},
         {src: 'img047.jpg', hover: false},
