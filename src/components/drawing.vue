@@ -168,7 +168,7 @@ export default {
       painting: false,
       canvas: null,
       ctx: null,
-      color: '#000000',
+      color: '#4060BF',
     };
   },
 };
