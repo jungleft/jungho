@@ -1,7 +1,7 @@
 <template>
   <div class="gallary">
     <h2>gallary</h2>
-    <div class = "inline" v-for="(t,idx) in test" :key="t.src">
+    <div class = "inline" v-for="(t) in test" :key="t.src">
       <a @click="use(t.src)"><img class ="g" :src="t.src"/></a>
     </div>
     <div>
@@ -31,21 +31,6 @@ export default {
     use(s) {
       localStorage.src = s;
       this.$router.push('/drawing')
-    },
-    del(i) {
-      db.collection('img').onSnapshot((snapshot) => {
-        snapshot.docs.forEach((doc, idx) => {
-          console.log(idx);
-          if (idx === i) {
-            db.collection('img').doc(doc.id).delete().catch((error) => {
-              console.log(error);
-            });
-            i = null
-            window.location.reload();
-            return;
-          }
-        });
-      });
     }
   },
   mounted() {
