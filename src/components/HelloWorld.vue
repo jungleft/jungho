@@ -9,7 +9,7 @@
 </template>
 
 <script>
-//  import { db } from '../db';
+  import { db } from '../db';
 
 export default {
   name: 'HelloWorld',
@@ -17,9 +17,9 @@ export default {
     msg: String,
     dark: Boolean,
   },
- // firestore: {
- //   items: db.collection('img'),
- // },
+  firestore: {
+    items: db.collection('img'),
+  },
   methods: {
     use(s) {
       localStorage.src = s;
