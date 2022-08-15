@@ -3,7 +3,6 @@
     <h2>gallary</h2>
     <div class = "inline" v-for="(t,idx) in test" :key="t.src">
       <a @click="use(t.src)"><img class ="g" :src="t.src"/></a>
-      <a @click="del(idx)">x</a>
     </div>
     <div>
       <h3>
