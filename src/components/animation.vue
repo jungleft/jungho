@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
+  <div class="scan" :class="{dark:dark}">
     <h2>Moving Images</h2>
     <p>2018-2020<br>Experimental pieces I did when<br>studying in the IABA Kingston.</p>
     <iframe src="https://player.vimeo.com/video/418366721" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>

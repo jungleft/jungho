@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
+  <div class="fluid" :class="{dark:dark}">
     <h2>Fluid Lines</h2>
     <p>2021<br>Watercolour on paper (4K).</p>
     <div class="work" v-for="i in items" :key="i">

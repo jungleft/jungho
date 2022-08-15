@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
+  <div class="scan" :class="{dark:dark}">
     <h2>Scanography</h2>
     <p>2021<br>Messing around scanner.</p>
     <p><router-link to="/scan_photo">photo</router-link></p>

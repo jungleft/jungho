@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
+  <div class="calen" :class="{dark:dark}">
     <h2>Moon Out of Sun</h2>
     <p>2021<br>Everyday calendar drawings<br> and daily window.(ongoing)</p>
 

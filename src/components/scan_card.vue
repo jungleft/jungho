@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
+  <div class="scan" :class="{dark:dark}">
     <h3>Advertising card</h3>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/' + i.src">
