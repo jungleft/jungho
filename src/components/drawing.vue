@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" :class="{dark: dark}">
+  <div class="dyo" :class="{dark: dark}">
     <canvas id="canvas" @mousedown="startPainting" @mouseup="finishedPainting" @mousemove="draw" @touchstart="startTouchPainting" @touchmove="drawTouch" @touchend="finishedPainting"></canvas>
     <div id ="c">
       <h3> draw your own!</h3>
