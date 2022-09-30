@@ -4,6 +4,7 @@
       <h2>works</h2>
       <li><router-link to="/calen">moon/sun</router-link></li>
       <li><router-link to="/fluid">fluid lines</router-link></li>
+      <li><router-link to="/thav_sketch">sketch</router-link></li>
       <li><router-link to="/animation">moving images</router-link></li>
       <li><router-link to="/scano">scanography</router-link></li>
     </ul>

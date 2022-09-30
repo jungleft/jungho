@@ -34,6 +34,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../components/fluid_lines.vue')
   },
   {
+    path: '/thav_sketch',
+    name: 'sketch',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../components/thav_sketch.vue')
+  },
+  {
     path: '/calen',
     name: 'calen',
 
