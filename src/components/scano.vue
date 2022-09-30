@@ -1,7 +1,7 @@
 <template>
   <div class="scan" :class="{dark:dark}">
     <h2>Scanography</h2>
-    <p>2021<br>Messing around scanner.</p>
+    <p>2021<br>Experiment with scanner.</p>
     <p><router-link to="/scan_photo">photo</router-link></p>
       <p><router-link to="/scan_match">match</router-link></p>
       <p><router-link to="/scan_bag">bag</router-link></p>

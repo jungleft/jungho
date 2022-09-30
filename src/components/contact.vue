@@ -3,10 +3,13 @@
     <h2>info</h2>
     <img :src="'./img/author.jpg'"/>
     <h4>何容</h4>
+    <p>生長於木柵。曾經在國外當一碗麥片粥，後來無功而返。喜歡提出問題多過於明確的定論，經常處於不知道如何定義自己的狀態，夢想就是找到自己的夢想。學過一些設計的，一些藝術的; 一些平面的，一些立體的; 一些動態的，一些靜態的; 一些東方的， 一些西方的(當然 ... 西方佔大多數)，一直在思考如何將這些技能匯集並轉化產生自己東西。最近興趣是尋找路上阿彌陀佛標語。  </p>
+    <br>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
-    <p>facebook: <a href="https://www.facebook.com/Jung-Ho-305353076838511" target="_blank" rel="noopener noreferrer">Jung Ho</a></p>
-    <p>(open for commissions!)</p>
+    <p>攝影帳號: <a href="https://www.instagram.com/gteyuoi/" target="_blank" rel="noopener noreferrer">@gteyuoi</a></p>
+    <p>阿密陀佛: <a href="https://www.instagram.com/amitopho/" target="_blank" rel="noopener noreferrer">@amitopho</a></p>
+    <p>(open for commissions.)</p>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="calen" :class="{dark:dark}">
-    <h2>Moon Out of Sun</h2>
-    <p>2021<br>Everyday calendar drawings<br> and daily window.(ongoing)</p>
+    <h2>Moon/Sun</h2>
+    <p>2021<br>Everyday calendar drawing<br> and daily window(jan-sep)</p>
 
      <h3>May</h3>
     <div class="work" v-for="i in items5" :key="i.src">

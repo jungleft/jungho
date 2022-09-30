@@ -95,7 +95,7 @@ body {
 }
 
 .hello {
-  background-image: url('https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg');
+  background-image: url('');
 }
 
 a {
