@@ -1,7 +1,8 @@
 <template>
   <div class="fluid" :class="{dark:dark}">
-    <h2>Fluid Lines</h2>
-    <p>2021<br>Watercolour on paper (4K).</p>
+    <h2>Sketches
+  </h2>
+    <p>2022<br><br>寶藏巖寫生<br> Watercolour on paper (A4).</p>
     <div class="work" v-for="i in items" :key="i">
       <img :src="'./img/sketch/' + i.src">
       <h4>{{i.txt}}</h4>
@@ -46,7 +47,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: [{src:'thav01', txt:'fluid lines, green'}, {src:'thav02', txt:'fluid lines, blue'}, {src:'thav03', txt:'fluid lines, blank space'}, {src:'thav04', txt:'fluid lines, statue'} ]
+      items: [{src:'thav01.jpg', txt:''}, {src:'thav02.jpg', txt:''}, {src:'thav03.jpg', txt:''}, {src:'thav04.jpg', txt:''} ]
     }
   }
 }
