@@ -9,7 +9,7 @@
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
     <p>攝影帳號: <a href="https://www.instagram.com/gteyuoi/" target="_blank" rel="noopener noreferrer">@gteyuoi</a></p>
     <p>阿密陀佛: <a href="https://www.instagram.com/amitopho/" target="_blank" rel="noopener noreferrer">@amitopho</a></p>
-    <p>(open for commissions.)</p>
+    <p class="last">(open for commissions.)</p>
   </div>
 </template>
 
@@ -67,17 +67,12 @@ export default {
   z-index: -1;
   top: 0;
   left: 0;
+  overflow: scroll;
 }
 
 .dark {
   filter: grayscale(100%);
   background-color: black;
-}
-
-#d {
-  position: fixed;
-  bottom: 5em;
-  left: 1em;
 }
 
 h2 {
@@ -122,5 +117,9 @@ a {
 
 a:visited {
   color: #AF601A;
+}
+
+.last {
+  margin-bottom: 5em;
 }
 </style>
