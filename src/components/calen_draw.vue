@@ -1,7 +1,29 @@
 <template>
   <div class="calen" :class="{dark:dark}">
     <h2>Moon/Sun</h2>
-    <p>2021<br>Everyday calendar drawing<br> and daily window(jan-sep)</p>
+    <p>2021<br>Everyday calendar drawing<br> and daily window(Sep-Jan)</p>
+
+     <h3>Aug</h3>
+    <div class="work" v-for="i in items8" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/aug'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
+
+
+     <h3>Jul</h3>
+    <div class="work" v-for="i in items7" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/jul'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
+
+      <h3>Jun</h3>
+    <div class="work" v-for="i in items6" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/jun'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
 
      <h3>May</h3>
     <div class="work" v-for="i in items5" :key="i.src">
@@ -77,6 +99,101 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
+      items8: [
+        {src: 'img256.jpg', hover: false},
+        {src: 'img257.jpg', hover: false},
+        {src: 'img258.jpg', hover: false},
+        {src: 'img259.jpg', hover: false},
+        {src: 'img260.jpg', hover: false},
+        {src: 'img261.jpg', hover: false},
+        {src: 'img262.jpg', hover: false},
+        {src: 'img263.jpg', hover: false},
+        {src: 'img264.jpg', hover: false},
+        {src: 'img265.jpg', hover: false},
+        {src: 'img266.jpg', hover: false},
+        {src: 'img267.jpg', hover: false},
+        {src: 'img268.jpg', hover: false},
+        {src: 'img269.jpg', hover: false},
+        {src: 'img270.jpg', hover: false},
+        {src: 'img271.jpg', hover: false},
+        {src: 'img272.jpg', hover: false},
+        {src: 'img273.jpg', hover: false},
+        {src: 'img274.jpg', hover: false},
+        {src: 'img275.jpg', hover: false},
+        {src: 'img276.jpg', hover: false},
+        {src: 'img277.jpg', hover: false},
+        {src: 'img278.jpg', hover: false},
+        {src: 'img279.jpg', hover: false},
+        {src: 'img280.jpg', hover: false},
+        {src: 'img281.jpg', hover: false},
+        {src: 'img282.jpg', hover: false},
+        {src: 'img283.jpg', hover: false},
+        {src: 'img284.jpg', hover: false},
+        {src: 'img285.jpg', hover: false}, 
+        {src: 'img286.jpg', hover: false} ],
+      items7: [
+        {src: 'img225.jpg', hover: false},
+        {src: 'img226.jpg', hover: false},
+        {src: 'img227.jpg', hover: false},
+        {src: 'img228.jpg', hover: false},
+        {src: 'img229.jpg', hover: false},
+        {src: 'img230.jpg', hover: false},
+        {src: 'img231.jpg', hover: false},
+        {src: 'img232.jpg', hover: false},
+        {src: 'img233.jpg', hover: false},
+        {src: 'img234.jpg', hover: false},
+        {src: 'img235.jpg', hover: false},
+        {src: 'img236.jpg', hover: false},
+        {src: 'img237.jpg', hover: false},
+        {src: 'img238.jpg', hover: false},
+        {src: 'img239.jpg', hover: false},
+        {src: 'img240.jpg', hover: false},
+        {src: 'img241.jpg', hover: false},
+        {src: 'img242.jpg', hover: false},
+        {src: 'img243.jpg', hover: false},
+        {src: 'img244.jpg', hover: false},
+        {src: 'img245.jpg', hover: false},
+        {src: 'img246.jpg', hover: false},
+        {src: 'img247.jpg', hover: false},
+        {src: 'img248.jpg', hover: false},
+        {src: 'img249.jpg', hover: false},
+        {src: 'img250.jpg', hover: false},
+        {src: 'img251.jpg', hover: false},
+        {src: 'img252.jpg', hover: false},
+        {src: 'img253.jpg', hover: false},
+        {src: 'img254.jpg', hover: false}, 
+        {src: 'img255.jpg', hover: false} ],
+      items6: [
+        {src: 'img032.jpg', hover: false},
+        {src: 'img033.jpg', hover: false},
+        {src: 'img034.jpg', hover: false},
+        {src: 'img035.jpg', hover: false},
+        {src: 'img036.jpg', hover: false},
+        {src: 'img037.jpg', hover: false},
+        {src: 'img038.jpg', hover: false},
+        {src: 'img039.jpg', hover: false},
+        {src: 'img040.jpg', hover: false},
+        {src: 'img041.jpg', hover: false},
+        {src: 'img042.jpg', hover: false},
+        {src: 'img043.jpg', hover: false},
+        {src: 'img044.jpg', hover: false},
+        {src: 'img045.jpg', hover: false},
+        {src: 'img046.jpg', hover: false},
+        {src: 'img047.jpg', hover: false},
+        {src: 'img048.jpg', hover: false},
+        {src: 'img049.jpg', hover: false},
+        {src: 'img050.jpg', hover: false},
+        {src: 'img051.jpg', hover: false},
+        {src: 'img052.jpg', hover: false},
+        {src: 'img053.jpg', hover: false},
+        {src: 'img054.jpg', hover: false},
+        {src: 'img055.jpg', hover: false},
+        {src: 'img056.jpg', hover: false},
+        {src: 'img057.jpg', hover: false},
+        {src: 'img058.jpg', hover: false},
+        {src: 'img059.jpg', hover: false},
+        {src: 'img060.jpg', hover: false},
+        {src: 'img061.jpg', hover: false} ],
       items5: [
         {src: 'img001.jpg', hover: false},
         {src: 'img002.jpg', hover: false},
