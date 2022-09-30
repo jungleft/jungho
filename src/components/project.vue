@@ -100,10 +100,10 @@ li {
 }
 
 a {
-  color: #566573;
+  color: #17202A;
 }
 
 a:visited {
-  color: #AF601A;
+  color: #17202A;
 }
 </style>

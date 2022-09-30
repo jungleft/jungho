@@ -3,6 +3,13 @@
     <h2>Moon/Sun</h2>
     <p>2021<br>Everyday calendar drawing<br> and daily window(Sep-Jan)</p>
 
+    <h3>Sep</h3>
+    <div class="work" v-for="i in items9" :key="i.src">
+      <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
+      <img :src="'./img/sep'+ (i.hover ? 1 : 0) +'/' + i.src" />
+      </a>
+    </div>
+
      <h3>Aug</h3>
     <div class="work" v-for="i in items8" :key="i.src">
       <a @mouseover="i.hover=true" @mouseout="i.hover=false" @click="i.hover = !i.hover">
@@ -99,6 +106,37 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
+      items9: [
+        {src: 'img287.jpg', hover: false},
+        {src: 'img288.jpg', hover: false},
+        {src: 'img289.jpg', hover: false},
+        {src: 'img290.jpg', hover: false},
+        {src: 'img291.jpg', hover: false},
+        {src: 'img292.jpg', hover: false},
+        {src: 'img293.jpg', hover: false},
+        {src: 'img294.jpg', hover: false},
+        {src: 'img295.jpg', hover: false},
+        {src: 'img296.jpg', hover: false},
+        {src: 'img297.jpg', hover: false},
+        {src: 'img298.jpg', hover: false},
+        {src: 'img299.jpg', hover: false},
+        {src: 'img300.jpg', hover: false},
+        {src: 'img301.jpg', hover: false},
+        {src: 'img302.jpg', hover: false},
+        {src: 'img303.jpg', hover: false},
+        {src: 'img304.jpg', hover: false},
+        {src: 'img305.jpg', hover: false},
+        {src: 'img306.jpg', hover: false},
+        {src: 'img307.jpg', hover: false},
+        {src: 'img308.jpg', hover: false},
+        {src: 'img309.jpg', hover: false},
+        {src: 'img310.jpg', hover: false},
+        {src: 'img311.jpg', hover: false},
+        {src: 'img312.jpg', hover: false},
+        {src: 'img313.jpg', hover: false},
+        {src: 'img314.jpg', hover: false},
+        {src: 'img315.jpg', hover: false},
+        {src: 'img316.jpg', hover: false}, ],
       items8: [
         {src: 'img256.jpg', hover: false},
         {src: 'img257.jpg', hover: false},

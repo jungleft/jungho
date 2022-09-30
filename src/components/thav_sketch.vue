@@ -1,6 +1,6 @@
 <template>
   <div class="fluid" :class="{dark:dark}">
-    <h2>Sketches
+    <h2>Sketch
   </h2>
     <p>2022<br><br>寶藏巖寫生<br> Watercolour on paper (A4).</p>
     <div class="work" v-for="i in items" :key="i">
