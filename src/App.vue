@@ -39,9 +39,9 @@ export default {
       idx: 0,
       rot: false,
       blur: false,
-      start: false,
+      start: true,
       iv: false,
-      focus: null
+      focus: 'normal'
     }
   },
   methods: {
