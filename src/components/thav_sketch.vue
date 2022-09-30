@@ -3,7 +3,7 @@
     <h2>Fluid Lines</h2>
     <p>2021<br>Watercolour on paper (4K).</p>
     <div class="work" v-for="i in items" :key="i">
-      <img :src="'./img/' + i.src">
+      <img :src="'./img/sketch/' + i.src">
       <h4>{{i.txt}}</h4>
     </div>
   </div>
@@ -46,7 +46,7 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
-      items: [{src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', txt:'fluid lines, green'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', txt:'fluid lines, blue'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', txt:'fluid lines, blank space'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', txt:'fluid lines, statue'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', txt:'fluid lines, clouds'}, {src:'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', txt:'fluid lines, orange sky'}, {src:'IMG_9037.jpeg', txt:'fluid lines, dark'}, {src:'IMG_9036.jpeg', txt:'fluid lines, darker'},  {src:'IMG_9038.jpeg', txt:'fluid lines, cut out'}, {src:'IMG_9142.jpeg', txt:'fluid lines, grayscale'} ]
+      items: [{src:'thav01', txt:'fluid lines, green'}, {src:'thav02', txt:'fluid lines, blue'}, {src:'thav03', txt:'fluid lines, blank space'}, {src:'thav04', txt:'fluid lines, statue'} ]
     }
   }
 }
