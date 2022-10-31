@@ -1,11 +1,11 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <router-link to="/cart"><i class="cart icon"/>cart</router-link>
+    <router-link id="c" to="/cart"><img src="" alt="cart"></router-link>
     <h1>寵物線上看</h1>
-    <div class="ui four doubling stackable cards container">
+    <div class="ui two doubling stackable cards container">
       <div class="ui attached card" v-for="p in pets" :key="p.n">
         <div class="ui image">
-          <img :src="'https://loremflickr.com/320/240/pet?random='+ p.i + '&lock=' + p.i"/>
+          <img :src="p.src"/>
         </div>
         <div class="description">
           <h3>{{p.n}}</h3>
@@ -62,14 +62,13 @@ export default {
   data () {
     return {
       pets: [
-        { i: 1, n: '小咪', price: 300 },
-        { i: 2, n: '阿肥', price: 500 },
-        { i: 3, n: '大頭', price: 200 },
-        { i: 4, n: '珠珠', price: 1000 },
-        { i: 5, n: '比爾', price: 400 },
-        { i: 6, n: '邱吉', price: 300 },
-        { i: 7, n: '嘟嘟', price: 200 },
-        { i: 8, n: '阿胖', price: 2300 }
+        { i: 1, n: '小咪', price: 300, src: './img/author.jpg' },
+        { i: 2, n: '阿肥', price: 500, src: './img/author.jpg' },
+        { i: 3, n: '大頭', price: 200, src: './img/author.jpg' },
+        { i: 4, n: '珠珠', price: 1000, src: './img/author.jpg' },
+        { i: 5, n: '比爾', price: 400, src: './img/author.jpg' },
+        { i: 6, n: '邱吉', price: 300, src: './img/author.jpg' }
+        
       ]
     }
   }
@@ -78,6 +77,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#c {
+  position: fixed;
+  top: 1em;
+  right: 4em;
+  font-size: 22px;
+}
 h3 {
   margin: 40px 0 0;
 }
