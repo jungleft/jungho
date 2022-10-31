@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <router-link to="/cart"><i class="car icon"/>cart</router-link>
+    <router-link to="/cart"><i class="cart icon"/>cart</router-link>
     <h1>寵物線上看</h1>
     <div class="ui four doubling stackable cards container">
       <div class="ui attached card" v-for="p in pets" :key="p.n">
