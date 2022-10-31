@@ -2,7 +2,7 @@
   <div class="hello" :class="{dark:dark}">
     <router-link to="/cart"><i class="cart icon"/>cart</router-link>
     <h1>寵物線上看</h1>
-    <div class="ui four doubling stackable cards container">
+    <div id="cs" class="ui four doubling stackable cards container">
       <div class="ui attached card" v-for="p in pets" :key="p.n">
         <div class="ui image">
           <img :src="'https://loremflickr.com/320/240/pet?random='+ p.i + '&lock=' + p.i"/>
@@ -78,6 +78,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#cs {
+  width: 60%;
+  margin: 0 auto;
+}
+
 h3 {
   margin: 40px 0 0;
 }
