@@ -4,7 +4,7 @@
     <div class="ui four doubling stackable cards container">
       <div class="ui attached card" v-for="p in mycarts" :key="p.n">
         <div class="ui image">
-          <img :src="'https://loremflickr.com/320/240/pet?random='+ p.i + '&lock=' + p.i"/>
+          <img :src="p.src"/>
         </div>
         <div class="description">
           <h3>{{p.n}}</h3>
@@ -51,15 +51,11 @@
         </div>
       </div>
       <a class="ui large green button" @click="submit()">下訂單</a>
+      <br> <p>註解：會自動導向信箱發送訊息</p>
     </div>
     <br/>
     <br/>
-    <div class="ui list container" v-if="myrecords[0]">
-      <h2>交易記錄</h2>
-      <div class="ui item" v-for="r in myrecords" :key="r">
-        {{r}}
-      </div>
-    </div>
+  
   </div>
 </template>
 
@@ -95,7 +91,7 @@ export default {
       }
       var names = items.join(',')
       const t = this.today()
-      const record = 'mailto:bestian@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 末五碼' + this.five
+      const record = 'mailto:gteyuoi@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 末五碼' + this.five
       window.open(record)
       this.mycarts = []
       this.name = ''
