@@ -1,116 +1,153 @@
 <template>
-  <div class="hello" :class="{dark:dark}">
-    
+  <div class="about">
+    <h1>我的購物車</h1>
+    <div class="ui four doubling stackable cards container">
+      <div class="ui attached card" v-for="p in mycarts" :key="p.n">
+        <div class="ui image">
+          <img :src="'https://loremflickr.com/320/240/pet?random='+ p.i + '&lock=' + p.i"/>
+        </div>
+        <div class="description">
+          <h3>{{p.n}}</h3>
+          價格：$NTD{{p.price}}
+        </div>
+        <a class="ui button" :class = "{green: !inCart(p), blue: inCart(p)}" tabindex="0" @click="toggleCart(p)">
+          {{ !inCart(p) ? '加入購物車' : '從購物車中移除' }} <i class="cart icon"/>
+        </a>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="ui form container">
+      <div class="ui field">
+        總金額 {{countTotal()}}
+      </div>
+      <h4 class="ui dividing header">訂單資訊</h4>
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <div class="ui labeled input">
+              <label class="ui label">訂購人</label>
+              <input type="text" name="shipping[first-name]" placeholder="Name" v-model="name">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui labeled input">
+              <label class="ui label">手機號碼</label>
+              <input type="text" name="phone" placeholder="Phone" v-model="phone">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui labeled input">
+          <label class="ui label">地址</label>
+          <input type="text" name="shipping[address]" placeholder="Street Address" v-model="addr">
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui labeled input">
+          <label class="ui label">帳號末五碼</label>
+          <input type="text" name="five" placeholder="帳號末五碼" v-model="five">
+        </div>
+      </div>
+      <a class="ui large green button" @click="submit()">下訂單</a>
+    </div>
+    <br/>
+    <br/>
+    <div class="ui list container" v-if="myrecords[0]">
+      <h2>交易記錄</h2>
+      <div class="ui item" v-for="r in myrecords" :key="r">
+        {{r}}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String,
-    dark: Boolean
+  name: 'AbOut',
+  metaInfo: {
+    title: '我的收藏'
+  },
+  data () {
+    return {
+      mycarts: [],
+      myrecords: [],
+      name: '',
+      phone: '',
+      addr: '',
+      five: ''
+    }
   },
   methods: {
-    next() {
-      this.idx += 1
-      if (this.idx === this.items.length) {
-        this.idx = 0
-      }
+    today () {
+      const t = new Date()
+      return t.getFullYear() + '/' + (t.getMonth() + 1) + '/' + t.getDate()
     },
-    move() {
-      this.top += 1 * this.dir2
-      this.left += 1 * this.dir
-      if(this.left == window.innerWidth - 300 || this.left == 0) {
-        this.dir *= -1
-        this.next()
+    submit () {
+      var price = 0
+      var items = []
+      for (var i = 0; i < this.mycarts.length; i++) {
+        price += this.mycarts[i].price
       }
-      if(this.top == window.innerHeight - 200 || this.top == 0) {
-        this.dir2 *= -1
-        this.next()
+      for (var j = 0; j < this.mycarts.length; j++) {
+        items.push(this.mycarts[j].n + '/$NTD' + this.mycarts[j].price)
+      }
+      var names = items.join(',')
+      const t = this.today()
+      const record = 'mailto:bestian@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 末五碼' + this.five
+      window.open(record)
+      this.mycarts = []
+      this.name = ''
+      this.phone = ''
+      this.five = ''
+      this.addr = ''
+      this.myrecords.push(record)
+      localStorage.setItem('mycarts', JSON.stringify(this.mycarts))
+      localStorage.setItem('myrecords', JSON.stringify(this.myrecords))
+    },
+    countTotal () {
+      var ans = 0
+      for (var i = 0; i < this.mycarts.length; i++) {
+        ans += this.mycarts[i].price
+      }
+      return ans
+    },
+    toggleCart (p) {
+      var mycarts = JSON.parse(localStorage.getItem('mycarts') || '[]')
+      if ((mycarts || []).filter(function (o) {
+        return o.n === p.n
+      }).length > 0) {
+        const ans = (mycarts || []).filter(function (o) {
+          return o.n !== p.n
+        })
+        mycarts = [ ...ans]
+        localStorage.setItem('mycarts', JSON.stringify(mycarts));
+      } else {
+        mycarts.push(p)
+        localStorage.setItem('mycarts', JSON.stringify(mycarts));
+      }
+      this.mycarts = JSON.parse(localStorage.getItem('mycarts') || '[]')
+      this.$forceUpdate()
+    },
+    inCart (p) {
+      const mycarts = JSON.parse(localStorage.getItem('mycarts') || '[]')
+      if ((mycarts || []).filter(function (o) {
+        return o.n === p.n
+      }).length > 0) {
+        return true
+      } else {
+        return false
       }
     }
   },
-  mounted() {
-    setInterval(this.move, 15)
-  },
-  data() {
-    return {
-      left: 0,
-      top: 0,
-      dir: 1,
-      dir2: 1,
-      idx: 0,
-      items: ['c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_3.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 'c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg', ]
+  mounted () {
+    if (localStorage.mycarts) {
+      this.mycarts = JSON.parse(localStorage.getItem('mycarts') || '[]')
+    }
+    if (localStorage.myrecords) {
+      this.myrecords = JSON.parse(localStorage.getItem('myrecords') || '[]')
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-.hello {
-  padding-top: 3em;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  overflow: scroll;
-}
-
-.dark {
-  filter: grayscale(100%);
-  background-color: black;
-}
-
-h2 {
-  list-style: none;
-  width: 33vw;
-  text-align: left;
-  margin: 1em auto;
-  margin-bottom: 2em;
-}
-p {
-  list-style: none;
-  width: 33vw;
-  text-align: left;
-  margin: 0.7em auto;
-}
-h4 {
-  list-style: none;
-  width: 33vw;
-  text-align: left;
-  margin: 0.7em auto;
-  margin-bottom: 1em;
-}
-img {
-  width: 200px;
-  margin-left: -18vw;
-  margin-bottom: 1em;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #17202A;
-}
-
-a:visited {
-  color: #17202A;
-}
-
-.last {
-  margin-bottom: 5em;
-}
-</style>
