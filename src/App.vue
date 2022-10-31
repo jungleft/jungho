@@ -7,6 +7,8 @@
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="info"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="works"></router-link>
         <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="dyo"></router-link>
+        <router-link to="/shop">shop</router-link>
+        
       </div>
       <div id="d" :class="{dark:dark}">
         <a @click="reset()">
