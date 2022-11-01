@@ -33,7 +33,8 @@
     <br/>
     <div class="ui form container">
       <div class="ui field">
-        <label class="ui label"><h4>Total<br>$NTD{{countTotal()}}</h4></label>
+        <label class="ui label"><h4>Total<br>
+          <span class="blue">$NTD{{countTotal()}}</span></h4></label>
       </div>
       <br>
       <h3>訂單資訊</h3>
@@ -229,6 +230,10 @@ h3 {
 
 .floted.left {
   float: left;
+}
+
+.blue {
+  color: #2185d0;
 }
 
 </style>
