@@ -45,10 +45,31 @@
           <input type="text" name="shipping[address]" placeholder="Street Address" v-model="addr">
         </div>
       </div>
-      <div class="field">
+      <div class="inline fields">
+        <label>選擇付款方式：</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="frequency" v-model="type" value="now">
+            <label>匯款</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="frequency" v-model="type" value="later">
+            <label>貨到付款</label>
+          </div>
+        </div>
+      </div>
+      <div class="field" v-show="type == 'now'">
         <div class="ui labeled input">
           <label class="ui label">帳號末五碼</label>
           <input type="text" name="five" placeholder="帳號末五碼" v-model="five">
+        </div>
+      </div>
+      <div class="field" v-show="type == 'later'">
+        <div class="ui labeled input">
+          <label class="ui label">7-11門市</label>
+          <input type="text" name="five" placeholder="門市" v-model="seven">
         </div>
       </div>
       <br> <p>備註：<br>下訂單後會自動導向信箱<br>請發送郵件即可完成訂單</p>
@@ -69,12 +90,14 @@ export default {
   },
   data () {
     return {
+      type: 'now',
       mycarts: [],
       myrecords: [],
       name: '',
       phone: '',
       addr: '',
-      five: ''
+      five: '',
+      seven: ''
     }
   },
   methods: {
@@ -93,7 +116,12 @@ export default {
       }
       var names = items.join(',')
       const t = this.today()
-      const record = 'mailto:gteyuoi@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 末五碼' + this.five
+      var record = ''
+      if (this.type === 'now') {
+        record = 'mailto:gteyuoi@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 末五碼' + this.five
+      } else {
+        record = 'mailto:gteyuoi@gmail.com?subject=' + t + this.name + '訂購' + names + '&body=' + t + this.name + '訂購' + names + ' ===> 總金額$NTD' + price + '===> 寄送地址' + this.addr + ' ===> 電話' + this.phone + '===> 門市' + this.seven     
+      }
       window.open(record)
       this.mycarts = []
       this.name = ''
