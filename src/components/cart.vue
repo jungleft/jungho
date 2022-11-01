@@ -216,6 +216,10 @@ export default {
   overflow: scroll;
 }
 
+.ui.form {
+  padding-left: 100px !important;
+}
+
 h2 {
   padding-top: 3em;
   margin-bottom: 1em;
