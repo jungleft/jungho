@@ -183,6 +183,8 @@ export default {
 #cs {
   width: 60%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
   
 .hello {
