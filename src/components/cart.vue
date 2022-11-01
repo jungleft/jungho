@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h2>購物車</h2>
-    <div id="cst" class="ui deivided list container thin-only">
+    <div id="cst" class="ui divided list container thin-only">
       <div class="item" v-for="p in mycarts" :key="p.n">
         <div>
           <img class="ui tiny floted left image" :src="p.src"/>
@@ -221,6 +221,10 @@ h2 {
 }
 h3 {
   margin-bottom: 1em;
+}
+
+.list .item {
+   padding-left: 5em;
 }
 
 .floted.left {
