@@ -7,7 +7,7 @@
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="info"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="works"></router-link>
         <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="dyo"></router-link>
-        <router-link to="/shop">shop</router-link>
+        <router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="shop"></router-link>
         
       </div>
       <div id="d" :class="{dark:dark}">
@@ -223,6 +223,11 @@ a {
 }
 #dyo{
   height: 2.3em;
+}
+#shop{
+  padding-top: 1em;
+  width: 50%;
+  height: 3em;
 }
 .big{
   height: 4em;

@@ -1,14 +1,14 @@
 <template>
   <div class="about">
-    <h1>我的購物車</h1>
-    <div class="ui four doubling stackable cards container">
+    <h2>購物車</h2>
+    <div id="cs" class="ui four doubling stackable cards container">
       <div class="ui attached card" v-for="p in mycarts" :key="p.n">
         <div class="ui image">
           <img :src="p.src"/>
         </div>
         <div class="description">
           <h3>{{p.n}}</h3>
-          價格：$NTD{{p.price}}
+          $NTD{{p.price}}
         </div>
         <a class="ui button" :class = "{green: !inCart(p), blue: inCart(p)}" tabindex="0" @click="toggleCart(p)">
           {{ !inCart(p) ? '加入購物車' : '從購物車中移除' }} <i class="cart icon"/>
@@ -19,9 +19,10 @@
     <br/>
     <div class="ui form container">
       <div class="ui field">
-        總金額 {{countTotal()}}
+        <label class="ui label"><h4>Total<br>$NTD{{countTotal()}}</h4></label>
       </div>
-      <h4 class="ui dividing header">訂單資訊</h4>
+      <br>
+      <h3>訂單資訊</h3>
       <div class="field">
         <div class="two fields">
           <div class="field">
@@ -50,12 +51,13 @@
           <input type="text" name="five" placeholder="帳號末五碼" v-model="five">
         </div>
       </div>
+      <br> <p>備註：<br>下訂單後會自動導向信箱<br>請發送郵件即可完成訂單</p>
       <a class="ui large green button" @click="submit()">下訂單</a>
-      <br> <p>註解：會自動導向信箱發送訊息</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
-    <br/>
-    <br/>
-  
   </div>
 </template>
 
@@ -147,3 +149,31 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+#cs {
+  width: 60%;
+  margin: 0 auto;
+}
+  
+.hello {
+  padding-top: 3em;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+
+h2 {
+  padding-top: 3em;
+  margin-bottom: 1em;
+}
+h3 {
+  margin-bottom: 1em;
+}
+
+</style>
