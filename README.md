@@ -31,3 +31,7 @@ style # id / . class
 
 v-show 用條件判斷是否顯示
 v-model 綁定某個變數
+
+### TODO
+
+1. 項目 => 點入可進入子頁 => 包含細節
