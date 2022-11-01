@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <router-link id="c" to="/shop"><img id="shop" class="small" src="../assets/back.png" alt="shop"></router-link>
+    <router-link id="c" to="/shop"><img id="shop" src="../assets/back.png" alt="shop"></router-link>
     <h2>購物車</h2>
     <div id="cst" class="ui divided list container thin-only">
       <div class="item" v-for="p in mycarts" :key="p.n">
@@ -213,7 +213,7 @@ export default {
   font-size: 22px
 }
 #shop {
-  height: 3em;
+  height: 3.5em;
 }
   
 .hello {
