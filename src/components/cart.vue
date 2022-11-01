@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <router-link id="c" to="/shop"><img id="shop" class="small" src="../assets/shop.png" alt="shop"></router-link>
     <h2>購物車</h2>
     <div id="cst" class="ui divided list container thin-only">
       <div class="item" v-for="p in mycarts" :key="p.n">
@@ -203,6 +204,16 @@ export default {
 .cards {
   display: flex;
   justify-content: center;
+}
+
+#c {
+  position: fixed;
+  top: 1em;
+  right: 4em;
+  font-size: 22px
+}
+#shop {
+  height: 3em;
 }
   
 .hello {
