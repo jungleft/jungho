@@ -35,7 +35,7 @@
     <div class="ui form container">
       <div class="ui field">
         <label class="ui label"><h4>Total<br>
-          <span class="blue">$NTD{{countTotal()}}</span></h4></label>
+          <span class="blue">$NTD&nbsp;{{countTotal()}}</span></h4></label>
       </div>
       <br>
       <h3>訂單資訊</h3>
