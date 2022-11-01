@@ -227,8 +227,8 @@ export default {
   overflow: scroll;
 }
 
-.ui.form {
-  padding-left: 100px !important;
+.about {
+  padding-left: 120px !important;
 }
 
 h2 {

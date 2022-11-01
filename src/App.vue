@@ -237,13 +237,13 @@ button {
   font-size: 26px;
 }
 
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 751px) {
   #cst.thin-only, .thin-only {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 750px) {
   #cs.fat-only, .fat-only {
     display: none !important;
   }
