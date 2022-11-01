@@ -4,7 +4,6 @@
     <img :src="'./img/author.jpg'"/>
     <h4>何容</h4>
     <p>生長於木柵。曾經在國外當一碗麥片粥，後來無功而返。<br>喜歡提出問題多過於明確的定論，想就是找到自己的夢想。<br>最近興趣是尋找路上阿彌陀佛標語。  </p>
-    <br>
     <p>email: <a href="mailto:gteyuoi@gmail.com" target="_blank">gteyuoi@gmail.com </a></p>
     <p>instagram: <a href="https://www.instagram.com/jungleft/" target="_blank" rel="noopener noreferrer">@jungleft</a></p>
     <p>阿密陀佛: <a href="https://www.instagram.com/amitopho/" target="_blank" rel="noopener noreferrer">@amitopho</a></p>
@@ -79,7 +78,7 @@ h2 {
   width: 33vw;
   text-align: left;
   margin: 1em auto;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 p {
   list-style: none;
