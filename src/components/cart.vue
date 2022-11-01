@@ -224,7 +224,7 @@ h3 {
 }
 
 .list .item {
-   padding-left: 5em;
+   padding-left: 160px;
 }
 
 .floted.left {
