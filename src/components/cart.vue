@@ -239,10 +239,6 @@ h3 {
   margin-bottom: 1em;
 }
 
-.list .item {
-   padding-left: 160px;
-}
-
 .floted.left {
   float: left;
 }
