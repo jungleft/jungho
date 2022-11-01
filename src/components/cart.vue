@@ -49,13 +49,13 @@
         <label>選擇付款方式：</label>
         <div class="field">
           <div class="ui radio checkbox">
-            <input type="radio" name="frequency" v-model="type" value="now">
+            <input type="radio" name="type" v-model="type" value="now">
             <label>匯款</label>
           </div>
         </div>
         <div class="field">
           <div class="ui radio checkbox">
-            <input type="radio" name="frequency" v-model="type" value="later">
+            <input type="radio" name="type" v-model="type" value="later">
             <label>貨到付款</label>
           </div>
         </div>
