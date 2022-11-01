@@ -1,7 +1,21 @@
 <template>
   <div class="about">
     <h2>購物車</h2>
-    <div id="cs" class="ui four doubling stackable cards container">
+    <div id="cst" class="ui deivided list container thin-only">
+      <div class="item" v-for="p in mycarts" :key="p.n">
+        <div>
+          <img class="ui tiny floted left image" :src="p.src"/>
+          <span>
+            {{p.n}}: 
+            $NTD{{p.price}}
+          </span>
+          <a class="ui button" :class = "{green: !inCart(p), blue: inCart(p)}" tabindex="0" @click="toggleCart(p)">
+            {{ !inCart(p) ? '加入購物車' : '從購物車中移除' }} <i class="cart icon"/>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="cs" class="ui four doubling stackable cards container fat-only">
       <div class="ui attached card" v-for="p in mycarts" :key="p.n">
         <div class="ui image">
           <img :src="p.src"/>
@@ -183,6 +197,9 @@ export default {
 #cs {
   width: 60%;
   margin: 0 auto;
+}
+
+.cards {
   display: flex;
   justify-content: center;
 }
@@ -204,6 +221,10 @@ h2 {
 }
 h3 {
   margin-bottom: 1em;
+}
+
+.floted.left {
+  float: left;
 }
 
 </style>

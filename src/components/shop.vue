@@ -25,7 +25,8 @@
 export default {
   name: 'Shop',
   props: {
-    msg: String
+    msg: String,
+    dark: Boolean
   },
   metaInfo: {
     title: '歡迎'

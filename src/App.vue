@@ -237,6 +237,18 @@ button {
   font-size: 26px;
 }
 
+@media screen and (min-width: 661px) {
+  #cst.thin-only, .thin-only {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cs.fat-only, .fat-only {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 420px) {
 
   .small{
