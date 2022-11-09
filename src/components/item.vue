@@ -3,14 +3,14 @@
     <router-link id="c" to="/shop"><img id="shop" src="../assets/back.png" alt="shop"></router-link>
     <div class="ui grid container">
       <div class="ui row" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
-        <div class="ui seven wide column">
+        <div class="ui ten wide column">
           <a @click="next()">
             <img class="lg" v-if="p.imgs" :src="p.imgs[m]"/>
           </a>
         </div>
         <div class="column">
           <div class="description">
-            <h3>{{p.n}}</h3>
+            <h3><br>{{p.n}}</h3>
             $NTD{{p.price}}
           </div>
           <div class="ui buttons">
