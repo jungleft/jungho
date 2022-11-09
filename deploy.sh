@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
+
 # abort on errors
 set -e
 
