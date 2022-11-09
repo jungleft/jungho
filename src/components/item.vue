@@ -3,11 +3,9 @@
     <router-link id="c" to="/cart"><img id="cart" class="small" src="../assets/cart.png" alt="cart"></router-link>
     <h2>shop</h2>
     <div id="cs" class="ui two doubling stackable cards container">
-      <div class="ui attached card" v-for="(p, idx) in pets" :key="p.n">
+      <div class="ui attached card" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
         <div class="ui image">
-          <router-link :to="'/item/' + idx">
-            <img :src="p.src"/>
-          </router-link>
+          <img :src="p.src"/>
         </div>
         <div class="description">
           <h3>{{p.n}}</h3>
