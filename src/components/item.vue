@@ -1,7 +1,7 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <router-link id="c" to="/shop"><img id="shop" src="../assets/back.png" alt="shop"></router-link>
-    <div id="cs" class="ui grid container">
+    <div class="ui grid container">
       <div class="ui row" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
         <div class="ui ten wide column">
           <a @click="next()">
@@ -101,6 +101,7 @@ export default {
 
 #c {
   position: fixed;
+  z-index: 9;
   top: 1em;
   right: 4em;
   font-size: 22px;
