@@ -101,7 +101,7 @@ export default {
 .lg {
   margin-top: 3em;
   margin-left: 10em;
-  width: 100%;
+  width: calc(100% - 10em);
 }
 
 h3 {
