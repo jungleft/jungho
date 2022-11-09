@@ -75,7 +75,8 @@ export default {
       pets: [
         { i: 1, n: '01', price: 300, src: './img/product.png', 
         imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
-        { i: 2, n: '02', price: 500, src: './img/product.png' },
+        { i: 2, n: '02', price: 500, src: './img/product.png', 
+        imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
         { i: 3, n: '03', price: 200, src: './img/product.png' },
         { i: 4, n: '04', price: 1000, src: './img/product.png' },
         { i: 5, n: '05', price: 400, src: './img/product.png' },
