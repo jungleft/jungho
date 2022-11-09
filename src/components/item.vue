@@ -4,7 +4,9 @@
     <div id="cs" class="ui two doubling stackable cards container">
       <div class="ui attached card" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
         <div class="ui image">
-          <img :src="p.imgs[m]"/>
+          <a @click="next()">
+            <img v-if="p.imgs" :src="p.imgs[m]"/>
+          </a>
         </div>
         <div class="description">
           <h3>{{p.n}}</h3>
@@ -31,6 +33,12 @@ export default {
     title: '歡迎'
   },
   methods: {
+    next () {
+      this.m++
+      if (this.m === this.pets[this.$route.params.id].imgs.length) {
+        this.m = 0
+      }
+    },
     toggleCart (p) {
       var mycarts = JSON.parse(localStorage.getItem('mycarts') || '[]')
       if ((mycarts || []).filter(function (o) {
@@ -64,7 +72,7 @@ export default {
       m: 0,
       pets: [
         { i: 1, n: '01', price: 300, src: './img/product.png', 
-        imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpeg'] },
+        imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
         { i: 2, n: '02', price: 500, src: './img/product.png' },
         { i: 3, n: '03', price: 200, src: './img/product.png' },
         { i: 4, n: '04', price: 1000, src: './img/product.png' },
