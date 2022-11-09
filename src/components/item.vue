@@ -1,6 +1,6 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <router-link id="c" to="/cart"><img id="cart" class="small" src="../assets/cart.png" alt="cart"></router-link>
+    <router-link id="c" to="/shop"><img id="shop" src="../assets/back.png" alt="shop"></router-link>
     <h2>shop</h2>
     <div id="cs" class="ui two doubling stackable cards container">
       <div class="ui attached card" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
