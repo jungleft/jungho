@@ -1,21 +1,23 @@
 <template>
   <div class="hello" :class="{dark:dark}">
     <router-link id="c" to="/shop"><img id="shop" src="../assets/back.png" alt="shop"></router-link>
-    <div id="cs" class="ui two doubling stackable cards container">
-      <div class="ui attached card" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
-        <div class="ui image">
+    <div id="cs" class="ui grid container">
+      <div class="ui row" v-for="(p, idx) in pets" :key="p.n" v-show="idx == $route.params.id">
+        <div class="ui ten wide column">
           <a @click="next()">
-            <img v-if="p.imgs" :src="p.imgs[m]"/>
+            <img class="lg" v-if="p.imgs" :src="p.imgs[m]"/>
           </a>
         </div>
-        <div class="description">
-          <h3>{{p.n}}</h3>
-          $NTD{{p.price}}
-        </div>
-        <div class="ui bottom attached buttons">
-          <a class="ui button" :class = "{green: !inCart(p), blue: inCart(p)}" tabindex="0" @click="toggleCart(p)">
-            {{ !inCart(p) ? '加入購物車' : '從購物車中移除' }} <i class="cart icon"/>
-          </a>
+        <div class="column">
+          <div class="description">
+            <h3>{{p.n}}</h3>
+            $NTD{{p.price}}
+          </div>
+          <div class="ui buttons">
+            <a class="ui button" :class = "{green: !inCart(p), blue: inCart(p)}" tabindex="0" @click="toggleCart(p)">
+              {{ !inCart(p) ? '加入購物車' : '從購物車中移除' }} <i class="cart icon"/>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -102,6 +104,10 @@ export default {
   top: 1em;
   right: 4em;
   font-size: 22px;
+}
+
+.lg {
+  width: 40%;
 }
 
 h3 {
