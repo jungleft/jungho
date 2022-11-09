@@ -97,7 +97,6 @@ body {
 }
 
 .hello {
-  background-image: url('');
 }
 
 a {
