@@ -27,6 +27,7 @@
 export default {
   name: 'Shop',
   props: {
+    pets: Array,
     msg: String,
     dark: Boolean
   },
@@ -64,15 +65,6 @@ export default {
   },
   data () {
     return {
-      pets: [
-        { i: 1, n: '01', price: 300, src: './img/product.png' },
-        { i: 2, n: '02', price: 500, src: './img/product.png' },
-        { i: 3, n: '03', price: 200, src: './img/product.png' },
-        { i: 4, n: '04', price: 1000, src: './img/product.png' },
-        { i: 5, n: '05', price: 400, src: './img/product.png' },
-        { i: 6, n: '06', price: 300, src: './img/product.png' }
-        
-      ]
     }
   }
 }

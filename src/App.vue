@@ -18,7 +18,7 @@
           <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
           <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png"></a>
       </div>
-      <router-view :dark="dark"/>
+      <router-view :dark="dark" :pets="pets"/>
     </div>
     <div class="flex" v-else>
       <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span class="l" v-show="focus == 'normal'"><br/>Normal</span></a>
@@ -43,7 +43,18 @@ export default {
       blur: false,
       start: true,
       iv: false,
-      focus: 'normal'
+      focus: 'normal',
+      pets: [
+        { i: 1, n: '01', price: 300, src: './img/product.png', 
+        imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
+        { i: 2, n: '02', price: 500, src: './img/product.png', 
+        imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
+        { i: 3, n: '03', price: 200, src: './img/product.png' },
+        { i: 4, n: '04', price: 1000, src: './img/product.png' },
+        { i: 5, n: '05', price: 400, src: './img/product.png' },
+        { i: 6, n: '06', price: 300, src: './img/product.png' }
+        
+      ]
     }
   },
   methods: {
