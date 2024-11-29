@@ -13,40 +13,50 @@
 
 export default {
   name: 'HelloWorld',
+  // 元件接收的屬性
   props: {
     msg: String,
     dark: Boolean,
   },
+  // Firestore 數據綁定
   firestore: {
     items: db.collection('img'),
   },
   methods: {
+    // 使用選中的圖片並導航到繪圖頁面
     use(s) {
       localStorage.src = s;
       this.$router.push('/drawing')
     },
+    // 切換到下一張圖片
     next() {
       this.idx += 1
       if (this.idx === this.items.length) {
         this.idx = 0
       }
     },
+    // 控制圖片移動的方法
     move() {
-      this.top += 1 * this.dir2
-      this.left += 1 * this.dir
+      this.top += 1 * this.dir2    // 垂直移動
+      this.left += 1 * this.dir    // 水平移動
+      
+      // 當圖片碰到左右邊界時
       if(this.left == window.innerWidth - 300 || this.left == 0) {
-        this.dir *= -1
-        this.next()
+        this.dir *= -1             // 改變水平移動方向
+        this.next()                // 切換下一張圖片
       }
+      // 當圖片碰到上下邊界時
       if(this.top == window.innerHeight - 200 || this.top == 0) {
-        this.dir2 *= -1
-        this.next()
+        this.dir2 *= -1            // 改變垂直移動方向
+        this.next()                // 切換下一張圖片
       }
     }
   },
+  // 元件掛載時啟動移動動畫
   mounted() {
-    setInterval(this.move, 15)
+    setInterval(this.move, 15)     // 每15毫秒執行一次move方法
   },
+  // 元件的數據
   data() {
     return {
       left: 0,

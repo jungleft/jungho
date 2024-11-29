@@ -36,15 +36,15 @@ export default {
   name: 'App',
   data() {
     return {
-      dark: false,
-      name: ['cjh.png','jh.png'],
-      idx: 0,
-      rot: false,
-      blur: false,
-      start: true,
-      iv: false,
-      focus: 'normal',
-      pets: [
+      dark: false,      // 深色模式開關
+      name: ['cjh.png','jh.png'],  // 輪播圖片名稱陣列
+      idx: 0,           // 當前顯示圖片索引
+      rot: false,       // 色相旋轉效果開關
+      blur: false,      // 模糊效果開關
+      start: true,      // 是否顯示主畫面
+      iv: false,        // 反轉效果開關
+      focus: 'normal',  // 當前聚焦的效果選項
+      pets: [           // 商品資料陣列
         { i: 1, n: '01', price: 1800, src: './img/rug/t01.jpeg', 
         imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
         { i: 2, n: '02', price: 200, src: './img/sticker/s01.jpeg', 

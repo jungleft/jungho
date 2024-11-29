@@ -19,27 +19,8 @@ export default {
     dark: Boolean
   },
   methods: {
-    next() {
-      this.idx += 1
-      if (this.idx === this.items.length) {
-        this.idx = 0
-      }
-    },
-    move() {
-      this.top += 1 * this.dir2
-      this.left += 1 * this.dir
-      if(this.left == window.innerWidth - 300 || this.left == 0) {
-        this.dir *= -1
-        this.next()
-      }
-      if(this.top == window.innerHeight - 200 || this.top == 0) {
-        this.dir2 *= -1
-        this.next()
-      }
-    }
   },
   mounted() {
-    setInterval(this.move, 15)
   },
   data() {
     return {
@@ -58,7 +39,7 @@ export default {
   height: 100vh;
   overflow-y: scroll;
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   top: 0;
   left: 0;
 }
@@ -84,8 +65,9 @@ export default {
 }
 
 ul {
+  position: relative;
+  z-index: 10;
   list-style: none;
-
   width: 33vw;
   text-align: left;
   margin: 5em auto;
