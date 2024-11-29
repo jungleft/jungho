@@ -1,31 +1,39 @@
 <template>
   <div id="app">
+    <!-- 主要內容區域，根據start狀態顯示，包含各種視覺效果class -->
     <div id="main" v-if="start" :class="{'hue-rotate': rot, blur: blur, invert: iv}">
+      <!-- 導航欄，可切換深色模式 -->
       <div id="nav" :class="{dark:dark}">
+        <!-- 頂部大圖輪播 -->
         <img class="big" :src="'./img/'+name[idx]">
-        <router-link to="/"><img class="small" src="./assets/home.png" alt="home"></router-link> 
-        <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="info"></router-link>
-        <router-link to="/project"><img class="small" src="./assets/works.png" alt="works"></router-link>
-        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="dyo"></router-link>
-        <router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="shop"></router-link>
-        
+        <!-- 導航連結區域 -->
+        <router-link to="/"><img class="small" src="./assets/home.png" alt="首頁"></router-link> 
+        <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
+        <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link>
+        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
+        <router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>
       </div>
+      <!-- 視覺效果切換按鈕區域 -->
       <div id="d" :class="{dark:dark}">
         <a @click="reset()">
+          <!-- 不同效果狀態下顯示的圖示 -->
           <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
           <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
           <img class="big" v-show="!blur && !dark && !iv && rot" src="./assets/rotate.png">
           <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
           <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png"></a>
       </div>
+      <!-- 路由視圖區域 -->
       <router-view :dark="dark" :pets="pets"/>
     </div>
+    <!-- 效果選擇介面 -->
     <div class="flex" v-else>
-      <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span class="l" v-show="focus == 'normal'"><br/>Normal</span></a>
-      <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span class="l" v-show="focus == 'bw'"><br/>Grayscale</span></a>
-      <a @click="rotate()" @mouseover="focus='rotate'"><img class="small" title="rotate" src="./assets/rotate.png"><span class="l" v-show="focus == 'rotate'"><br/>Rotate</span></a>
-      <a @click="bl()" @mouseover="focus='bl'"><img class="small" title="blur" src="./assets/bl.png"><span class="l" v-show="focus == 'bl'"><br/>Blur</span></a>
-      <a @click="invert()" @mouseover="focus='invert'"><img class="small" title="invert" src="./assets/iv.png"><span class="l" v-show="focus == 'invert'"><br/>Invert</span></a>
+      <!-- 各種視覺效果選項 -->
+      <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span class="l" v-show="focus == 'normal'"><br/>一般</span></a>
+      <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span class="l" v-show="focus == 'bw'"><br/>灰階</span></a>
+      <a @click="rotate()" @mouseover="focus='rotate'"><img class="small" title="rotate" src="./assets/rotate.png"><span class="l" v-show="focus == 'rotate'"><br/>旋轉</span></a>
+      <a @click="bl()" @mouseover="focus='bl'"><img class="small" title="blur" src="./assets/bl.png"><span class="l" v-show="focus == 'bl'"><br/>模糊</span></a>
+      <a @click="invert()" @mouseover="focus='invert'"><img class="small" title="invert" src="./assets/iv.png"><span class="l" v-show="focus == 'invert'"><br/>反轉</span></a>
     </div>
   </div>
 </template>
