@@ -52,6 +52,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../components/animation.vue')
   },
   {
+    path: '/dyo',
+    name: 'dyo',
+    component: () => import(/* webpackChunkName: "about" */ '../components/dyo.vue')
+  },
+  {
+    path: '/dyo_photo',
+    name: 'dyo_photo',
+    component: () => import(/* webpackChunkName: "about" */ '../components/dyo_photo.vue')
+  },
+  {
+    path: '/dyo_text',
+    name: 'dyo_text',
+    component: () => import(/* webpackChunkName: "about" */ '../components/dyo_text.vue')
+  },
+  {
     path: '/drawing',
     name: 'drawing',
     // route level code-splitting
