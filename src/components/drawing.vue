@@ -208,7 +208,9 @@ export default {
 <style scoped>
 
 canvas {
+  position: relative;
   cursor: se-resize;
+  z-index: 1;
 }
 
 #g {
