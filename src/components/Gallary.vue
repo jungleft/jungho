@@ -1,13 +1,21 @@
 <template>
-  <div class="gallary">
-    <h2>gallary</h2>
-    <div class = "inline" v-for="(t) in test" :key="t.src">
-      <a @click="use(t.src)"><img class ="g" :src="t.src"/></a>
-    </div>
-    <div>
-      <h3>
-        <router-link to="/drawing">Back</router-link>
+  <div class="gallary-container">
+    <div class="gallary">
+      <h2>gallary</h2>
+      <div class = "block" v-for="(t) in test" :key="t.src">
+        <a @click="use(t.src)"><img class ="g" :src="t.src"/></a>
+      </div>
+      <div>
+        <h3>
+          <router-link to="/drawing">Back</router-link>
       </h3>
+      </div>
+    </div>
+    <div class="gallary">
+      <h2>text</h2>
+    <div class = "block" v-for="(t) in text" :key="t.content">
+        <div class = "g padded gold">{{ t.content }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +34,7 @@ export default {
   },
   firestore: {
     test: db.collection('img'),
+    text: db.collection('text'),
   },
   methods: {
     use(s) {
@@ -37,6 +46,7 @@ export default {
   },
   data() {
     return {
+      text: null,
       test: null,
       message: 'Hello Vue!',
       vueCanvas: null,
@@ -53,9 +63,23 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.gallary-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+  .gallary-container {
+    flex-direction: column;
+  }
+}
+
 .gallary {
   max-width: 800px;
   margin: 4em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a#save {
@@ -89,9 +113,18 @@ a#clear {
 }
 
 .g {
-  height: 20vmin;
+  max-height: 20vmin;
   border: 3px gold ridge;
   border-radius: 15px;
+}
+
+.gold {
+  color: rgb(41, 3, 154) !important;
+}
+
+.padded {
+  padding: 1em;
+  font-size: 1.5em;
 }
 
 a {
@@ -102,9 +135,10 @@ a:visited {
   color: #AF601A;
 }
 
-.inline {
-  display: inline-block;
+.block {
+  display: block;
 }
+
 
 h2 {
   margin-top: 2em;

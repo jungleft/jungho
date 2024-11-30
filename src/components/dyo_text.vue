@@ -40,11 +40,11 @@ export default {
   },
   methods: {
 
-    // 儲存畫布內容到 Firebase
+    // 儲存文字內容到 Firebase
     save() {
       this.$firestoreRefs.text.add(
         {
-          text: this.message
+          content: this.message
         }
       )
       this.$router.push('/gallary');
