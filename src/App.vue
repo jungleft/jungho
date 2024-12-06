@@ -11,7 +11,7 @@
         <!--
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
-        <router-link to="/drawing"><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
+        <router-link to="/dyo"><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
         <router-link to="/gallary"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>
         <!--<router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>-->
         <a @click="reset()">
