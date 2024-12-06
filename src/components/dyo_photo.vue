@@ -42,6 +42,19 @@ export default {
   methods: {
     uploadFile(e) {
       const file = e.target.files[0];
+      
+      // 檢查是否有選擇檔案
+      if (!file) {
+        return;
+      }
+
+      // 檢查檔案格式
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+      if (!allowedTypes.includes(file.type)) {
+        window.alert('不支援的檔案格式！請上傳 JPG、PNG、GIF圖片檔案。');
+        return;
+      }
+
       const reader = new FileReader();
       
       reader.onload = (event) => {
@@ -94,6 +107,7 @@ export default {
               url: file.name,
               src: dataURL,
             });
+            window.alert('上傳成功');
           })
           .catch(err => {
             console.error('圖片處理錯誤:', err);
@@ -103,7 +117,6 @@ export default {
         img.src = event.target.result;
       };
       reader.readAsDataURL(file);
-      window.alert('上傳成功');
     },
   },
   mounted() {
