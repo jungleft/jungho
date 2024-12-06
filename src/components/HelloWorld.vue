@@ -1,9 +1,16 @@
 <template>
   <div class="hello" :class="{dark:dark}">
 
+
+    <a v-for="(item, i) in items" :key="item.src" @click="use(item)">
+      <img :src="item.src" :style="{left: left_array[i] + 'px', top: top_array[i] + 'px'}">
+    </a>
+
+    <!-- 
     <a @click="use(items[idx] && items[idx].src || items[idx])">
       <img :src="items[idx] && items[idx].src || items[idx]" :style="{left: left + 'px', top: top + 'px'}">
-    </a>
+    </a> -->
+
   </div>
 </template>
 
@@ -50,6 +57,37 @@ export default {
         this.dir2 *= -1            // 改變垂直移動方向
         this.next()                // 切換下一張圖片
       }
+    },
+    move_all() {
+      this.left_array = this.left_array.map((item, i) => item + 1 * this.dir1_array[i])
+      this.top_array = this.top_array.map((item, i) => item + 1 * this.dir2_array[i])
+
+      // 當圖片碰到左右邊界時
+      for (let i = 0; i < this.left_array.length; i++) {
+        if(this.left_array[i] == window.innerWidth - 300 || this.left_array[i] == 0) {
+          this.dir1_array[i]  *= -1             // 改變水平移動方向
+          this.next()                // 切換下一張圖片
+        } 
+      }
+
+      for (let i = 0; i < this.top_array.length; i++) {
+        // 當圖片碰到上下邊界時
+        if(this.top_array[i] == window.innerHeight - 200 || this.top_array[i] == 0) {
+          this.dir2_array[i] *= -1            // 改變垂直移動方向
+          this.next()                // 切換下一張圖片
+        }
+      }
+    }
+  },
+  watch: {
+    items: function(newVal) {
+      // 使用隨機值初始化位置陣列
+      this.left_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerWidth - 300)))
+      this.top_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerHeight - 200)))
+      this.dir1_array = new Array(newVal.length).fill(1)
+      this.dir2_array = new Array(newVal.length).fill(1)
     }
   },
   // 元件掛載時啟動移動動畫
@@ -57,11 +95,15 @@ export default {
     if (localStorage.idx) {
       this.idx = localStorage.idx
     }
-    setInterval(this.move, 15)     // 每15毫秒執行一次move方法
+    setInterval(this.move_all, 15)     // 每15毫秒執行一次move方法
   },
   // 元件的數據
   data() {
     return {
+      left_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      top_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      dir1_array: [1, 1, 1, 1, 1, 1, 1, 1],
+      dir2_array: [1, 1, 1, 1, 1, 1, 1, 1],
       left: 0,
       top: 0,
       dir: 1,
