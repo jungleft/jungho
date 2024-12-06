@@ -3,7 +3,7 @@
   <div class="dyo" :class="{dark: dark}">
     <!-- 畫布元素，綁定滑鼠和觸控事件 -->
 
-<p>+請投稿在路上觀察到的東西+<br>(視覺、聽覺、空間感...)<br>可選擇</p>
+<p>+請投稿在路上觀察到的東西+<br>ex. 視覺、聽覺、觸覺、空間感...<br>可選擇塗鴉、照片、文字來表達</p>
 
  </div>
 </template>
@@ -37,7 +37,7 @@ export default {
 }
 
 p{
-  padding-top: 10em;
+  padding-top: 25em;
   padding-bottom: 2em;
 }
 
