@@ -31,7 +31,7 @@ export default {
     // 切換到下一張圖片
     next() {
       this.idx = Number(this.idx) + 1
-      if (this.idx === this.items.length) {
+      if (this.idx >= this.items.length) {
         this.idx = 0
       }
       localStorage.idx = this.idx
