@@ -47,58 +47,62 @@ export default {
       reader.onload = (event) => {
         const img = new Image();
         img.onload = () => {
-          // 計算適當的尺寸，保持原始比例
-          const maxDimension = 400;
-          let targetWidth, targetHeight;
+          // 計定最大尺寸限制
+          const MAX_DIMENSION = 400;
+          let targetWidth = img.width;
+          let targetHeight = img.height;
           
-          if (img.width >= img.height) {
-            // 寬圖片
-            if (img.width > maxDimension) {
-              targetWidth = maxDimension;
-              targetHeight = Math.round((maxDimension * img.height) / img.width);
+          // 如果圖片尺寸超過限制，等比例縮小
+          if (img.width > MAX_DIMENSION || img.height > MAX_DIMENSION) {
+            if (img.width > img.height) {
+              targetWidth = MAX_DIMENSION;
+              targetHeight = Math.round(img.height * (MAX_DIMENSION / img.width));
             } else {
-              // 保持原始尺寸
-              targetWidth = img.width;
-              targetHeight = img.height;
-            }
-          } else {
-            // 長圖片
-            if (img.height > maxDimension) {
-              targetHeight = maxDimension;
-              targetWidth = Math.round((maxDimension * img.width) / img.height);
-            } else {
-              // 保持原始尺寸
-              targetWidth = img.width;
-              targetHeight = img.height;
+              targetHeight = MAX_DIMENSION;
+              targetWidth = Math.round(img.width * (MAX_DIMENSION / img.height));
             }
           }
           
-          // 設定 canvas 尺寸
+          // 設置 canvas 尺寸為目標尺寸
           this.canvas.width = targetWidth;
           this.canvas.height = targetHeight;
           
-          // 使用 pica 進行圖片縮放
-          const pica = new Pica();
-          pica.resize(img, this.canvas, {
-            width: targetWidth,
-            height: targetHeight,
+          // 使用 pica 處理圖片
+          const pica = new Pica({
+            features: ['js', 'wasm', 'cib'],
+          });
+          
+          // 建立臨時 canvas 並設置為原始尺寸
+          const tempCanvas = document.createElement('canvas');
+          tempCanvas.width = targetWidth;
+          tempCanvas.height = targetHeight;
+          const tempCtx = tempCanvas.getContext('2d');
+          tempCtx.drawImage(img, 0, 0, targetWidth, targetHeight);
+          
+          pica.resize(tempCanvas, this.canvas, {
+            quality: 3,
+            alpha: true,
+            unsharpAmount: 80,
+            unsharpRadius: 0.6,
+            unsharpThreshold: 2
           })
           .then(() => {
-            // 將 canvas 轉換為 base64 字串
-            const dataURL = this.canvas.toDataURL('image/jpeg');
+            // 使用較高品質的 JPEG 輸出
+            const dataURL = this.canvas.toDataURL('image/jpeg', 0.95);
             
-            // 儲存 base64 字串到 Firestore
             this.$firestoreRefs.photos.add({
               url: file.name,
               src: dataURL,
             });
+          })
+          .catch(err => {
+            console.error('圖片處理錯誤:', err);
+            window.alert('圖片處理失敗，請重試');
           });
         };
         img.src = event.target.result;
       };
-      
       reader.readAsDataURL(file);
-
       window.alert('上傳成功');
     },
   },

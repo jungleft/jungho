@@ -94,8 +94,10 @@ export default {
       this.top_photo_array = this.top_photo_array.map((item, i) => item + 1 * this.dir2_photo_array[i])
 
       // 當圖片碰到左右邊界時
+      const imgWidth = window.innerWidth <= 768 ? 150 : 250;
+
       for (let i = 0; i < this.left_array.length; i++) {
-        if(this.left_array[i] == window.innerWidth - 300 || this.left_array[i] == 0) {
+        if(this.left_array[i] == window.innerWidth - imgWidth || this.left_array[i] == 0) {
           this.dir1_array[i]  *= -1             // 改變水平移動方向
           this.next()                // 切換下一張圖片
         } 
@@ -109,31 +111,59 @@ export default {
         }
       }
 
+      // 當文字碰到左右邊界時
+      const font_size = window.innerWidth <= 768 ? 14 : 18;
       for (let i = 0; i < this.left_text_array.length; i++) {
-        if(this.left_text_array[i] >= window.innerWidth - 200 || this.left_text_array[i] <= 0) {
+        if (!this.texts[i]) continue;
+        let textWidth = this.texts[i].content.length * font_size * 1.5;
+        if(this.left_text_array[i] >= window.innerWidth - textWidth || this.left_text_array[i] <= 0) {
           this.dir1_text_array[i] *= -1
           this.next_text()
         }
       }
 
+      // 當文字碰到上下邊界時
       for (let i = 0; i < this.top_text_array.length; i++) {
-        if(this.top_text_array[i] >= window.innerHeight - 100 || this.top_text_array[i] <= 0) {
+        if(this.top_text_array[i] >= window.innerHeight - font_size * 2 || this.top_text_array[i] <= 0) {
           this.dir2_text_array[i] *= -1
           this.next_text()
         }
       }
 
+      // 當照片碰到左右邊界時
+      const photoWidth = window.innerWidth <= 768 ? 100 : 150;
+
       for (let i = 0; i < this.left_photo_array.length; i++) {
-        if(this.left_photo_array[i] >= window.innerWidth - 300 || this.left_photo_array[i] <= 0) {
+        if(this.left_photo_array[i] >= window.innerWidth - photoWidth || this.left_photo_array[i] <= 0) {
           this.dir1_photo_array[i] *= -1
           this.next_photo()
         }
       }
 
       for (let i = 0; i < this.top_photo_array.length; i++) {
-        if(this.top_photo_array[i] >= window.innerHeight - 200 || this.top_photo_array[i] <= 0) {
-          this.dir2_photo_array[i] *= -1
-          this.next_photo()
+        // 獲取當前照片元素
+        const photoElement = document.querySelectorAll('.photo')[i];
+        if (!photoElement) continue;
+        
+        // 等待圖片載入完成後再取得實際高度
+        if (!photoElement.complete) {
+          photoElement.onload = () => {
+            const photoBox = photoElement.parentElement;
+            if (photoBox) {
+              photoBox.style.height = photoElement.offsetHeight + 'px';
+            }
+          }
+        } else {
+          const photoBox = photoElement.parentElement;
+          if (photoBox) {
+            photoBox.style.height = photoElement.offsetHeight + 'px';
+          }
+        }
+        
+        const photoHeight = photoElement.offsetHeight;
+        if(this.top_photo_array[i] >= window.innerHeight - photoHeight || this.top_photo_array[i] <= 0) {
+          this.dir2_photo_array[i] *= -1;
+          this.next_photo();
         }
       }
     }
@@ -264,7 +294,7 @@ a:visited {
 }
 
 .my-text {
-  font-size: 1.5em;
+  font-size: 18px;
   color: #229954;
   margin: 0;
   text-align: center;
@@ -284,6 +314,7 @@ a:visited {
 }
 
 .photo-box {
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,10 +332,16 @@ a:visited {
 
 @media (max-width: 768px) {
   .my-text {
-    font-size: 1em;
+    font-size: 14px;
   }
   .img {
     max-width: 150px !important;
+  }
+  .photo-box {
+    width: 100px;
+  }
+  .photo {
+    width: 100px;
   }
 }
 </style>
