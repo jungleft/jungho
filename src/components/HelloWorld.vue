@@ -30,10 +30,10 @@ export default {
     // 切換到下一張圖片
     next() {
       this.idx = Number(this.idx) + 1
-      localStorage.idx = this.idx
       if (this.idx === this.items.length) {
         this.idx = 0
       }
+      localStorage.idx = this.idx
     },
     // 控制圖片移動的方法
     move() {
