@@ -2,7 +2,7 @@
   <!-- 畫布容器，可切換深色模式 -->
   <div class="dyo_text" :class="{dark: dark}">
     <input id="input-text" type="text" v-model="message" />
-    <button @click="save">SAVE</button>
+    <button id="save-button" @click="save">SAVE</button>
   </div>
 </template>
 
@@ -66,8 +66,18 @@ export default {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .dyo_text {
+    flex-direction: column;
+  }
+  #save-button {
+    margin-top: 1em;
+  }
 }
 
 input { 
