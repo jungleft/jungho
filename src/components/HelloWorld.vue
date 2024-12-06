@@ -1,6 +1,5 @@
 <template>
   <div class="hello" :class="{dark:dark}">
-    <p><router-link to="/project">𓆏</router-link></p>
 
     <a @click="use(items[idx] && items[idx].src || items[idx])">
       <img :src="items[idx] && items[idx].src || items[idx]" :style="{left: left + 'px', top: top + 'px'}">
