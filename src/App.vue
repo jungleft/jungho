@@ -52,7 +52,7 @@ export default {
       blur: false,      // 模糊效果開關
       start: true,      // 是否顯示主畫面
       iv: true,        // 反轉效果開關
-      focus: 'normal',  // 當前聚焦的效果選項
+      focus: 'iv',  // 當前聚焦的效果選項
       pets: [           // 商品資料陣列
         { i: 1, n: '01', price: 1800, src: './img/rug/t01.jpeg', 
         imgs: ['./img/rug/t01.jpeg','./img/rug/t02.jpeg', './img/rug/t03.jpeg', './img/rug/t04.jpeg', './img/rug/t05.jpeg', './img/rug/t06.jpg'] },
