@@ -12,14 +12,16 @@
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
         
-        <router-link class="large-font" to="/dyo_photo" v-show="$route.path == '/dyo'">照片</router-link>
-        <router-link class="large-font" to="/dyo_text" v-show="$route.path == '/dyo'">文字</router-link>
-        <router-link class="large-font" to="/dyo_photo" v-show="$route.path == '/dyo'">圖鴨</router-link>
+        <router-link class="large-font" to="/dyo_photo" v-show="in_dyo()">照片</router-link>
+        <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字</router-link>
+        <router-link class="large-font" to="/drawing" v-show="in_dyo()">圖鴨</router-link>
 
-        <router-link to="/dyo" v-show="$route.path !== '/dyo'"><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
-        <router-link to="/gallary" v-show="$route.path !== '/dyo'"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>
+        <router-link to="/dyo"
+          v-show="!in_dyo()"
+        ><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
+        <router-link to="/gallary" v-show="!in_dyo()"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>
         <!--<router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>-->
-        <a @click="reset()" v-show="$route.path !== '/dyo'">
+        <a @click="reset()" v-show="!in_dyo()">
           <!-- 不同效果狀態下顯示的圖示 -->
           <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
           <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
@@ -69,6 +71,12 @@ export default {
     }
   },
   methods: {
+    in_dyo() {
+      return this.$route.path === '/dyo' ||
+       this.$route.path === '/dyo_photo' || 
+       this.$route.path === '/dyo_text' || 
+       this.$route.path === '/drawing'
+    },
     change() {
       this.idx++
       if (this.idx == 2) {
