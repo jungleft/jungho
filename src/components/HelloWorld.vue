@@ -3,8 +3,12 @@
 
 
     <a v-for="(item, i) in items" :key="item.src" @click="use(item)">
-      <img :src="item.src" :style="{left: left_array[i] + 'px', top: top_array[i] + 'px'}">
+      <img class="img" :src="item.src" :style="{left: left_array[i] + 'px', top: top_array[i] + 'px'}">
     </a>
+
+    <div class="text-box" v-for="(item, i) in texts" :key="item.id" :style="{left: left_text_array[i] + 'px', top: top_text_array[i] + 'px'}">
+      <p class="my-text">{{ item.content }}</p>
+    </div>
 
     <!-- 
     <a @click="use(items[idx] && items[idx].src || items[idx])">
@@ -27,6 +31,7 @@ export default {
   // Firestore 數據綁定
   firestore: {
     items: db.collection('img'),
+    texts: db.collection('text'),
   },
   methods: {
     // 使用選中的圖片並導航到繪圖頁面
@@ -41,6 +46,13 @@ export default {
         this.idx = 0
       }
       localStorage.idx = this.idx
+    },
+    next_text() {
+      this.idx_text = Number(this.idx_text) + 1
+      if (this.idx_text >= this.texts.length) {
+        this.idx_text = 0
+      }
+      localStorage.idx_text = this.idx_text
     },
     // 控制圖片移動的方法
     move() {
@@ -62,6 +74,9 @@ export default {
       this.left_array = this.left_array.map((item, i) => item + 1 * this.dir1_array[i])
       this.top_array = this.top_array.map((item, i) => item + 1 * this.dir2_array[i])
 
+      this.left_text_array = this.left_text_array.map((item, i) => item + 1 * this.dir1_text_array[i])
+      this.top_text_array = this.top_text_array.map((item, i) => item + 1 * this.dir2_text_array[i])
+
       // 當圖片碰到左右邊界時
       for (let i = 0; i < this.left_array.length; i++) {
         if(this.left_array[i] == window.innerWidth - 300 || this.left_array[i] == 0) {
@@ -77,10 +92,25 @@ export default {
           this.next()                // 切換下一張圖片
         }
       }
+
+      for (let i = 0; i < this.left_text_array.length; i++) {
+        if(this.left_text_array[i] >= window.innerWidth - 200 || this.left_text_array[i] <= 0) {
+          this.dir1_text_array[i] *= -1
+          this.next_text()
+        }
+      }
+
+      for (let i = 0; i < this.top_text_array.length; i++) {
+        if(this.top_text_array[i] >= window.innerHeight - 100 || this.top_text_array[i] <= 0) {
+          this.dir2_text_array[i] *= -1
+          this.next_text()
+        }
+      }
     }
   },
   watch: {
     items: function(newVal) {
+      console.log(newVal)
       // 使用隨機值初始化位置陣列
       this.left_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerWidth - 300)))
@@ -88,6 +118,16 @@ export default {
         Math.floor(Math.random() * (window.innerHeight - 200)))
       this.dir1_array = new Array(newVal.length).fill(1)
       this.dir2_array = new Array(newVal.length).fill(1)
+    },
+    texts: function(newVal) {
+      console.log(newVal)
+      // 使用隨機值初始化文字位置陣列
+      this.left_text_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerWidth - 200)))
+      this.top_text_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerHeight - 100)))
+      this.dir1_text_array = new Array(newVal.length).fill(1)
+      this.dir2_text_array = new Array(newVal.length).fill(1)
     }
   },
   // 元件掛載時啟動移動動畫
@@ -109,6 +149,8 @@ export default {
       dir: 1,
       dir2: 1,
       idx: 0,
+      idx_text: 0,
+      texts: [],
       items: ['https://jungleft.github.io/jungho//img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 
@@ -116,7 +158,11 @@ export default {
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_4.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 
-      'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg']
+      'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg'],
+      left_text_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      top_text_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      dir1_text_array: [1, 1, 1, 1, 1, 1, 1, 1],
+      dir2_text_array: [1, 1, 1, 1, 1, 1, 1, 1],
     }
   }
 }
@@ -124,6 +170,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 
 .hello {
   padding-top: 4em;
@@ -171,5 +218,35 @@ a {
 
 a:visited {
   color: #229954;
+}
+
+.my-text {
+  font-size: 1.5em;
+  color: #229954;
+  margin: 0;
+  text-align: center;
+}
+
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 6;
+  width: fit-content;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .my-text {
+    font-size: 1em;
+  }
+  .img {
+    max-width: 150px !important;
+  }
 }
 </style>
