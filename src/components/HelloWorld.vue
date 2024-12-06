@@ -10,6 +10,10 @@
       <p class="my-text">{{ item.content }}</p>
     </div>
 
+    <div class="photo-box" v-for="(item, i) in photos" :key="item.id" :style="{left: left_photo_array[i] + 'px', top: top_photo_array[i] + 'px'}">
+      <img class="photo" :src="item.src">
+    </div>
+
     <!-- 
     <a @click="use(items[idx] && items[idx].src || items[idx])">
       <img :src="items[idx] && items[idx].src || items[idx]" :style="{left: left + 'px', top: top + 'px'}">
@@ -32,6 +36,7 @@ export default {
   firestore: {
     items: db.collection('img'),
     texts: db.collection('text'),
+    photos: db.collection('photo'),
   },
   methods: {
     // 使用選中的圖片並導航到繪圖頁面
@@ -54,6 +59,13 @@ export default {
       }
       localStorage.idx_text = this.idx_text
     },
+    next_photo() {
+      this.idx_photo = Number(this.idx_photo) + 1
+      if (this.idx_photo >= this.photos.length) {
+        this.idx_photo = 0
+      }
+      localStorage.idx_photo = this.idx_photo
+    },
     // 控制圖片移動的方法
     move() {
       this.top += 1 * this.dir2    // 垂直移動
@@ -71,11 +83,15 @@ export default {
       }
     },
     move_all() {
+
       this.left_array = this.left_array.map((item, i) => item + 1 * this.dir1_array[i])
       this.top_array = this.top_array.map((item, i) => item + 1 * this.dir2_array[i])
 
       this.left_text_array = this.left_text_array.map((item, i) => item + 1 * this.dir1_text_array[i])
       this.top_text_array = this.top_text_array.map((item, i) => item + 1 * this.dir2_text_array[i])
+
+      this.left_photo_array = this.left_photo_array.map((item, i) => item + 1 * this.dir1_photo_array[i])
+      this.top_photo_array = this.top_photo_array.map((item, i) => item + 1 * this.dir2_photo_array[i])
 
       // 當圖片碰到左右邊界時
       for (let i = 0; i < this.left_array.length; i++) {
@@ -106,12 +122,34 @@ export default {
           this.next_text()
         }
       }
+
+      for (let i = 0; i < this.left_photo_array.length; i++) {
+        if(this.left_photo_array[i] >= window.innerWidth - 300 || this.left_photo_array[i] <= 0) {
+          this.dir1_photo_array[i] *= -1
+          this.next_photo()
+        }
+      }
+
+      for (let i = 0; i < this.top_photo_array.length; i++) {
+        if(this.top_photo_array[i] >= window.innerHeight - 200 || this.top_photo_array[i] <= 0) {
+          this.dir2_photo_array[i] *= -1
+          this.next_photo()
+        }
+      }
     }
   },
   watch: {
+    photos: function(newVal) {
+      console.log(newVal)
+      this.left_photo_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerWidth - 300)))
+      this.top_photo_array = new Array(newVal.length).fill(0).map(() => 
+        Math.floor(Math.random() * (window.innerHeight - 200)))
+      this.dir1_photo_array = new Array(newVal.length).fill(1)
+      this.dir2_photo_array = new Array(newVal.length).fill(1)
+    },
     items: function(newVal) {
       console.log(newVal)
-      // 使用隨機值初始化位置陣列
       this.left_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerWidth - 300)))
       this.top_array = new Array(newVal.length).fill(0).map(() => 
@@ -144,6 +182,10 @@ export default {
       top_array: [0, 0, 0, 0, 0, 0, 0, 0],
       dir1_array: [1, 1, 1, 1, 1, 1, 1, 1],
       dir2_array: [1, 1, 1, 1, 1, 1, 1, 1],
+      left_photo_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      top_photo_array: [0, 0, 0, 0, 0, 0, 0, 0],
+      dir1_photo_array: [1, 1, 1, 1, 1, 1, 1, 1],
+      dir2_photo_array: [1, 1, 1, 1, 1, 1, 1, 1],
       left: 0,
       top: 0,
       dir: 1,
@@ -151,6 +193,7 @@ export default {
       idx: 0,
       idx_text: 0,
       texts: [],
+      photos: [],
       items: ['https://jungleft.github.io/jungho//img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_0.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_1.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_2.jpg', 
@@ -238,6 +281,21 @@ a:visited {
   word-wrap: break-word;
   border-radius: 5px;
   padding: 10px;
+}
+
+.photo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 6;
+}
+
+.photo {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  opacity: 0.5;
 }
 
 
