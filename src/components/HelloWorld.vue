@@ -30,7 +30,8 @@ export default {
     },
     // 切換到下一張圖片
     next() {
-      this.idx += 1
+      this.idx = Number(this.idx) + 1
+      localStorage.idx = this.idx
       if (this.idx === this.items.length) {
         this.idx = 0
       }
@@ -54,6 +55,9 @@ export default {
   },
   // 元件掛載時啟動移動動畫
   mounted() {
+    if (localStorage.idx) {
+      this.idx = localStorage.idx
+    }
     setInterval(this.move, 15)     // 每15毫秒執行一次move方法
   },
   // 元件的數據
