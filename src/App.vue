@@ -12,22 +12,23 @@
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
         
-        <router-link class="large-font" to="/dyo_photo" v-show="in_dyo()">照片</router-link>
-        <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字</router-link>
-        <router-link class="large-font" to="/drawing" v-show="in_dyo()">圖鴨</router-link>
+       
+        <router-link class="large-font" to="/drawing" v-show="in_dyo()">塗鴉+</router-link>
+        <router-link class="large-font" to="/dyo_photo" v-show="in_dyo()">照片+</router-link>
+        <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字+</router-link>
+        <router-link class="large-font" to="/gallary" v-show="in_dyo()">相簿→
+        </router-link>
 
-        <router-link to="/dyo"
-          v-show="!in_dyo()"
-        ><img id="dyo" class="small" src="./assets/dyo.png" alt="繪圖"></router-link>
-        <router-link to="/gallary" v-show="!in_dyo()"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>
+        <router-link class="large-font" to="/dyo" v-show="!in_dyo()">投稿→</router-link>
+        <!--<router-link to="/gallary" v-show="!in_dyo()"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>-->
         <!--<router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>-->
         <a @click="reset()" v-show="!in_dyo()">
           <!-- 不同效果狀態下顯示的圖示 -->
-          <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
+          <!--<img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
           <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
           <img class="big" v-show="!blur && !dark && !iv && rot" src="./assets/rotate.png">
           <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
-          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png"></a>
+          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png">--></a>
       </div>
       <!-- 視覺效果切換按鈕區域 -->
         
@@ -169,7 +170,7 @@ a {
 }
 
 .large-font {
-  font-size: 2em;
+  font-size: 1.2em;
   line-height: 2em;
 }
 
