@@ -175,8 +175,10 @@ export default {
         Math.floor(Math.random() * (window.innerWidth - 300)))
       this.top_photo_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerHeight - 200)))
-      this.dir1_photo_array = new Array(newVal.length).fill(1)
-      this.dir2_photo_array = new Array(newVal.length).fill(1)
+      this.dir1_photo_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
+      this.dir2_photo_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
     }, // 監聽 items 的變化
     items: function(newVal) {
       console.log(newVal)
@@ -184,18 +186,21 @@ export default {
         Math.floor(Math.random() * (window.innerWidth - 300)))
       this.top_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerHeight - 200)))
-      this.dir1_array = new Array(newVal.length).fill(1)
-      this.dir2_array = new Array(newVal.length).fill(1)
+      this.dir1_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
+      this.dir2_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
     }, // 監聽 texts 的變化
     texts: function(newVal) {
       console.log(newVal)
-      // 使用隨機值初始化文字位置陣列
       this.left_text_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerWidth - 200)))
       this.top_text_array = new Array(newVal.length).fill(0).map(() => 
         Math.floor(Math.random() * (window.innerHeight - 100)))
-      this.dir1_text_array = new Array(newVal.length).fill(1)
-      this.dir2_text_array = new Array(newVal.length).fill(1)
+      this.dir1_text_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
+      this.dir2_text_array = new Array(newVal.length).fill(0).map(() => 
+        Math.random() < 0.5 ? 1 : -1)
     }
   },
   // 元件掛載時啟動移動動畫
