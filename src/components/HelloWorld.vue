@@ -87,7 +87,36 @@ export default {
       this.left_array = this.left_array.map((item, i) => item + 1 * this.dir1_array[i])
       this.top_array = this.top_array.map((item, i) => item + 1 * this.dir2_array[i])
 
-      this.left_text_array = this.left_text_array.map((item, i) => item + 1 * this.dir1_text_array[i])
+      this.left_text_array = this.left_text_array.map((item, i) => {
+        const newPosition = item + this.dir1_text_array[i]
+        
+        if (!this.texts[i]) return newPosition
+        
+        // 計算文字寬度
+        const font_size = window.innerWidth <= 768 ? 14 : 18
+        const textWidth = this.texts[i].content.length * font_size * 1.5
+        
+        // 當文字完全移出左側時
+        if (newPosition < -textWidth) {
+          // 檢查是否所有文字都已移出畫面
+          const allTextsMoved = this.left_text_array.every((pos, idx) => {
+            if (!this.texts[idx]) return true
+            const width = this.texts[idx].content.length * font_size * 1.5
+            return pos < -width
+          })
+          
+          // 如果所有文字都已移出畫面，則重置所有文字位置
+          if (allTextsMoved) {
+            return window.innerWidth + (i * 500)
+          }
+          
+          // 否則保持在畫面外
+          return newPosition
+        }
+        
+        return newPosition
+      })
+
       this.top_text_array = this.top_text_array.map((item, i) => item + 1 * this.dir2_text_array[i])
 
       this.left_photo_array = this.left_photo_array.map((item, i) => item + 1 * this.dir1_photo_array[i])
@@ -111,25 +140,6 @@ export default {
         }
       }
 
-      // 當文字碰到左右邊界時
-      const font_size = window.innerWidth <= 768 ? 14 : 18;
-      for (let i = 0; i < this.left_text_array.length; i++) {
-        if (!this.texts[i]) continue;
-        let textWidth = this.texts[i].content.length * font_size * 1.5;
-        if(this.left_text_array[i] >= window.innerWidth - textWidth || this.left_text_array[i] <= 0) {
-          this.dir1_text_array[i] *= -1
-          this.next_text()
-        }
-      }
-
-      // 當文字碰到上下邊界時
-      for (let i = 0; i < this.top_text_array.length; i++) {
-        if(this.top_text_array[i] >= window.innerHeight - font_size * 2 || this.top_text_array[i] <= 0) {
-          this.dir2_text_array[i] *= -1
-          this.next_text()
-        }
-      }
-
       // 當照片碰到左右邊界時
       const photoWidth = window.innerWidth <= 768 ? 100 : 150;
 
@@ -145,7 +155,7 @@ export default {
         const photoElement = document.querySelectorAll('.photo')[i];
         if (!photoElement) continue;
         
-        // 等待圖片載入完成後再取得實際高度
+        // 等待圖片載入成後再取得實際高度
         if (!photoElement.complete) {
           photoElement.onload = () => {
             const photoBox = photoElement.parentElement;
@@ -193,14 +203,13 @@ export default {
     }, // 監聽 texts 的變化
     texts: function(newVal) {
       console.log(newVal)
-      this.left_text_array = new Array(newVal.length).fill(0).map(() => 
-        Math.floor(Math.random() * (window.innerWidth - 200)))
+      this.left_text_array = new Array(newVal.length).fill(0).map((_, i) => {
+        return window.innerWidth + (i * 500)
+      })
       this.top_text_array = new Array(newVal.length).fill(0).map(() => 
-        Math.floor(Math.random() * (window.innerHeight - 100)))
-      this.dir1_text_array = new Array(newVal.length).fill(0).map(() => 
-        Math.random() < 0.5 ? 1 : -1)
-      this.dir2_text_array = new Array(newVal.length).fill(0).map(() => 
-        Math.random() < 0.5 ? 1 : -1)
+        window.innerHeight - 100)
+      this.dir1_text_array = new Array(newVal.length).fill(-1)
+      this.dir2_text_array = new Array(newVal.length).fill(0)
     }
   },
   // 元件掛載時啟動移動動畫
@@ -237,7 +246,6 @@ export default {
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_5.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_6.jpg', 
       'https://jungleft.github.io/jungho/img/c48c4fa8b906854d6327b27f30b1d24ca_4620693218563810026_210127_7.jpg'],
-      left_text_array: [0, 0, 0, 0, 0, 0, 0, 0],
       top_text_array: [0, 0, 0, 0, 0, 0, 0, 0],
       dir1_text_array: [1, 1, 1, 1, 1, 1, 1, 1],
       dir2_text_array: [1, 1, 1, 1, 1, 1, 1, 1],
@@ -303,6 +311,8 @@ a:visited {
   color: #229954;
   margin: 0;
   text-align: center;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 .text-box {
@@ -310,12 +320,12 @@ a:visited {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 6;
+  z-index: 12;
   width: fit-content;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  border-radius: 5px;
+  white-space: nowrap;
   padding: 10px;
+  background-color: rgba(0, 0, 0, 1);
+  margin: 0;
 }
 
 .photo-box {
