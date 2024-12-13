@@ -230,6 +230,12 @@ a {
   background-color: rgb(110, 252, 40) !important; /* 這行之後可以拿掉 */
 }
 
+@media screen and (max-width: 600px) {
+  #nav {
+    padding: 10px;
+  }
+}
+
 #nav a {
   display: block;
   font-weight: bold;
@@ -293,12 +299,12 @@ button {
 @media screen and (max-width: 420px) {
 
   .small{
-    height: 1em;
+    height: 1.6em;
   }
   #info{
-    height: .8em;
+    height: 1.6em;
   }
-  #dyo{
+  #dyo, #dyo_photo, #dyo_text {
     height: 1.6em;
   }
   .big{

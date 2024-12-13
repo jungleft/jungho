@@ -12,8 +12,14 @@
       </div>
     </div>
     <div class="gallary">
+      <h2>photo</h2>
+      <div class = "block" v-for="(t) in photo" :key="t.src">
+        <img class ="g" :src="t.src"/>
+      </div>
+    </div>
+    <div class="gallary">
       <h2>text</h2>
-    <div class = "block" v-for="(t) in text" :key="t.content">
+      <div class = "block" v-for="(t) in text" :key="t.content">
         <div class = "g padded gold">{{ t.content }}</div>
       </div>
     </div>
@@ -35,6 +41,7 @@ export default {
   firestore: {
     test: db.collection('img'),
     text: db.collection('text'),
+    photo: db.collection('photo'),
   },
   methods: {
     use(s) {
@@ -48,6 +55,7 @@ export default {
     return {
       text: null,
       test: null,
+      photo: null,
       message: 'Hello Vue!',
       vueCanvas: null,
       painting: false,
