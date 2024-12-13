@@ -74,6 +74,8 @@ export default {
 @media screen and (max-width: 600px) {
   .dyo_text {
     flex-direction: column;
+    position: relative;
+    top: 3em;
   }
   #save-button {
     margin-top: 1em;
