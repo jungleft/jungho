@@ -253,12 +253,12 @@ export default {
   z-index: -1;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: #000;
 }
 
 .dark {
   filter: grayscale(100%);
-  background-color: black;
+  background-color: #000;
 }
 
 h1 {
@@ -326,7 +326,7 @@ a:visited {
   width: 150px;
   height: auto;
   border-radius: 5px;
-  opacity: 0.5;
+  opacity: 1; /* 設定圖片不透明度為1 */
 }
 
 

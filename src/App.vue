@@ -59,7 +59,7 @@ export default {
       rot: false,       // 色相旋轉效果開關
       blur: false,      // 模糊效果開關
       start: true,      // 是否顯示主畫面
-      iv: true,        // 反轉效果開關
+      iv: false,        // 反轉效果開關
       focus: 'iv',  // 當前聚焦的效果選項
       pets: [           // 商品資料陣列
         { i: 1, n: '01', price: 1800, src: './img/rug/t01.jpeg', 
@@ -89,7 +89,7 @@ export default {
       this.dark = false;
       this.rot = false;
       this.start = false;
-      this.iv = true;
+      this.iv = false;
     },
     normal() {
       this.start = true
@@ -125,6 +125,7 @@ export default {
 
 body {
   cursor: crosshair;
+  background-color: #000;
 }
 
 .hello {
@@ -150,7 +151,7 @@ a {
 }
 
 #main {
-  background-color: white;
+  background-color: #000;
 }
 
 .flex {

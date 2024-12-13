@@ -31,7 +31,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .dyo {
-  background-color: white;
+  background-color: #000;
   width: 100%;
   height: 100vh;
 }
@@ -39,6 +39,7 @@ export default {
 p{
   padding-top: 25em;
   padding-bottom: 2em;
+  color: #fff;
 }
 
 </style>
