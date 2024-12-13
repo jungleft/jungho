@@ -80,7 +80,8 @@ export default {
       return this.$route.path === '/dyo' ||
        this.$route.path === '/dyo_photo' || 
        this.$route.path === '/dyo_text' || 
-       this.$route.path === '/drawing'
+       this.$route.path === '/drawing' ||
+       this.$route.path === '/gallary'
     },
     change() {
       this.idx++
