@@ -335,13 +335,14 @@ a:visited {
     font-size: 14px;
   }
   .img {
-    max-width: 150px !important;
+    max-width: 15vmin !important;
   }
   .photo-box {
-    width: 100px;
+    width: 10vmin;
   }
   .photo {
     width: 100px;
+    max-width: 15vmin;
   }
 }
 </style>

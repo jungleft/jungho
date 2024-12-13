@@ -7,7 +7,7 @@
         <!-- 頂部大圖輪播 -->
         <!--<img class="big" :src="'./img/'+name[idx]">-->
         <!-- 導航連結區域 -->
-        <router-link to="/"><img class="small">留圖板</router-link> 
+        <router-link class="large-font" to="/"><img class="small">留圖板</router-link> 
         <!--
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
