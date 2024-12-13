@@ -7,7 +7,7 @@
         <!-- 頂部大圖輪播 -->
         <!--<img class="big" :src="'./img/'+name[idx]">-->
         <!-- 導航連結區域 -->
-        <router-link to="/"><img class="small" src="./assets/home.png" alt="首頁"></router-link> 
+        <router-link to="/"><img class="small">留圖板</router-link> 
         <!--
         <router-link to="/contact"><img id="info" class="small" src="./assets/info.png" alt="聯絡資訊"></router-link>
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
@@ -16,7 +16,7 @@
         <!--<router-link class="large-font" to="/drawing" v-show="in_dyo()">塗鴉+</router-link>
         <router-link class="large-font" to="/dyo_photo" v-show="in_dyo()">照片+</router-link>
         <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字+</router-link>-->
-        
+
         <router-link class="large-font" to="/dyo" >投稿→</router-link>
 
         <router-link class="large-font" to="/gallary" v-show="in_dyo()">相簿→
@@ -27,11 +27,12 @@
         <!--<router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>-->
         <a @click="reset()" v-show="!in_dyo()">
           <!-- 不同效果狀態下顯示的圖示 -->
-          <!--<img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
+          <img class="big" v-show="!blur && !dark && !iv && !rot" src="./assets/eyes.png">
           <img class="big" v-show="!blur && dark && !iv && !rot" src="./assets/bw.png">
           <img class="big" v-show="!blur && !dark && !iv && rot" src="./assets/rotate.png">
           <img class="big" v-show="blur && !dark && !iv && !rot" src="./assets/bl.png">
-          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png">--></a>
+          <img class="big" v-show="!blur && !dark && iv && !rot" src="./assets/iv.png">
+        </a>
       </div>
       <!-- 視覺效果切換按鈕區域 -->
         
@@ -281,7 +282,7 @@ a {
 }
 
 .big{
-  height: 4em;
+  height: 3em;
 }
 
 button {

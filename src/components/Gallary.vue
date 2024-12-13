@@ -7,7 +7,7 @@
       </div>
       <div>
         <h3>
-          <router-link to="/drawing">Back</router-link>
+          <!--<router-link to="/drawing">Back</router-link>-->
       </h3>
       </div>
     </div>
