@@ -3,8 +3,10 @@
   <div class="dyo" :class="{dark: dark}">
     <!-- 畫布元素，綁定滑鼠和觸控事件 -->
 
-<p>+請投稿在路上觀察到的東西+<br>ex. 視覺、聽覺、觸覺、空間感...<br>可選擇塗鴉、照片、文字來表達</p>
-
+<!-- <p>+請投稿在路上觀察到的東西+</p>-->
+<router-link to="/drawing" class="ui huge green button">塗鴉</router-link>
+<router-link to="/dyo_photo" class="ui huge green button">照片</router-link>
+<router-link to="/dyo_text" class="ui huge green button">文字</router-link>
  </div>
 </template>
 
@@ -34,6 +36,15 @@ export default {
   background-color: #000;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ui.button {
+margin: 1em;
+color:#000;
 }
 
 p{

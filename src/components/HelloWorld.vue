@@ -325,7 +325,7 @@ a:visited {
 .photo {
   width: 150px;
   height: auto;
-  border-radius: 5px;
+  /*border-radius: 50%;*/
   opacity: 1; /* 設定圖片不透明度為1 */
 }
 

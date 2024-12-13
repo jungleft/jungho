@@ -185,8 +185,9 @@ canvas {
 #c {
   position: fixed;
   z-index: 2;
-  bottom: 1em;
-  right: 1em;
+  bottom: 5em;
+  right: 0;
+  color: #fff;
 }
 
 

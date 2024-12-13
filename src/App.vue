@@ -13,13 +13,16 @@
         <router-link to="/project"><img class="small" src="./assets/works.png" alt="作品集"></router-link> -->
         
        
-        <router-link class="large-font" to="/drawing" v-show="in_dyo()">塗鴉+</router-link>
+        <!--<router-link class="large-font" to="/drawing" v-show="in_dyo()">塗鴉+</router-link>
         <router-link class="large-font" to="/dyo_photo" v-show="in_dyo()">照片+</router-link>
-        <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字+</router-link>
+        <router-link class="large-font" to="/dyo_text" v-show="in_dyo()">文字+</router-link>-->
+        
+        <router-link class="large-font" to="/dyo" >投稿→</router-link>
+
         <router-link class="large-font" to="/gallary" v-show="in_dyo()">相簿→
         </router-link>
 
-        <router-link class="large-font" to="/dyo" v-show="!in_dyo()">投稿→</router-link>
+        
         <!--<router-link to="/gallary" v-show="!in_dyo()"><img id="gallary" class="big" src="./assets/gallary.png" alt="相簿"></router-link>-->
         <!--<router-link to="/shop"><img id="shop" class="small" src="./assets/shop.png" alt="商店"></router-link>-->
         <a @click="reset()" v-show="!in_dyo()">
