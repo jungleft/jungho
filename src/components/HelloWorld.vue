@@ -168,7 +168,7 @@ export default {
       }
     }
   },
-  watch: {
+  watch: { // 監聽 photos 的變化
     photos: function(newVal) {
       console.log(newVal)
       this.left_photo_array = new Array(newVal.length).fill(0).map(() => 
@@ -177,7 +177,7 @@ export default {
         Math.floor(Math.random() * (window.innerHeight - 200)))
       this.dir1_photo_array = new Array(newVal.length).fill(1)
       this.dir2_photo_array = new Array(newVal.length).fill(1)
-    },
+    }, // 監聽 items 的變化
     items: function(newVal) {
       console.log(newVal)
       this.left_array = new Array(newVal.length).fill(0).map(() => 
@@ -186,7 +186,7 @@ export default {
         Math.floor(Math.random() * (window.innerHeight - 200)))
       this.dir1_array = new Array(newVal.length).fill(1)
       this.dir2_array = new Array(newVal.length).fill(1)
-    },
+    }, // 監聽 texts 的變化
     texts: function(newVal) {
       console.log(newVal)
       // 使用隨機值初始化文字位置陣列

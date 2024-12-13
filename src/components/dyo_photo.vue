@@ -13,6 +13,7 @@
 
 <script>
 
+// 引入 db 和 pica 和 heic2any
 import { db } from '../db.js';
 import Pica from 'pica';
 import heic2any from 'heic2any';
@@ -42,9 +43,10 @@ export default {
   },
   methods: {
     async uploadFile(e) {
-      const file = e.target.files[0];
+
+      const file = e.target.files[0]; // 取得上傳的檔案
       
-      if (!file) {
+      if (!file) { // 如果沒有檔案，馬上返回
         return;
       }
 
