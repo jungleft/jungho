@@ -7,7 +7,7 @@ module.exports = {
       skipWaiting: true,
       clientsClaim: true
     },
-    name: 'Jungho',
+    name: 'picboard',
     themeColor: '#000',
     msTileColor: '#000',
     appleMobileWebAppCapable: 'yes',
