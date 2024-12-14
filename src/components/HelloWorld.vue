@@ -259,7 +259,7 @@ export default {
 
 
 .hello {
-  padding-top: 4em;
+  padding-top: 2em;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -324,7 +324,7 @@ a:visited {
   width: fit-content;
   white-space: nowrap;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0);
   margin: 0;
 }
 
