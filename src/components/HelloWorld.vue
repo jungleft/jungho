@@ -67,21 +67,7 @@ export default {
       localStorage.idx_photo = this.idx_photo
     },
     // 控制圖片移動的方法
-    move() {
-      this.top += 1 * this.dir2    // 垂直移動
-      this.left += 1 * this.dir    // 水平移動
-      
-      // 當圖片碰到左右邊界時
-      if(this.left == window.innerWidth - 300 || this.left == 0) {
-        this.dir *= -1             // 改變水平移動方向
-        this.next()                // 切換下一張圖片
-      }
-      // 當圖片碰到上下邊界時
-      if(this.top == window.innerHeight - 200 || this.top == 0) {
-        this.dir2 *= -1            // 改變垂直移動方向
-        this.next()                // 切換下一張圖片
-      }
-    },
+    
     move_all() {
 
       this.left_array = this.left_array.map((item, i) => item + 1 * this.dir1_array[i])
@@ -123,12 +109,12 @@ export default {
       this.top_photo_array = this.top_photo_array.map((item, i) => item + 1 * this.dir2_photo_array[i])
 
       // 當圖片碰到左右邊界時
-      const imgWidth = window.innerWidth <= 768 ? 150 : 250;
-
+      const vmin = Math.min(window.innerWidth, window.innerHeight) / 100;
+      const imgWidth = window.innerWidth <= 768 ? (15 * vmin) : 250;
+      
       for (let i = 0; i < this.left_array.length; i++) {
-        if(this.left_array[i] == window.innerWidth - imgWidth || this.left_array[i] == 0) {
+        if(this.left_array[i] >= window.innerWidth - imgWidth || this.left_array[i] <= 0) {
           this.dir1_array[i]  *= -1             // 改變水平移動方向
-          this.next()                // 切換下一張圖片
         } 
       }
 
@@ -141,7 +127,7 @@ export default {
       }
 
       // 當照片碰到左右邊界時
-      const photoWidth = window.innerWidth <= 768 ? 100 : 150;
+      const photoWidth = window.innerWidth <= 768 ? 15 * vmin : 150;
 
       for (let i = 0; i < this.left_photo_array.length; i++) {
         if(this.left_photo_array[i] >= window.innerWidth - photoWidth || this.left_photo_array[i] <= 0) {
@@ -353,10 +339,10 @@ a:visited {
     max-width: 15vmin !important;
   }
   .photo-box {
-    width: 10vmin;
+    width: 15vmin;
   }
   .photo {
-    width: 100px;
+    width: 15vmin;
     max-width: 15vmin;
   }
 }
