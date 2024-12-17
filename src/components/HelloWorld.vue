@@ -1,16 +1,19 @@
 <template>
   <div class="hello" :class="{dark:dark}">
 
-
-    <a v-for="(item, i) in items" :key="item.src" @click="use(item)">
-      <img class="img" :src="item.src" :style="{left: left_array[i] + 'px', top: top_array[i] + 'px'}">
-    </a>
+    <div class="loading-screen" v-if="loadingmillisecs < 3000">
+      <div class="loader">Loading...</div>
+    </div>
 
     <div class="text-box" v-for="(item, i) in texts" :key="item.id" :style="{left: left_text_array[i] + 'px', top: top_text_array[i] + 'px'}">
       <p class="my-text">{{ item.content }}</p>
     </div>
 
-    <div class="photo-box" v-for="(item, i) in photos" :key="item.id" :style="{left: left_photo_array[i] + 'px', top: top_photo_array[i] + 'px'}">
+    <a v-for="(item, i) in items.slice(0, n)" :key="item.src" @click="use(item)">
+      <img class="img" :src="item.src" :style="{left: left_array[i] + 'px', top: top_array[i] + 'px'}">
+    </a>
+
+    <div class="photo-box" v-for="(item, i) in photos.slice(0, n)" :key="item.id" :style="{left: left_photo_array[i] + 'px', top: top_photo_array[i] + 'px'}">
       <img class="photo" :src="item.src">
     </div>
 
@@ -39,7 +42,7 @@ export default {
     photos: db.collection('photo'),
   },
   methods: {
-    // 使用選中的圖片並導航到繪圖頁面
+    // 使用選中��圖片並導航到繪圖頁面
     use(s) {
       localStorage.src = s;
       this.$router.push('/drawing')
@@ -82,7 +85,7 @@ export default {
         const font_size = window.innerWidth <= 768 ? 14 : 18
         const textWidth = this.texts[i].content.length * font_size * 1.5
         
-        // 當文字完全移出左側時
+        // 當文���完全移出左側時
         if (newPosition < -textWidth) {
           // 檢查是否所有文字都已移出畫面
           const allTextsMoved = this.left_text_array.every((pos, idx) => {
@@ -204,10 +207,18 @@ export default {
       this.idx = localStorage.idx
     }
     setInterval(this.move_all, 15)     // 每15毫秒執行一次move方法
+    setInterval(() => {
+      this.n = this.n + 5
+    }, 500)
+    setInterval(() => {
+      this.loadingmillisecs = this.loadingmillisecs + 1000
+    }, 1000)
   },
   // 元件的數據
   data() {
     return {
+      loadingmillisecs: 0,
+      n: 5,
       left_array: [0, 0, 0, 0, 0, 0, 0, 0],
       top_array: [0, 0, 0, 0, 0, 0, 0, 0],
       dir1_array: [1, 1, 1, 1, 1, 1, 1, 1],
@@ -330,6 +341,37 @@ a:visited {
   opacity: 1; /* 設定圖片不透明度為1 */
 }
 
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  color: #fff;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.loader:after {
+  content: '';
+  animation: loading 1s infinite;
+  display: inline-block;
+}
+
+@keyframes loading {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+}
 
 @media (max-width: 768px) {
   .my-text {
