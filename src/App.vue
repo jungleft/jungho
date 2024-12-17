@@ -42,6 +42,7 @@
     <!-- 效果選擇介面 -->
     <div class="flex" v-else>
       <!-- 各種視覺效果選項 -->
+      <h3>視覺模式：</h3>
       <a @click="normal()" @mouseover= "focus='normal'"><img class="small" title="normal" src="./assets/normal.png"><span class="l" v-show="focus == 'normal'"><br/>一般</span></a>
       <a @click="bw()" @mouseover="focus='bw'"><img class="small" title="grayscale" src="./assets/bw.png"><span class="l" v-show="focus == 'bw'"><br/>灰階</span></a>
       <a @click="rotate()" @mouseover="focus='rotate'"><img class="small" title="rotate" src="./assets/rotate.png"><span class="l" v-show="focus == 'rotate'"><br/>旋轉</span></a>
@@ -265,6 +266,7 @@ a {
 }
 .small{
   height: 2em;
+  margin-top: -1em;
 }
 #info{
   height: 1.6em;
@@ -317,5 +319,11 @@ button {
     height: 2em;
   }
 }
+
+h3 {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
 
 </style>

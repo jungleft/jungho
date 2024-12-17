@@ -2,7 +2,7 @@
   <!-- 畫布容器，可切換深色模式 -->
   <div class="dyo" :class="{dark: dark}">
     <!-- 畫布元素，綁定滑鼠和觸控事件 -->
-
+<h3>歡迎投稿收集/觀察～</h3>
 <!-- <p>+請投稿在路上觀察到的東西+</p>-->
 <router-link to="/drawing" class="ui huge green button">塗鴉</router-link>
 <router-link to="/dyo_photo" class="ui huge green button">照片</router-link>
@@ -51,6 +51,11 @@ p{
   padding-top: 25em;
   padding-bottom: 2em;
   color: #fff;
+}
+
+h3 {
+  margin-top: 0em;
+  margin-bottom: 3em;
 }
 
 </style>

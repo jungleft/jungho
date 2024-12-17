@@ -1,7 +1,7 @@
 <template>
   <div class="gallary-container">
     <div class="gallary">
-      <h2>gallary</h2>
+      <h2>sketch</h2>
       <div class = "block" v-for="(t) in test" :key="t.src">
         <a @click="use(t.src)"><img class ="g" :src="t.src"/></a>
       </div>
