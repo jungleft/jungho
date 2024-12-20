@@ -85,7 +85,7 @@ export default {
         const font_size = window.innerWidth <= 768 ? 14 : 18
         const textWidth = this.texts[i].content.length * font_size * 1.5
         
-        // 當文���完全移出左側時
+        // 當文字完全移出左側時
         if (newPosition < -textWidth) {
           // 檢查是否所有文字都已移出畫面
           const allTextsMoved = this.left_text_array.every((pos, idx) => {
@@ -195,8 +195,10 @@ export default {
       this.left_text_array = new Array(newVal.length).fill(0).map((_, i) => {
         return window.innerWidth + (i * 500)
       })
+      // 設定文字的top位置
       this.top_text_array = new Array(newVal.length).fill(0).map(() => 
         window.innerHeight - 100)
+      // 設定文字的移動方向
       this.dir1_text_array = new Array(newVal.length).fill(-1)
       this.dir2_text_array = new Array(newVal.length).fill(0)
     }
