@@ -193,11 +193,11 @@ export default {
     texts: function(newVal) {
       console.log(newVal)
       this.left_text_array = new Array(newVal.length).fill(0).map((_, i) => {
-        return window.innerWidth + (i * 500)
+        return window.innerWidth + (i * 300)
       })
       // 設定文字的top位置
       this.top_text_array = new Array(newVal.length).fill(0).map(() => 
-        window.innerHeight - 100)
+        window.innerHeight - 35)
       // 設定文字的移動方向
       this.dir1_text_array = new Array(newVal.length).fill(-1)
       this.dir2_text_array = new Array(newVal.length).fill(0)
