@@ -234,7 +234,7 @@ a {
   top:0;
   left:0;
   padding: 30px;
-  background-color: rgb(110, 252, 40) !important; /* 這行之後可以拿掉 */
+  background-color: rgba(110, 252, 40, 0.8) !important; /* 這行之後可以拿掉 */
 }
 
 @media screen and (max-width: 600px) {
@@ -262,7 +262,7 @@ a {
 }
 
 #nav a.router-link-exact-active {
-  color: #F5B041;
+  color: rgb(150,100,150);
 }
 .small{
   height: 2em;
