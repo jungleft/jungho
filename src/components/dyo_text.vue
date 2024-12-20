@@ -47,7 +47,8 @@ export default {
           content: this.message
         }
       )
-      this.$router.push('/gallary');
+      window.alert('上傳成功');
+      this.$router.push('/');
     }
   },
   mounted() {

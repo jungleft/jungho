@@ -137,6 +137,7 @@ export default {
                 src: dataURL,
               });
               window.alert('上傳成功');
+              this.$router.push('/');
             })
             .catch(err => {
               console.error('圖片處理錯誤:', err);

@@ -83,7 +83,7 @@ export default {
     save() {
       const canvas = document.getElementById('canvas');
       this.$firestoreRefs.test.add({src: canvas.toDataURL()})
-      this.$router.push('/gallary');
+      this.$router.push('/');
     },
 
     // 將畫布內容轉換為 Blob 並上傳到 Firebase Storage
